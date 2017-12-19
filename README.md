@@ -1,3 +1,2 @@
 # scripts
-A collection of shell scripts.
-The one for League of Legends mostly works ;)
+A collection of shell scripts I've written. Most aren't currently working because shell scripting is such a brutal way to code.
