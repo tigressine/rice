@@ -1,22 +1,55 @@
-# Install Minecraft
+clear
+echo "Welcome to Tgsachse's Minecraft Installation Script for Ubuntu."
+echo
+echo "Enter 1 to install Minecraft."
+echo "Enter 0 or anything else to quit without installation."
+read COMMAND
 
-# Install Java9
+if [ "$COMMAND" != "1" ]; then
+    echo "Quitting without installation..."
+    exit 0
+fi
+
+echo "Installing Java9..."
 sudo add-apt-repository ppa:webupd8team/java
 sudo apt update
 sudo apt install oracle-java9-installer oracle-java9-set-default
 
-# Install & Run Minecraft
+echo "Making .minecraft directory..."
 mkdir ~/.minecraft
-cd ~/.minecraft
-wget s3.amazonaws.com/Minecraft.Download/launcher/Minecraft.jar
-java -jar Minecraft.jar
+
+echo "Downloading Minecraft.jar..."
+wget http://s3.amazonaws.com/Minecraft.Download/launcher/Minecraft.jar -P ~/.minecraft
+
+echo "Minecraft downloaded."
+echo
+echo "Installation IS NOT complete!"
+echo "Now you must log into the client, then go to your profiles (located in the bottom left corner"
+echo "Under your default profile, you must enable java arguments. Then exit the client."
+echo "Enter 1 to launch the client and then follow these instructions."
+echo "Enter 0 or anything else to cancel installation."
+read COMMAND
+
+if [ "$COMMAND" != "1" ]; then
+    echo "Cancelling installation..."
+    exit 0
+fi
+java -jar ~/.minecraft/Minecraft.jar
 
 
-echo
-echo
-echo "You now must log in, then go to your profiles and on your firs
-#sed 's/-Xmx1G/-Xmx4G/' launcher_profiles.json > temp.json
-#sed 's/ -XX:+CMSIncrementalMode / /' temp.json > launcher_profiles.json
-#rm temp.json
+# Nothing below this line works yet
+clear
+echo "How much RAM (in gigabytes) would you like to allocate to Minecraft? Enter a value between 1 and 8 (default: 1)"
+read RAM
+
+if [ "$RAM" -ge 2 -a "$RAM" -le 8 ]; then #
+    sed -i 's/-Xmx1G/-Xmx',"$RAM",'G/' launcher_profiles.json #
+fi
+
+PROFILE_DIR='$(user expansion}' #
+sed -i 's/"gameDir": "[^\n]*",/"gameDir": "',"$" #
+sed -i 's/-Xmx1G/-Xmx4G/' launcher_profiles.json #
+#sed -i 's/ -XX:+CMSIncrementalMode / /' launcher_profiles.json
+
 # Possibly add more to put versions in own folder like usual
 # possibly add modded stuff
