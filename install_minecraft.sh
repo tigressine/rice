@@ -36,20 +36,14 @@ if [ "$COMMAND" != "1" ]; then
 fi
 java -jar ~/.minecraft/Minecraft.jar
 
-
-# Nothing below this line works yet
 clear
 echo "How much RAM (in gigabytes) would you like to allocate to Minecraft? Enter a value between 1 and 8 (default: 1)"
 read RAM
 
-if [ "$RAM" -ge 2 -a "$RAM" -le 8 ]; then #
-    sed -i 's/-Xmx1G/-Xmx',"$RAM",'G/' launcher_profiles.json #
+if [ "$RAM" -ge 2 -a "$RAM" -le 8 ]; then
+    sed -i "s/-Xmx1G/-Xmx"$RAM"G/" ~/.minecraft/launcher_profiles.json
 fi
+sed -i 's/ -XX:+CMSIncrementalMode / /' ~/.minecraft/launcher_profiles.json
 
-PROFILE_DIR='$(user expansion}' #
-sed -i 's/"gameDir": "[^\n]*",/"gameDir": "',"$" #
-sed -i 's/-Xmx1G/-Xmx4G/' launcher_profiles.json #
-#sed -i 's/ -XX:+CMSIncrementalMode / /' launcher_profiles.json
-
-# Possibly add more to put versions in own folder like usual
-# possibly add modded stuff
+# Add options for custom game directories
+# Add options for modding
