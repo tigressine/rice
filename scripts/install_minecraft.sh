@@ -2,7 +2,7 @@
 # Written by Tiger Sachse
 
 SYS_EXECUTABLE="/usr/bin/minecraft"
-DESKTOP_EXECUTABLE="~/Desktop/minecraft"
+DESKTOP="~/Desktop"
 
 clear
 echo "Welcome to Tgsachse's Minecraft Installation Script for Ubuntu."
@@ -54,6 +54,11 @@ if [ "$RAM" -ge 2 -a "$RAM" -le 8 ]; then
     sed -i "s/-Xmx1G/-Xmx"$RAM"G/" ~/.minecraft/launcher_profiles.json
 fi
 sed -i 's/ -XX:+CMSIncrementalMode / /' ~/.minecraft/launcher_profiles.json
+
+# Move executable to desktop
+cd ..
+cp /exe/Minecraft.sh $DESKTOP
+cd scripts
 
 # Add options for custom game directories
 # Add options for modding

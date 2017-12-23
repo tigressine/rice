@@ -5,8 +5,8 @@ install_dir='~/installation'
 ### SETUP ###
 # Make installation directory
 mkdir $install_dir
-cp install_sponge.sh $install_dir
-cp install_minecraft.sh $install_dir
+cp scripts/install_sponge.sh $install_dir
+cp scripts/install_minecraft.sh $install_dir
 
 # Check that system is up to date
 sudo apt update
