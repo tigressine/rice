@@ -1,4 +1,5 @@
-# This script was written to install League of Legends on Ubuntu.
+# League of Legends installation script for Ubuntu.
+# Written by Tiger Sachse.
 # It currently does not work, although I may return to finish it in the future.
 # It was created to automate the clearest guide I found on reddit.
 

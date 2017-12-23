@@ -1,4 +1,4 @@
-# Script to install sPoNgEbOb.c
+# sPoNgEbOb.c installation script
 # Written by Tiger Sachse
 # sPoNgEbOb.c by Caleb Shepard
 

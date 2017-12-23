@@ -1,3 +1,5 @@
+# Minecraft installation script for Ubuntu
+# Written by Tiger Sachse
 clear
 echo "Welcome to Tgsachse's Minecraft Installation Script for Ubuntu."
 echo

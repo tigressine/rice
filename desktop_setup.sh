@@ -1,4 +1,5 @@
-# Desktop installation script
+# Desktop installation script for Kubuntu
+# Written by Tiger Sachse
 install_dir='~/installation'
 
 ### SETUP ###
