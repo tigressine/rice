@@ -16,7 +16,6 @@ sudo apt upgrade
 ### UTILITIES ###
 # Install needed utilities
 sudo apt install git neovim tmux plank
-ln -s /usr/bin/plank ~/.config/autostart
 ./install_sponge.sh
 
 # Install dotfiles from github
@@ -42,7 +41,6 @@ sudo apt install google-chrome-stable
 
 # Install Dropbox
 cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
-ln -s ~/.dropbox-dist/dropboxd ~/.config/autostart
 
 
 ### GAMING ###
