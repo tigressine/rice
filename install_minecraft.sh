@@ -1,5 +1,9 @@
 # Minecraft installation script for Ubuntu
 # Written by Tiger Sachse
+
+SYS_EXECUTABLE="/usr/bin/minecraft"
+DESKTOP_EXECUTABLE="~/Desktop/minecraft"
+
 clear
 echo "Welcome to Tgsachse's Minecraft Installation Script for Ubuntu."
 echo
@@ -12,15 +16,14 @@ if [ "$COMMAND" != "1" ]; then
     exit 0
 fi
 
-echo "Installing Java9..."
+# Install Java9
 sudo add-apt-repository ppa:webupd8team/java
 sudo apt update
 sudo apt install oracle-java9-installer oracle-java9-set-default
 
-echo "Making .minecraft directory..."
 mkdir ~/.minecraft
 
-echo "Downloading Minecraft.jar..."
+# Download the Minecraft.jar
 wget http://s3.amazonaws.com/Minecraft.Download/launcher/Minecraft.jar -P ~/.minecraft
 
 echo "Minecraft downloaded."
@@ -36,12 +39,17 @@ if [ "$COMMAND" != "1" ]; then
     echo "Cancelling installation..."
     exit 0
 fi
-java -jar ~/.minecraft/Minecraft.jar
+
+# Run the jar
+echo "java -jar ~/.minecraft/Minecraft.jar" | sudo tee $SYS_EXECUTABLE > /dev/null
+sudo chmod +x $SYS_EXECUTABLE
+minecraft
 
 clear
 echo "How much RAM (in gigabytes) would you like to allocate to Minecraft? Enter a value between 1 and 8 (default: 1)"
 read RAM
 
+# Change RAM allocation for default profile and remove poison pill java argument
 if [ "$RAM" -ge 2 -a "$RAM" -le 8 ]; then
     sed -i "s/-Xmx1G/-Xmx"$RAM"G/" ~/.minecraft/launcher_profiles.json
 fi
