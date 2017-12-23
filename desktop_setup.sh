@@ -53,3 +53,7 @@ sudo dpkg -i discord.deb
 
 # Install Minecraft
 ./install_minecraft.sh
+
+
+### CLEANUP ###
+rm -r $install_dir
