@@ -15,7 +15,7 @@ sudo apt upgrade
 
 ### UTILITIES ###
 # Install needed utilities
-sudo apt install git neovim tmux plank
+sudo apt install git neovim tmux plank fortune cowsay lolcat
 ./install_sponge.sh
 
 # Install dotfiles from github
