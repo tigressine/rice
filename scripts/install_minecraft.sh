@@ -56,9 +56,5 @@ fi
 sed -i 's/ -XX:+CMSIncrementalMode / /' ~/.minecraft/launcher_profiles.json
 
 # Move executable to desktop
-cd ..
-cp /exe/Minecraft.sh $DESKTOP
-cd scripts
-
 # Add options for custom game directories
 # Add options for modding
