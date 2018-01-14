@@ -14,22 +14,36 @@ sudo apt upgrade
 
 
 ### UTILITIES ###
-# Install needed utilities
-sudo apt install git neovim tmux plank fortune cowsay lolcat
+# Install useful terminal utilities
+sudo apt install git neovim tmux
+
+# Install packages for UCF VPN
+sudo apt install vpnc network-manager-vpnc
+
+# Install other goofy stuff
+sudo apt install fortune cowsay lolcat
 ./install_sponge.sh
 
-# Install dotfiles from github
+
+### CUSTOMIZATION ###
+# Install dotfiles from GitHub
 cd $install_dir
 git clone https://www.github.com/tgsachse/dotfiles.git
 cd dotfiles
 chmod +x install.sh
 ./install.sh
 
+# Install Plank
+sudo apt install plank
+
 
 ### DEVELOPMENT ###
+# Install C compiler
+sudo apt install gcc
+
 # Install Python tools and projects
 sudo apt install python3-pip
-sudo pip3 install selenium enigmamachine
+sudo pip3 install selenium enigmamachine shellcuts
 
 
 ### SOFTWARE ###
@@ -41,6 +55,8 @@ sudo apt install google-chrome-stable
 
 # Install Dropbox
 cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
+ln -s .dropbox-dist/dropboxd .kde/Autostart/dropboxd
+.dropbox-dist/dropboxd
 
 
 ### GAMING ###
