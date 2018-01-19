@@ -1,12 +1,13 @@
 # Desktop installation script for Kubuntu
 # Written by Tiger Sachse
-install_dir='~/installation'
-
+install_dir="~/installation"
+echo $HOME
 ### SETUP ###
 # Make installation directory
 mkdir $install_dir
-cp scripts/install_sponge.sh $install_dir
-cp scripts/install_minecraft.sh $install_dir
+cp install_sponge.sh $install_dir
+cp install_minecraft.sh $install_dir
+cd $install_dir
 
 # Check that system is up to date
 sudo apt update
@@ -27,7 +28,6 @@ sudo apt install fortune cowsay lolcat
 
 ### CUSTOMIZATION ###
 # Install dotfiles from GitHub
-cd $install_dir
 git clone https://www.github.com/tgsachse/dotfiles.git
 cd dotfiles
 chmod +x install.sh
@@ -38,6 +38,11 @@ sudo apt install plank
 
 
 ### DEVELOPMENT ###
+# Install Java9
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt update
+sudo apt install oracle-java9-installer oracle-java9-set-default
+
 # Install C compiler
 sudo apt install gcc
 
@@ -48,6 +53,7 @@ sudo pip3 install selenium enigmamachine shellcuts
 
 ### SOFTWARE ###
 # Install Google Chrome
+cd $install_dir
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
 sudo apt update
