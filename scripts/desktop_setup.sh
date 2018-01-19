@@ -1,13 +1,14 @@
 # Desktop installation script for Kubuntu
 # Written by Tiger Sachse
 install_dir="~/installation"
-echo $HOME
+dotfile_dir="~/.git_dotfiles"
+
 ### SETUP ###
 # Make installation directory
 mkdir $install_dir
-cp install_sponge.sh $install_dir
-cp install_minecraft.sh $install_dir
-cd $install_dir
+
+# Clone necessary script repository
+git clone https://www.github.com/tgsachse/scripts.git $install_dir
 
 # Check that system is up to date
 sudo apt update
@@ -16,22 +17,20 @@ sudo apt upgrade
 
 ### UTILITIES ###
 # Install useful terminal utilities
-sudo apt install git neovim tmux
+sudo apt install git neovim
 
 # Install packages for UCF VPN
 sudo apt install vpnc network-manager-vpnc
 
 # Install other goofy stuff
 sudo apt install fortune cowsay lolcat
-./install_sponge.sh
+.$install_dir/scripts/scripts/install_sponge.sh
 
 
 ### CUSTOMIZATION ###
 # Install dotfiles from GitHub
-git clone https://www.github.com/tgsachse/dotfiles.git
-cd dotfiles
-chmod +x install.sh
-./install.sh
+git clone https://www.github.com/tgsachse/dotfiles.git $dotfile_dir
+.$dotfile_dir/install.sh
 
 # Install Plank
 sudo apt install plank
@@ -48,7 +47,7 @@ sudo apt install gcc
 
 # Install Python tools and projects
 sudo apt install python3-pip
-sudo pip3 install selenium enigmamachine shellcuts
+sudo pip3 install selenium enigmamachine
 
 
 ### SOFTWARE ###
@@ -60,10 +59,8 @@ sudo apt update
 sudo apt install google-chrome-stable
 
 # Install Dropbox
-cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
-ln -s .dropbox-dist/dropboxd .kde/Autostart/dropboxd
-.dropbox-dist/dropboxd
-
+sudo apt install nautilus-dropbox
+dropbox autostart y
 
 ### GAMING ###
 # Install Discord
@@ -74,7 +71,7 @@ sudo apt --fix-broken install
 sudo dpkg -i discord.deb
 
 # Install Minecraft
-./install_minecraft.sh
+.$install_dir/scripts/scripts/install_minecraft.sh
 
 
 ### CLEANUP ###
