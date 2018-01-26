@@ -1,13 +1,47 @@
 # Desktop installation script for Kubuntu
 # Written by Tiger Sachse
+
+function procedure_check {
+    echo
+    echo "Next process: $1"
+    echo "Proceed? (Yes/No/Skip)"
+    
+    read command
+    
+    case $command in
+        Y|y|yes|Yes)
+            echo "Proceeding..."
+            return 0
+            ;;
+        N|n|no|No)
+            echo "Goodbye!"
+            exit 0
+            ;;
+        S|s|skip|Skip)
+            echo "Skipping..."
+            return 1
+            ;;
+        *)
+            echo "Goodbye!"
+            exit 0
+            ;;
+    esac
+}
+
 install_dir="~/installation"
-echo $HOME
+
 ### SETUP ###
 # Make installation directory
-mkdir $install_dir
-cp install_sponge.sh $install_dir
-cp install_minecraft.sh $install_dir
-cd $install_dir
+if procedure_check "make installation directory";
+then
+    echo "running"
+    #mkdir $install_dir
+    #cp install_sponge.sh $install_dir
+    #cp install_minecraft.sh $install_dir
+    #cd $install_dir
+fi
+
+exit 0
 
 # Check that system is up to date
 sudo apt update
