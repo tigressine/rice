@@ -1,6 +1,7 @@
-# Desktop installation script for Kubuntu
+# Full desktop installation script for Ubuntu systems
 # Written by Tiger Sachse
 
+### FUNCTIONS ###
 function procedure_check {
     echo
     echo "Next process: $1"
@@ -13,10 +14,6 @@ function procedure_check {
             echo "Proceeding..."
             return 0
             ;;
-        N|n|no|No)
-            echo "Goodbye!"
-            exit 0
-            ;;
         S|s|skip|Skip)
             echo "Skipping..."
             return 1
@@ -28,88 +25,139 @@ function procedure_check {
     esac
 }
 
-install_dir="~/installation"
+function quick_check {
+    case $1 in
+        -q|-Q|--quick)
+            return 1
+            ;;
+        *)
+            return 0
+            ;;
+    esac
+}
+
+
+### CONSTANTS ###
+D_INSTALL="$(pwd)/installation"
+D_DOTFILES="$HOME/.git_dotfiles"
+QUICK="$(quick_check $1)"
+
 
 ### SETUP ###
-# Make installation directory
-if procedure_check "make installation directory";
+# Clone script repository
+if procedure_check "prepare for installation";
 then
-    echo "running"
-    #mkdir $install_dir
-    #cp install_sponge.sh $install_dir
-    #cp install_minecraft.sh $install_dir
-    #cd $install_dir
+    git clone https://www.github.com/tgsachse/scripts.git $D_INSTALL
 fi
 
-exit 0
-
 # Check that system is up to date
-sudo apt update
-sudo apt upgrade
+if procedure_check "update system";
+then
+    sudo apt update
+    sudo apt upgrade -y
+fi
 
 
 ### UTILITIES ###
-# Install useful terminal utilities
-sudo apt install git neovim tmux
+# Install useful terminal utilities, UCF VPN, and goofy stuff
+if procedure_check "install utilities and goofy stuff";
+then
+    sudo apt install -y git neovim vpnc network-manager-vpnc
+    sudo apt install -y fortune cowsay lolcat
+fi
 
-# Install packages for UCF VPN
-sudo apt install vpnc network-manager-vpnc
-
-# Install other goofy stuff
-sudo apt install fortune cowsay lolcat
-./install_sponge.sh
+# Run SpOnGe install script
+if procedure_check "run SpOnGe script";
+then
+    bash $D_INSTALL/scripts/install_sponge.sh
+fi
 
 
 ### CUSTOMIZATION ###
 # Install dotfiles from GitHub
-git clone https://www.github.com/tgsachse/dotfiles.git
-cd dotfiles
-chmod +x install.sh
-./install.sh
+if procedure_check "install dotfiles";
+then
+    git clone https://www.github.com/tgsachse/dotfiles.git $D_DOTFILES
+    bash $D_DOTFILES/install.sh
+fi
+
+# Install Cinnamon DE
+if procedure_check "install Cinnamon";
+then
+    sudo add-apt-repository ppa:embrosyn/cinnamon
+    sudo apt-get update
+    sudo apt-get install -y cinnamon
+fi
 
 # Install Plank
-sudo apt install plank
+if procedure_check "install plank";
+then
+    sudo apt install -y plank
+fi
 
 
 ### DEVELOPMENT ###
 # Install Java9
-sudo add-apt-repository ppa:webupd8team/java
-sudo apt update
-sudo apt install oracle-java9-installer oracle-java9-set-default
+if procedure_check "install Java9";
+then
+    sudo add-apt-repository ppa:webupd8team/java
+    sudo apt update
+    sudo apt install -y oracle-java9-installer oracle-java9-set-default
+fi
 
 # Install C compiler
-sudo apt install gcc
+if procedure_check "install GCC";
+then
+    sudo apt install -y gcc
+fi
 
 # Install Python tools and projects
-sudo apt install python3-pip
-sudo pip3 install selenium enigmamachine shellcuts
+if procedure_check "install pip and python stuff";
+then
+    sudo apt install -y python3-pip
+    /usr/bin/yes | sudo pip3 install selenium enigmamachine
+fi
 
 
 ### SOFTWARE ###
 # Install Google Chrome
-cd $install_dir
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
-sudo apt update
-sudo apt install google-chrome-stable
+if procedure_check "install Chrome";
+then
+    cd $D_INSTALL
+    wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+    echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
+    sudo apt update
+    sudo apt install -y google-chrome-stable
+fi
 
 # Install Dropbox
-cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
-ln -s .dropbox-dist/dropboxd .kde/Autostart/dropboxd
-.dropbox-dist/dropboxd
+if procedure_check "install and autostart Dropbox";
+then
+    sudo apt install -y nautilus-dropbox
+    dropbox autostart y
+fi
 
 
 ### GAMING ###
 # Install Discord
-cd $install_dir
-wget -O discord.deb https://discordapp.com/api/download?platform=linux&format=deb
-sudo apt install libgconf-2-4 libc++1
-sudo apt --fix-broken install
-sudo dpkg -i discord.deb
+if procedure_check "install Discord";
+then
+    cd $D_INSTALL
+    wget -O discord.deb https://discordapp.com/api/download?platform=linux&format=deb
+    sudo apt install libgconf-2-4 libc++1
+    sudo apt --fix-broken install
+    sudo dpkg -i discord.deb
+fi
 
 # Install Minecraft
-./install_minecraft.sh
+if procedure_check "install Minecraft";
+then
+    bash $D_INSTALL/scripts/install_minecraft.sh
+fi
 
 
 ### CLEANUP ###
-rm -r $install_dir
+if procedure_check "finish installation";
+then
+    sudo rm -r $D_INSTALL
+fi
