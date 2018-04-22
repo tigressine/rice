@@ -1,2 +1,2 @@
 # scripts
-A collection of shell scripts I've written. Most aren't currently working because shell scripting is such a brutal way to code.
+A collection of shell scripts I've written to do cool things. This is also my dotfile repository.
