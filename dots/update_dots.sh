@@ -1,7 +1,7 @@
-cp .bashrc ~/
-cp .bash_aliases ~/
-cp .bash_profile ~/
-cp .face ~/
-cp .Xresources ~/
-cp -r .config/nvim ~/.config
-cp -r .config/shellcuts ~/.config
+cp $HOME/.bashrc .
+cp $HOME/.bash_aliases .
+cp $HOME/.bash_profile .
+cp $HOME/.face .
+cp $HOME/.Xresources .
+cp -r $HOME/.config/nvim .config/
+cp -r $HOME/.config/shellcuts .config/

@@ -26,7 +26,7 @@ function procedure_check {
 }
 
 
-### CONSTANTS ###
+### SCRIPT DIRECTORY ###
 D_SCRIPTS="$HOME/.scripts"
 
 
@@ -71,8 +71,22 @@ then
     bash $D_SCRIPTS/scripts/install_sponge.sh
 fi
 
+if procedure_check "enable firewall";
+then
+    sudo ufw enable
+fi
+
 
 ### CUSTOMIZATION ###
+#
+if procedure_check "configure home folder";
+then
+    rm -r $HOME/Music $HOME/Pictures $HOME/Public
+    rm -r $HOME/Downloads $HOME/Templates $HOME/Videos
+    rm -r $HOME/Desktop $HOME/Documents
+    mkdir $HOME/Bin $HOME/Slate
+fi
+
 # Install dotfiles from GitHub
 if procedure_check "install dotfiles";
 then
@@ -80,18 +94,13 @@ then
 fi
 
 
-# Install Java9
-if procedure_check "install Java9";
+### DEVELOPMENT TOOLS ###
+# Install Java10
+if procedure_check "install Java";
 then
-    sudo add-apt-repository ppa:webupd8team/java
+    sudo add-apt-repository ppa:linuxuprising/java
     sudo apt update
-    sudo apt install -y oracle-java9-installer oracle-java9-set-default
-fi
-
-# Install C compiler
-if procedure_check "install GCC";
-then
-    sudo apt install -y gcc
+    sudo apt install -y oracle-java10-installer
 fi
 
 # Install Python tools and projects
@@ -136,11 +145,4 @@ fi
 if procedure_check "install Minecraft";
 then
     bash $D_INSTALL/scripts/install_minecraft.sh
-fi
-
-
-### CLEANUP ###
-if procedure_check "finish installation";
-then
-    sudo rm -r $D_INSTALL
 fi
