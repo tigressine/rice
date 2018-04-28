@@ -27,8 +27,7 @@ function procedure_check {
 
 
 ### CONSTANTS ###
-D_INSTALL="/tmp/desktop_installation"
-D_DOTFILES="$HOME/.git_dotfiles"
+D_SCRIPTS="$HOME/.scripts"
 
 
 ### SETUP ###
@@ -43,11 +42,11 @@ fi
 # Clone script repository
 if procedure_check "prepare for installation";
 then
-    if [ -d $D_INSTALL ];
+    if [ -d $D_SCRIPTS ];
     then
-        sudo rm -r $D_INSTALL
+        sudo rm -r $D_SCRIPTS
     fi
-    git clone https://www.github.com/tgsachse/scripts.git $D_INSTALL
+    git clone https://www.github.com/tgsachse/scripts.git $D_SCRIPTS
 fi
 
 # Check that system is up to date
@@ -69,7 +68,7 @@ fi
 # Run SpOnGe install script
 if procedure_check "run SpOnGe script";
 then
-    bash $D_INSTALL/scripts/install_sponge.sh
+    bash $D_SCRIPTS/scripts/install_sponge.sh
 fi
 
 
@@ -77,8 +76,7 @@ fi
 # Install dotfiles from GitHub
 if procedure_check "install dotfiles";
 then
-    git clone https://www.github.com/tgsachse/dotfiles.git $D_DOTFILES
-    bash $D_DOTFILES/install.sh
+    bash $D_SCRIPTS/dots/install_dots.sh
 fi
 
 
