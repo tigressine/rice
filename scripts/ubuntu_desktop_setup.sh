@@ -27,7 +27,7 @@ function procedure_check {
 
 
 ### CONSTANTS ###
-D_INSTALL="$(pwd)/installation"
+D_INSTALL="/tmp/installation"
 D_DOTFILES="$HOME/.git_dotfiles"
 
 
@@ -58,7 +58,7 @@ fi
 # Install useful terminal utilities, UCF VPN, and goofy stuff
 if procedure_check "install utilities and goofy stuff";
 then
-    sudo apt install -y neovim vpnc network-manager-vpnc tree
+    sudo apt install -y neovim vpnc network-manager-vpnc tree zsh fish gcc
     sudo apt install -y fortune cowsay lolcat
 fi
 
