@@ -25,25 +25,21 @@ function procedure_check {
     esac
 }
 
-function quick_check {
-    case $1 in
-        -q|-Q|--quick)
-            return 1
-            ;;
-        *)
-            return 0
-            ;;
-    esac
-}
-
 
 ### CONSTANTS ###
 D_INSTALL="$(pwd)/installation"
 D_DOTFILES="$HOME/.git_dotfiles"
-QUICK="$(quick_check $1)"
 
 
 ### SETUP ###
+# install git to clone the scripts repo
+if procedure_check "install git";
+then
+    sudo apt install git -y
+    git config --global user.email "tgsachse@gmail.com"
+    git config --global user.name "Tiger Sachse"
+fi
+
 # Clone script repository
 if procedure_check "prepare for installation";
 then
@@ -62,7 +58,7 @@ fi
 # Install useful terminal utilities, UCF VPN, and goofy stuff
 if procedure_check "install utilities and goofy stuff";
 then
-    sudo apt install -y git neovim vpnc network-manager-vpnc
+    sudo apt install -y neovim vpnc network-manager-vpnc tree
     sudo apt install -y fortune cowsay lolcat
 fi
 
@@ -81,22 +77,7 @@ then
     bash $D_DOTFILES/install.sh
 fi
 
-# Install Cinnamon DE
-if procedure_check "install Cinnamon";
-then
-    sudo add-apt-repository ppa:embrosyn/cinnamon
-    sudo apt-get update
-    sudo apt-get install -y cinnamon
-fi
 
-# Install Plank
-if procedure_check "install plank";
-then
-    sudo apt install -y plank
-fi
-
-
-### DEVELOPMENT ###
 # Install Java9
 if procedure_check "install Java9";
 then
