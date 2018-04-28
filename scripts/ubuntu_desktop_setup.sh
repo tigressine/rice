@@ -27,7 +27,7 @@ function procedure_check {
 
 
 ### CONSTANTS ###
-D_INSTALL="/tmp/installation"
+D_INSTALL="/tmp/desktop_installation"
 D_DOTFILES="$HOME/.git_dotfiles"
 
 
@@ -43,6 +43,10 @@ fi
 # Clone script repository
 if procedure_check "prepare for installation";
 then
+    if [ -d $D_INSTALL ];
+    then
+        sudo rm -r $D_INSTALL
+    fi
     git clone https://www.github.com/tgsachse/scripts.git $D_INSTALL
 fi
 

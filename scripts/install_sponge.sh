@@ -3,12 +3,12 @@
 # sPoNgEbOb.c by Caleb Shepard
 
 # Change this variable to change the name of the folder created during install
-DOWNLOAD_FOLDER="tmp/install_sponge"
+DOWNLOAD_FOLDER="/tmp/sponge_installation"
 
 git clone https://github.com/Caleb-Shepard/Scripts.git $DOWNLOAD_FOLDER
 
 cd $DOWNLOAD_FOLDER
-sudo gcc sPoNgEbOb.c -o /usr/bin/sponge
+sudo gcc Scripts_General/sources/sPoNgEbOb.c -o /usr/bin/sponge
 
 if $?;
 then
