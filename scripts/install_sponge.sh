@@ -10,7 +10,8 @@ git clone https://github.com/Caleb-Shepard/Scripts.git $DOWNLOAD_FOLDER
 cd $DOWNLOAD_FOLDER
 sudo gcc Scripts_General/sources/sPoNgEbOb.c -o /usr/bin/sponge
 
-if $?;
+echo $?
+if ;
 then
     echo "Something went wrong installing sPoNgEbOb."
     echo "Sorry. ;("
