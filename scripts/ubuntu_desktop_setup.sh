@@ -93,6 +93,22 @@ then
     bash $D_SCRIPTS/dots/install_dots.sh
 fi
 
+# Install icon theme, GTK theme and enable shell themes
+if procedure_check "install themes";
+then
+    sudo add-apt-repository ppa:tista/adapta
+    sudo add-apt-repository ppa:papirus/papirus
+    sudo apt update
+    sudo apt install -y gnome-shell-extensions gnome-tweak-tool
+    sudo apt install -y adapta-gtk-theme papirus-icon-theme
+    sudo apt install -y chrome-gnome-shell
+    gsettings set org.gnome.desktop.interface gtk-theme Adapta
+    gsettings set org.gnome.desktop.interface icon-theme Papirus-Adapta
+    echo
+    echo "You'll need to restart and then use the tweak tool to change the shell theme."
+    echo
+fi
+
 
 ### DEVELOPMENT TOOLS ###
 # Install Java10
@@ -115,9 +131,8 @@ fi
 # Install Google Chrome
 if procedure_check "install Chrome";
 then
-    cd $D_INSTALL
     wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-    echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
+    echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
     sudo apt update
     sudo apt install -y google-chrome-stable
 fi
@@ -134,11 +149,10 @@ fi
 # Install Discord
 if procedure_check "install Discord";
 then
-    cd $D_INSTALL
-    wget -O discord.deb https://discordapp.com/api/download?platform=linux&format=deb
+    wget -O /tmp/discord.deb "https://discordapp.com/api/download?platform=linux&format=deb"
     sudo apt install libgconf-2-4 libc++1
     sudo apt --fix-broken install
-    sudo dpkg -i discord.deb
+    sudo dpkg -i /tmp/discord.deb
 fi
 
 # Install Minecraft
