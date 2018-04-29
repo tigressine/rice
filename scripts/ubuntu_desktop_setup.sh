@@ -30,6 +30,9 @@ function main {
     echo "o) install Discord"
     echo "p) install Minecraft"
     echo "q) quit"
+    echo "r) install Shellcuts"
+    echo "s) install Variety"
+    echo "t) install GIMP"
     echo
     echo "e.g. To install Discord, Google Chrome, and Java 10, enter \"kmo\""
     echo
@@ -91,6 +94,15 @@ function main {
             q|Q)
                 exit
                 ;;
+            r|R)
+                install_shellcuts
+                ;;
+            s|S)
+                install_variety
+                ;;
+            t|T)
+                install_gimp
+                ;;
         esac
     done
 }
@@ -147,8 +159,16 @@ function update_system {
 ### UTILITIES ###
 # Install useful terminal utilities, UCF VPN, and goofy stuff
 function install_utilities {
-    sudo apt install -y neovim vpnc network-manager-vpnc tree zsh fish gcc
+    sudo apt install -y vpnc network-manager-vpnc network-manager-vpnc-gnome
+    sudo apt install -y neovim tree zsh fish gcc
     sudo apt install -y fortune cowsay lolcat screenfetch
+}
+
+# Install shellcuts utility
+function install_shellcuts { # ADD TO SWITCH
+    LINK="https://github.com/tgsachse/shellcuts/releases/download/v1.2.1/shellcuts.deb"
+    wget $LINK -P /tmp
+    sudo dpkg -i /tmp/shellcuts.deb
 }
 
 # Run SpOnGe install script
@@ -196,6 +216,7 @@ function install_variety { # ADD TO SWITCH
     sudo add-apt-repository ppa:peterlevi/ppa
     sudo apt update
     sudo apt install variety
+    gsettings set org.gnome.desktop.background show-desktop-icons false
 }
 
 
@@ -229,6 +250,11 @@ function install_dropbox {
     dropbox autostart y
 }
 
+# Install GIMP
+function install_gimp { # ADD TO SWITCH
+    sudo apt install gimp
+}
+
 
 ### GAMING ###
 # Install Discord
@@ -244,13 +270,5 @@ function install_minecraft {
     bash $D_INSTALL/scripts/install_minecraft.sh
 }
 
-
 # call the main function
-#main
-
-function check_installed {
-    return command -v $1
-}
-
-echo $(check_installed "git")
-echo $(check_installed "gitt")
+main
