@@ -165,7 +165,7 @@ function install_utilities {
 }
 
 # Install shellcuts utility
-function install_shellcuts { # ADD TO SWITCH
+function install_shellcuts {
     LINK="https://github.com/tgsachse/shellcuts/releases/download/v1.2.1/shellcuts.deb"
     wget $LINK -P /tmp
     sudo dpkg -i /tmp/shellcuts.deb
@@ -211,12 +211,16 @@ function install_themes {
     echo
 }
 
+# Run script to set gsettings
+function set_gsettings { #ADDd
+   bash $D_SCRIPTS/scripts/set_gsettings.sh 
+}
+
 # Install wallpaper manager
-function install_variety { # ADD TO SWITCH
+function install_variety {
     sudo add-apt-repository ppa:peterlevi/ppa
     sudo apt update
     sudo apt install variety
-    gsettings set org.gnome.desktop.background show-desktop-icons false
 }
 
 
@@ -234,6 +238,10 @@ function install_python_tools {
     /usr/bin/yes | sudo pip3 install selenium enigmamachine
 }
 
+# Install Golang #ADD
+function install_golang {
+    sudo apt install golang-go
+}
 
 ### SOFTWARE ###
 # Install Google Chrome
@@ -251,7 +259,7 @@ function install_dropbox {
 }
 
 # Install GIMP
-function install_gimp { # ADD TO SWITCH
+function install_gimp {
     sudo apt install gimp
 }
 
