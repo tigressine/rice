@@ -1,16 +1,14 @@
 # A collection of gsettings that I like.
-
 gsettings set org.gnome.desktop.background show-desktop-icons false
 gsettings set org.gnome.desktop.wm.preferences focus-mode 'sloppy'
 gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
 gsettings set org.gnome.desktop.peripherals.touchpad click-method 'areas'
-
 gsettings set org.gnome.shell enable-hot-corners false
 gsettings set org.gnome.desktop.interface clock-show-date true
 gsettings set org.gnome.desktop.interface show-battery-percentage true
-
 gsettings set org.gnome.mutter workspaces-only-on-primary false
 
+# Keybindings
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-1 "['<Shift><Alt>exclam']"
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-2 "['<Shift><Alt>at']"
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-3 "['<Shift><Alt>numbersign']"
