@@ -211,8 +211,8 @@ function install_dots {
 
 # Install icon theme, GTK theme and enable shell themes
 function install_themes {
-    sudo add-apt-repository ppa:tista/adapta
-    sudo add-apt-repository ppa:papirus/papirus
+    sudo add-apt-repository -y ppa:tista/adapta
+    sudo add-apt-repository -y ppa:papirus/papirus
     sudo apt update
     sudo apt install -y gnome-shell-extensions gnome-tweak-tool
     sudo apt install -y adapta-gtk-theme papirus-icon-theme
@@ -225,13 +225,13 @@ function install_themes {
 }
 
 # Run script to set gsettings
-function set_gsettings { #ADDd
+function set_gsettings {
    bash $D_SCRIPTS/scripts/set_gsettings.sh 
 }
 
 # Install wallpaper manager
 function install_variety {
-    sudo add-apt-repository ppa:peterlevi/ppa
+    sudo add-apt-repository -y ppa:peterlevi/ppa
     sudo apt update
     sudo apt install -y variety
 }
@@ -240,7 +240,7 @@ function install_variety {
 ### DEVELOPMENT TOOLS ###
 # Install Java10
 function install_java {
-    sudo add-apt-repository ppa:linuxuprising/java
+    sudo add-apt-repository -y ppa:linuxuprising/java
     sudo apt update
     sudo apt install -y oracle-java10-installer
 }
@@ -251,7 +251,7 @@ function install_python_tools {
     /usr/bin/yes | sudo pip3 install selenium enigmamachine
 }
 
-# Install Golang #ADD
+# Install Golang
 function install_golang {
     sudo apt install -y golang-go
 }
@@ -281,7 +281,7 @@ function install_gimp {
 # Install Discord
 function install_discord {
     wget -O /tmp/discord.deb "https://discordapp.com/api/download?platform=linux&format=deb"
-    sudo apt install libgconf-2-4 libc++1
+    sudo apt install -y libgconf-2-4 libc++1
     sudo apt --fix-broken install
     sudo dpkg -i /tmp/discord.deb
 }
