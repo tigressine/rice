@@ -225,7 +225,7 @@ function install_themes {
     gsettings set org.gnome.desktop.interface gtk-theme Adapta
     gsettings set org.gnome.desktop.interface icon-theme Papirus-Adapta
     gnome-shell-extension-tool -e user-theme@gnome-shell-extensions.gcampax.github.com
-    gnome-shell --replace &
+    gnome-shell --replace 2>/dev/null 1>&2 &
     gsettings set org.gnome.shell.extensions.user-theme name Adapta-Eta
 }
 
@@ -243,10 +243,12 @@ function install_variety {
 
 # Install Dash to Dock
 function install_dash_to_dock {
-    git clone https://www.github.com/micheleg/dash-to-dock.git /tmp/dash-to-dock
-    make -C /tmp/dash-to-dock
-    make -C /tmp/dash-to-dock install
-    gnome-shell --replace &
+    MAKE_DIR="/tmp/dash-to-dock"
+    rm -rf $MAKE_DIR
+    git clone https://www.github.com/micheleg/dash-to-dock.git $MAKE_DIR
+    make -C $MAKE_DIR
+    make -C $MAKE_DIR install
+    gnome-shell --replace 2>/dev/null 1>&2 &
     gnome-shell-extension-tool -e dash-to-dock@micxgx.gmail.com
 }
 
