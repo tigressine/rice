@@ -220,7 +220,7 @@ function set_gsettings { #ADDd
 function install_variety {
     sudo add-apt-repository ppa:peterlevi/ppa
     sudo apt update
-    sudo apt install variety
+    sudo apt install -y variety
 }
 
 
@@ -240,7 +240,7 @@ function install_python_tools {
 
 # Install Golang #ADD
 function install_golang {
-    sudo apt install golang-go
+    sudo apt install -y golang-go
 }
 
 ### SOFTWARE ###
@@ -260,7 +260,7 @@ function install_dropbox {
 
 # Install GIMP
 function install_gimp {
-    sudo apt install gimp
+    sudo apt install -y gimp
 }
 
 
