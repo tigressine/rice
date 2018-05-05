@@ -7,9 +7,10 @@ gsettings set org.gnome.shell enable-hot-corners false
 gsettings set org.gnome.desktop.interface clock-show-date true
 gsettings set org.gnome.desktop.interface show-battery-percentage true
 gsettings set org.gnome.mutter workspaces-only-on-primary false
+gsettings set org.gnome.desktop.interface clock-format 12h
 
 # Shell extensions
-gnome-shell.extension-tool -e launch-new-instance@gnome-shell-extensions.gcampax.github.com
+gnome-shell-extension-tool -e launch-new-instance@gnome-shell-extensions.gcampax.github.com
 
 function set_wm_keybinding {
     gsettings set org.gnome.desktop.wm.keybindings $1 "['$2']"
