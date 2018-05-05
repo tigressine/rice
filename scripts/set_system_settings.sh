@@ -9,6 +9,9 @@ gsettings set org.gnome.desktop.interface show-battery-percentage true
 gsettings set org.gnome.mutter workspaces-only-on-primary false
 gsettings set org.gnome.desktop.interface clock-format 12h
 
+echo "HandleLidSwitch=lock" | sudo tee -a /etc/systemd/logind.conf
+echo "HandleLidSwitchDocked=lock" | sudo tee -a /etc/systemd/logind.conf
+
 # Shell extensions
 gnome-shell-extension-tool -e launch-new-instance@gnome-shell-extensions.gcampax.github.com
 
