@@ -36,7 +36,7 @@ function main {
     echo "r) install Shellcuts"
     echo "s) install Variety"
     echo "t) install GIMP"
-    echo "u) set all gsettings"
+    echo "u) set system settings"
     echo "v) install Golang"
     echo
     echo "e.g. To install Discord, Google Chrome, and Java 10, enter \"kmo\""
@@ -109,7 +109,7 @@ function main {
                 install_gimp
                 ;;
             u|U)
-                set_gsettings
+                set_system_settings
                 ;;
             v|V)
                 install_golang
@@ -135,7 +135,7 @@ function run_all {
     install_dropbox
     install_discord
     install_minecraft
-    set_gsettings
+    set_system_settings
     install_golang
 }
 
@@ -224,9 +224,9 @@ function install_themes {
     gsettings set org.gnome.shell.extensions.user-theme name Adapta-Eta
 }
 
-# Run script to set gsettings
-function set_gsettings {
-   bash $D_SCRIPTS/scripts/set_gsettings.sh 
+# Run script for all system settings
+function set_system_settings {
+   bash $D_SCRIPTS/scripts/set_system_settings.sh 
 }
 
 # Install wallpaper manager
