@@ -1,6 +1,9 @@
 # Full desktop installation script for Ubuntu systems
 # Written by Tiger Sachse
 
+# TO DO
+# 
+
 ### SCRIPT DIRECTORY ###
 D_SCRIPTS="$HOME/.scripts"
 
@@ -33,6 +36,8 @@ function main {
     echo "r) install Shellcuts"
     echo "s) install Variety"
     echo "t) install GIMP"
+    echo "u) set all gsettings"
+    echo "v) install Golang"
     echo
     echo "e.g. To install Discord, Google Chrome, and Java 10, enter \"kmo\""
     echo
@@ -103,6 +108,12 @@ function main {
             t|T)
                 install_gimp
                 ;;
+            u|U)
+                set_gsettings
+                ;;
+            v|V)
+                install_golang
+                ;;
         esac
     done
 }
@@ -124,6 +135,8 @@ function run_all {
     install_dropbox
     install_discord
     install_minecraft
+    set_gsettings
+    install_golang
 }
 
 ### SETUP ###
