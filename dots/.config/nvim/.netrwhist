@@ -1,10 +1,4 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
-let g:netrw_dirhist_1='/home/tgsachse/Dropbox/Code/Shellcuts/pack/deb'
-let g:netrw_dirhist_2='/home/tgsachse/Dropbox/Code/Shellcuts/share/bash'
-let g:netrw_dirhist_3='/home/tgsachse/Dropbox/Code/Homework/COP3330/Assignment6'
-let g:netrw_dirhist_4='/home/tgsachse/Dropbox/Code/Homework/COP3502/ListyString'
-let g:netrw_dirhist_5='/home/tgsachse/Dropbox/Code/Homework/COP3330/Assignment7/Assignment_7_Students/test'
-let g:netrw_dirhist_6='/home/tgsachse/Dropbox/Code/Homework/COP3330/Assignment7/Assignment_7_Students'
-let g:netrw_dirhist_7='/home/tgsachse/Dropbox/Code/Homework/COP3330/Assignment7/Assignment_7_Students/src'
-let g:netrw_dirhist_8='/home/tgsachse/.config/variety/scripts'
+let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_1='/home/tgsachse/.config/nvim'
+let g:netrw_dirhist_2='/home/tgsachse/.config/nvim/bundle'

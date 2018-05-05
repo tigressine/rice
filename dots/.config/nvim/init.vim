@@ -1,3 +1,9 @@
+execute pathogen#infect()
+
+autocmd VimEnter * HeaderSetEmail tgsachse@gmail.com
+autocmd VimEnter * HeaderSetUser tigermoo
+autocmd VimEnter * HeaderSetArt ucf1
+
 " COLORS
 set t_Co=256
 colorscheme slate
