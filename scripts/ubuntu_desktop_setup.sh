@@ -38,6 +38,7 @@ function main {
     echo "t) install GIMP"
     echo "u) set system settings"
     echo "v) install Golang"
+    echo "w) install Dash to Dock"
     echo
     echo "e.g. To install Discord, Google Chrome, and Java 10, enter \"kmo\""
     echo
@@ -114,6 +115,9 @@ function main {
             v|V)
                 install_golang
                 ;;
+            w|W)
+                install_dash_to_dock
+                ;;
         esac
     done
 }
@@ -137,6 +141,7 @@ function run_all {
     install_minecraft
     set_system_settings
     install_golang
+    install_dash_to_dock
 }
 
 ### SETUP ###
@@ -220,7 +225,7 @@ function install_themes {
     gsettings set org.gnome.desktop.interface gtk-theme Adapta
     gsettings set org.gnome.desktop.interface icon-theme Papirus-Adapta
     gnome-shell-extension-tool -e user-theme@gnome-shell-extensions.gcampax.github.com
-    gnome-shell --replace & # I'm not sure this line is needed
+    gnome-shell --replace &
     gsettings set org.gnome.shell.extensions.user-theme name Adapta-Eta
 }
 
@@ -236,6 +241,14 @@ function install_variety {
     sudo apt install -y variety
 }
 
+# Install Dash to Dock
+function install_dash_to_dock {
+    git clone https://www.github.com/micheleg/dash-to-dock.git /tmp/dash-to-dock
+    make -C /tmp/dash-to-dock
+    make -C /tmp/dash-to-dock install
+    gnome-shell --replace &
+    gnome-shell-extension-tool -e dash-to-dock@micxgx.gmail.com
+}
 
 ### DEVELOPMENT TOOLS ###
 # Install Java10
