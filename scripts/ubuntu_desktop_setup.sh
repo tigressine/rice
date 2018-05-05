@@ -1,5 +1,5 @@
 # Full desktop installation script for Ubuntu systems
-# Written by Tiger Sachse
+# Written by Tiger Sachse 
 
 # TO DO
 # 
@@ -219,9 +219,9 @@ function install_themes {
     sudo apt install -y chrome-gnome-shell
     gsettings set org.gnome.desktop.interface gtk-theme Adapta
     gsettings set org.gnome.desktop.interface icon-theme Papirus-Adapta
-    echo
-    echo "You'll need to restart and then use the tweak tool to change the shell theme."
-    echo
+    gnome-shell-extension-tool -e user-theme@gnome-shell-extensions.gcampax.github.com
+    gnome-shell --replace & # I'm not sure this line is needed
+    gsettings set org.gnome.shell.extensions.user-theme name Adapta-Eta
 }
 
 # Run script to set gsettings
