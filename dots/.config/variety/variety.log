@@ -1,130 +1,245 @@
-INFO: 2018-05-04 19:55:53,583: perform_upgrade() 'Last run version was 0.6.8 or earlier, current version is 0.6.8'
-INFO: 2018-05-04 19:55:53,584: process_command() 'Received command: []'
-INFO: 2018-05-04 19:55:53,586: load_banned() 'Missing or invalid banned URLs list, no URLs will be banned'
-INFO: 2018-05-04 19:55:53,599: load() 'Jumble loading'
-INFO: 2018-05-04 19:55:53,600: _walk_modules() 'Jumble loading module in __init__ from /usr/share/variety/plugins/__init__.py'
-INFO: 2018-05-04 19:55:53,600: _walk_modules() 'Jumble loading module in __init__ from /usr/share/variety/plugins/quotes/__init__.py'
-INFO: 2018-05-04 19:55:53,600: _walk_modules() 'Jumble loading module in QuotesDaddySource from /usr/share/variety/plugins/quotes/QuotesDaddySource.py'
-INFO: 2018-05-04 19:55:53,601: load() 'Jumble found plugin class: <class 'QuotesDaddySource.QuotesDaddySource'>: {'author': 'Peter Levi', 'name': 'QuotesDaddy', 'version': '0.1', 'description': u"Fetches quotes from QuotesDaddy's daily quotes RSS feed.\nDoes not support searching by tags or authors."}'
-INFO: 2018-05-04 19:55:53,601: _walk_modules() 'Jumble loading module in GoodreadsSource from /usr/share/variety/plugins/quotes/GoodreadsSource.py'
-INFO: 2018-05-04 19:55:53,607: load() 'Jumble found plugin class: <class 'GoodreadsSource.GoodreadsSource'>: {'author': 'Peter Levi', 'name': 'Goodreads', 'version': '0.1', 'description': u'Fetches quotes from Goodreads.com'}'
-INFO: 2018-05-04 19:55:53,607: _walk_modules() 'Jumble loading module in QuotationsPageSource from /usr/share/variety/plugins/quotes/QuotationsPageSource.py'
-INFO: 2018-05-04 19:55:53,608: load() 'Jumble found plugin class: <class 'QuotationsPageSource.QuotationsPageSource'>: {'author': 'Peter Levi', 'name': 'TheQuotationsPage.com', 'version': '0.1', 'description': u'Fetches quotes from TheQuotationsPage.com'}'
-INFO: 2018-05-04 19:55:53,608: _walk_modules() 'Jumble loading module in LocalFilesSource from /usr/share/variety/plugins/quotes/LocalFilesSource.py'
-INFO: 2018-05-04 19:55:53,608: load() 'Jumble found plugin class: <class 'LocalFilesSource.LocalFilesSource'>: {'author': 'Peter Levi', 'name': 'Local text files', 'version': '0.1', 'description': u'Displays quotes, defined in local text files.\nPut your own txt files in: ~/.config/variety/pluginconfig/quotes/.\nThe file format is:\n\nquote -- author\n.\nsecond quote -- another author\n.\netc...\n\nExample: http://rvelthuis.de/zips/quotes.txt'}'
-ERROR: 2018-05-04 19:55:53,609: get_xdg_pictures_folder() 'Could not get path to Pictures folder. Defaulting to ~/Pictures.'
+INFO: 2018-05-08 09:27:07,101: perform_upgrade() 'Last run version was 0.6.8 or earlier, current version is 0.6.8'
+INFO: 2018-05-08 09:27:07,101: process_command() 'Received command: []'
+INFO: 2018-05-08 09:27:07,104: load_banned() 'Missing or invalid banned URLs list, no URLs will be banned'
+INFO: 2018-05-08 09:27:07,119: load() 'Jumble loading'
+INFO: 2018-05-08 09:27:07,121: _walk_modules() 'Jumble loading module in __init__ from /usr/share/variety/plugins/__init__.py'
+INFO: 2018-05-08 09:27:07,122: _walk_modules() 'Jumble loading module in QuotationsPageSource from /usr/share/variety/plugins/quotes/QuotationsPageSource.py'
+INFO: 2018-05-08 09:27:07,130: load() 'Jumble found plugin class: <class 'QuotationsPageSource.QuotationsPageSource'>: {'author': 'Peter Levi', 'name': 'TheQuotationsPage.com', 'version': '0.1', 'description': u'Fetches quotes from TheQuotationsPage.com'}'
+INFO: 2018-05-08 09:27:07,130: _walk_modules() 'Jumble loading module in __init__ from /usr/share/variety/plugins/quotes/__init__.py'
+INFO: 2018-05-08 09:27:07,131: _walk_modules() 'Jumble loading module in QuotesDaddySource from /usr/share/variety/plugins/quotes/QuotesDaddySource.py'
+INFO: 2018-05-08 09:27:07,131: load() 'Jumble found plugin class: <class 'QuotesDaddySource.QuotesDaddySource'>: {'author': 'Peter Levi', 'name': 'QuotesDaddy', 'version': '0.1', 'description': u"Fetches quotes from QuotesDaddy's daily quotes RSS feed.\nDoes not support searching by tags or authors."}'
+INFO: 2018-05-08 09:27:07,131: _walk_modules() 'Jumble loading module in LocalFilesSource from /usr/share/variety/plugins/quotes/LocalFilesSource.py'
+INFO: 2018-05-08 09:27:07,132: load() 'Jumble found plugin class: <class 'LocalFilesSource.LocalFilesSource'>: {'author': 'Peter Levi', 'name': 'Local text files', 'version': '0.1', 'description': u'Displays quotes, defined in local text files.\nPut your own txt files in: ~/.config/variety/pluginconfig/quotes/.\nThe file format is:\n\nquote -- author\n.\nsecond quote -- another author\n.\netc...\n\nExample: http://rvelthuis.de/zips/quotes.txt'}'
+INFO: 2018-05-08 09:27:07,132: _walk_modules() 'Jumble loading module in GoodreadsSource from /usr/share/variety/plugins/quotes/GoodreadsSource.py'
+INFO: 2018-05-08 09:27:07,132: load() 'Jumble found plugin class: <class 'GoodreadsSource.GoodreadsSource'>: {'author': 'Peter Levi', 'name': 'Goodreads', 'version': '0.1', 'description': u'Fetches quotes from Goodreads.com'}'
+INFO: 2018-05-08 09:27:07,136: log_options() 'Loaded options:'
+INFO: 2018-05-08 09:27:07,137: log_options() 'change_enabled = True'
+INFO: 2018-05-08 09:27:07,137: log_options() 'change_interval = 18000'
+INFO: 2018-05-08 09:27:07,137: log_options() 'change_on_start = True'
+INFO: 2018-05-08 09:27:07,137: log_options() 'clipboard_enabled = False'
+INFO: 2018-05-08 09:27:07,137: log_options() 'clipboard_hosts = [u'wallhaven.cc', u'ns223506.ovh.net', u'wallpapers.net', u'flickr.com', u'imgur.com', u'deviantart.com', u'interfacelift.com', u'vladstudio.com', u'imageshack.us']'
+INFO: 2018-05-08 09:27:07,137: log_options() 'clipboard_use_whitelist = True'
+INFO: 2018-05-08 09:27:07,137: log_options() 'clock_date_font = Ubuntu Condensed, 30'
+INFO: 2018-05-08 09:27:07,137: log_options() 'clock_enabled = False'
+INFO: 2018-05-08 09:27:07,137: log_options() 'clock_filter = -density 100 -font `fc-match -f '%{file[0]}' '%CLOCK_FONT_NAME'` -pointsize %CLOCK_FONT_SIZE -gravity SouthEast -fill '#00000044' -annotate 0x0+[%HOFFSET+58]+[%VOFFSET+108] '%H:%M' -fill white -annotate 0x0+[%HOFFSET+60]+[%VOFFSET+110] '%H:%M' -font `fc-match -f '%{file[0]}' '%DATE_FONT_NAME'` -pointsize %DATE_FONT_SIZE -fill '#00000044' -annotate 0x0+[%HOFFSET+58]+[%VOFFSET+58] '%A, %B %d' -fill white -annotate 0x0+[%HOFFSET+60]+[%VOFFSET+60] '%A, %B %d''
+INFO: 2018-05-08 09:27:07,137: log_options() 'clock_font = Ubuntu Condensed, 70'
+INFO: 2018-05-08 09:27:07,137: log_options() 'configfile = /home/tgsachse/.config/variety/variety.conf'
+INFO: 2018-05-08 09:27:07,137: log_options() 'copyto_enabled = False'
+INFO: 2018-05-08 09:27:07,137: log_options() 'copyto_folder = Default'
+INFO: 2018-05-08 09:27:07,137: log_options() 'desired_color = [160, 160, 160]'
+INFO: 2018-05-08 09:27:07,137: log_options() 'desired_color_enabled = False'
+INFO: 2018-05-08 09:27:07,137: log_options() 'download_enabled = False'
+INFO: 2018-05-08 09:27:07,137: log_options() 'download_folder = /home/tgsachse/.config/variety/Downloaded'
+INFO: 2018-05-08 09:27:07,137: log_options() 'download_interval = 600'
+INFO: 2018-05-08 09:27:07,137: log_options() 'facebook_message = '
+INFO: 2018-05-08 09:27:07,137: log_options() 'facebook_show_dialog = True'
+INFO: 2018-05-08 09:27:07,137: log_options() 'favorites_folder = /home/tgsachse/.config/variety/Favorites'
+INFO: 2018-05-08 09:27:07,138: log_options() 'favorites_operations = [[u'Downloaded', u'Copy'], [u'Fetched', u'Move'], [u'Others', u'Copy']]'
+INFO: 2018-05-08 09:27:07,138: log_options() 'fetched_folder = /home/tgsachse/.config/variety/Fetched'
+INFO: 2018-05-08 09:27:07,138: log_options() 'filters = [[True, u'Keep original', u''], [False, u'Grayscale', u'-type Grayscale'], [False, u'Heavy blur', u'-blur 120x40'], [False, u'Soft blur', u'-blur 20x7'], [False, u'Oil painting', u'-paint 8'], [False, u'Pencil sketch', u'-colorspace gray \\( +clone -tile ~/.config/variety/pencil_tile.png -draw "color 0,0 reset" +clone +swap -compose color_dodge -composite \\) -fx \'u*.2+v*.8\''], [False, u'Pointilism', u'-spread 10 -noise 3'], [False, u'Pixellate', u'-scale 3% -scale 3333%']]'
+INFO: 2018-05-08 09:27:07,138: log_options() 'icon = Light'
+INFO: 2018-05-08 09:27:07,138: log_options() 'lightness_enabled = False'
+INFO: 2018-05-08 09:27:07,138: log_options() 'lightness_mode = 0'
+INFO: 2018-05-08 09:27:07,138: log_options() 'min_rating = 4'
+INFO: 2018-05-08 09:27:07,138: log_options() 'min_rating_enabled = False'
+INFO: 2018-05-08 09:27:07,138: log_options() 'min_size = 80'
+INFO: 2018-05-08 09:27:07,138: log_options() 'min_size_enabled = False'
+INFO: 2018-05-08 09:27:07,138: log_options() 'quota_enabled = True'
+INFO: 2018-05-08 09:27:07,138: log_options() 'quota_size = 500'
+INFO: 2018-05-08 09:27:07,138: log_options() 'quotes_authors = '
+INFO: 2018-05-08 09:27:07,138: log_options() 'quotes_bg_color = [80, 80, 80]'
+INFO: 2018-05-08 09:27:07,138: log_options() 'quotes_bg_opacity = 51'
+INFO: 2018-05-08 09:27:07,138: log_options() 'quotes_change_enabled = False'
+INFO: 2018-05-08 09:27:07,138: log_options() 'quotes_change_interval = 300'
+INFO: 2018-05-08 09:27:07,138: log_options() 'quotes_disabled_sources = [u'QuotesDaddy']'
+INFO: 2018-05-08 09:27:07,138: log_options() 'quotes_enabled = False'
+INFO: 2018-05-08 09:27:07,138: log_options() 'quotes_favorites_file = /home/tgsachse/.config/variety/favorite_quotes.txt'
+INFO: 2018-05-08 09:27:07,138: log_options() 'quotes_font = Ubuntu Light 20'
+INFO: 2018-05-08 09:27:07,138: log_options() 'quotes_hpos = 100'
+INFO: 2018-05-08 09:27:07,139: log_options() 'quotes_tags = '
+INFO: 2018-05-08 09:27:07,139: log_options() 'quotes_text_color = [255, 255, 255]'
+INFO: 2018-05-08 09:27:07,139: log_options() 'quotes_text_shadow = True'
+INFO: 2018-05-08 09:27:07,139: log_options() 'quotes_vpos = 40'
+INFO: 2018-05-08 09:27:07,139: log_options() 'quotes_width = 88'
+INFO: 2018-05-08 09:27:07,139: log_options() 'safe_mode = False'
+INFO: 2018-05-08 09:27:07,139: log_options() 'slideshow_custom_enabled = False'
+INFO: 2018-05-08 09:27:07,139: log_options() 'slideshow_custom_folder = /home/tgsachse'
+INFO: 2018-05-08 09:27:07,139: log_options() 'slideshow_downloads_enabled = False'
+INFO: 2018-05-08 09:27:07,139: log_options() 'slideshow_fade = 0.4'
+INFO: 2018-05-08 09:27:07,139: log_options() 'slideshow_favorites_enabled = True'
+INFO: 2018-05-08 09:27:07,139: log_options() 'slideshow_mode = Fullscreen'
+INFO: 2018-05-08 09:27:07,139: log_options() 'slideshow_monitor = All'
+INFO: 2018-05-08 09:27:07,139: log_options() 'slideshow_pan = 0.05'
+INFO: 2018-05-08 09:27:07,139: log_options() 'slideshow_seconds = 6.0'
+INFO: 2018-05-08 09:27:07,139: log_options() 'slideshow_sort_order = Random'
+INFO: 2018-05-08 09:27:07,139: log_options() 'slideshow_sources_enabled = True'
+INFO: 2018-05-08 09:27:07,139: log_options() 'slideshow_zoom = 0.2'
+INFO: 2018-05-08 09:27:07,139: log_options() 'smart_enabled = False'
+INFO: 2018-05-08 09:27:07,139: log_options() 'smart_notice_shown = False'
+INFO: 2018-05-08 09:27:07,139: log_options() 'smart_register_shown = False'
+INFO: 2018-05-08 09:27:07,139: log_options() 'sources = [[False, 3, u'The Favorites folder'], [False, 4, u'The Fetched folder'], [False, 2, u'/usr/share/backgrounds'], [False, 6, u'Random wallpapers from Desktoppr.co'], [False, 15, u'Bing Photo of the Day'], [False, 16, u'High-resolution photos from Unsplash.com'], [False, 8, u"NASA's Astronomy Picture of the Day"], [False, 11, u'World Sunlight Map - live wallpaper from Die.net'], [False, 7, u'user:www.flickr.com/photos/peter-levi/;user_id:93647178@N00;'], [True, 2, u'/home/tgsachse/Dropbox/Wallpapers/Current']]'
+INFO: 2018-05-08 09:27:07,139: log_options() 'stats_enabled = True'
+INFO: 2018-05-08 09:27:07,139: log_options() 'stats_notice_shown = False'
+INFO: 2018-05-08 09:27:07,139: log_options() 'sync_enabled = True'
+INFO: 2018-05-08 09:27:07,140: log_options() 'use_landscape_enabled = True'
+INFO: 2018-05-08 09:27:07,140: reload_config() 'No need to clear prepared queue'
+INFO: 2018-05-08 09:27:07,140: load_last_change_time() 'Change interval < 6 hours, ignore persisted last_change_time, wait initially the whole interval: 18000'
+INFO: 2018-05-08 09:27:07,140: update_indicator() 'Setting file info to: /home/tgsachse/Dropbox/Wallpapers/Current/Cave.jpg'
+INFO: 2018-05-08 09:27:07,143: regular_change_thread() 'regular_change thread running'
+INFO: 2018-05-08 09:27:07,144: prepare_thread() 'Prepare thread running'
+INFO: 2018-05-08 09:27:07,144: prepare_thread() 'Prepared buffer contains 0 images'
+INFO: 2018-05-08 09:27:07,144: prepare_thread() 'Preparing some images'
+INFO: 2018-05-08 09:27:07,145: update_indicator_icon() 'Creating indicator'
+INFO: 2018-05-08 09:27:07,240: do_set_wp() 'Calling do_set_wp with /home/tgsachse/Dropbox/Wallpapers/Current/Cave.jpg, time: 1525786027.24'
+INFO: 2018-05-08 09:27:07,245: prepare_thread() 'After search prepared buffer contains 11 images'
+WARNING: 2018-05-08 09:27:07,246: create_menu() 'Variety Slideshow is not installed. This is an optional extension adding pan-and-zoom slideshows to Variety: see https://github.com/peterlevi/variety-slideshow for details'
+INFO: 2018-05-08 09:27:07,255: update_indicator() 'Setting file info to: /home/tgsachse/Dropbox/Wallpapers/Current/Cave.jpg'
+INFO: 2018-05-08 09:27:07,275: set_from_theme_icon() 'Showing indicator icon variety-indicator from GTK theme'
+INFO: 2018-05-08 09:27:07,275: update_indicator() 'Setting file info to: /home/tgsachse/Dropbox/Wallpapers/Current/Cave.jpg'
+ERROR: 2018-05-08 09:27:07,311: set_desktop_wallpaper() 'Exception when calling set_wallpaper script: 127'
 Traceback (most recent call last):
-  File "/usr/lib/python2.7/dist-packages/variety/Util.py", line 674, in get_xdg_pictures_folder
-    raise Exception("Could not get path to Pictures folder. Defaulting to ~/Pictures.")
-Exception: Could not get path to Pictures folder. Defaulting to ~/Pictures.
-INFO: 2018-05-04 19:55:53,612: log_options() 'Loaded options:'
-INFO: 2018-05-04 19:55:53,612: log_options() 'change_enabled = True'
-INFO: 2018-05-04 19:55:53,612: log_options() 'change_interval = 18000'
-INFO: 2018-05-04 19:55:53,612: log_options() 'change_on_start = True'
-INFO: 2018-05-04 19:55:53,612: log_options() 'clipboard_enabled = False'
-INFO: 2018-05-04 19:55:53,612: log_options() 'clipboard_hosts = [u'wallhaven.cc', u'ns223506.ovh.net', u'wallpapers.net', u'flickr.com', u'imgur.com', u'deviantart.com', u'interfacelift.com', u'vladstudio.com', u'imageshack.us']'
-INFO: 2018-05-04 19:55:53,613: log_options() 'clipboard_use_whitelist = True'
-INFO: 2018-05-04 19:55:53,613: log_options() 'clock_date_font = Ubuntu Condensed, 30'
-INFO: 2018-05-04 19:55:53,613: log_options() 'clock_enabled = False'
-INFO: 2018-05-04 19:55:53,613: log_options() 'clock_filter = -density 100 -font `fc-match -f '%{file[0]}' '%CLOCK_FONT_NAME'` -pointsize %CLOCK_FONT_SIZE -gravity SouthEast -fill '#00000044' -annotate 0x0+[%HOFFSET+58]+[%VOFFSET+108] '%H:%M' -fill white -annotate 0x0+[%HOFFSET+60]+[%VOFFSET+110] '%H:%M' -font `fc-match -f '%{file[0]}' '%DATE_FONT_NAME'` -pointsize %DATE_FONT_SIZE -fill '#00000044' -annotate 0x0+[%HOFFSET+58]+[%VOFFSET+58] '%A, %B %d' -fill white -annotate 0x0+[%HOFFSET+60]+[%VOFFSET+60] '%A, %B %d''
-INFO: 2018-05-04 19:55:53,613: log_options() 'clock_font = Ubuntu Condensed, 70'
-INFO: 2018-05-04 19:55:53,613: log_options() 'configfile = /home/tgsachse/.config/variety/variety.conf'
-INFO: 2018-05-04 19:55:53,613: log_options() 'copyto_enabled = False'
-INFO: 2018-05-04 19:55:53,613: log_options() 'copyto_folder = Default'
-INFO: 2018-05-04 19:55:53,613: log_options() 'desired_color = [160, 160, 160]'
-INFO: 2018-05-04 19:55:53,613: log_options() 'desired_color_enabled = False'
-INFO: 2018-05-04 19:55:53,613: log_options() 'download_enabled = False'
-INFO: 2018-05-04 19:55:53,613: log_options() 'download_folder = /home/tgsachse/.config/variety/Downloaded'
-INFO: 2018-05-04 19:55:53,613: log_options() 'download_interval = 600'
-INFO: 2018-05-04 19:55:53,613: log_options() 'facebook_message = '
-INFO: 2018-05-04 19:55:53,613: log_options() 'facebook_show_dialog = True'
-INFO: 2018-05-04 19:55:53,613: log_options() 'favorites_folder = /home/tgsachse/.config/variety/Favorites'
-INFO: 2018-05-04 19:55:53,613: log_options() 'favorites_operations = [[u'Downloaded', u'Copy'], [u'Fetched', u'Move'], [u'Others', u'Copy']]'
-INFO: 2018-05-04 19:55:53,613: log_options() 'fetched_folder = /home/tgsachse/.config/variety/Fetched'
-INFO: 2018-05-04 19:55:53,613: log_options() 'filters = [[True, u'Keep original', u''], [False, u'Grayscale', u'-type Grayscale'], [False, u'Heavy blur', u'-blur 120x40'], [False, u'Soft blur', u'-blur 20x7'], [False, u'Oil painting', u'-paint 8'], [False, u'Pencil sketch', u'-colorspace gray \\( +clone -tile ~/.config/variety/pencil_tile.png -draw "color 0,0 reset" +clone +swap -compose color_dodge -composite \\) -fx \'u*.2+v*.8\''], [False, u'Pointilism', u'-spread 10 -noise 3'], [False, u'Pixellate', u'-scale 3% -scale 3333%']]'
-INFO: 2018-05-04 19:55:53,613: log_options() 'icon = Light'
-INFO: 2018-05-04 19:55:53,613: log_options() 'lightness_enabled = False'
-INFO: 2018-05-04 19:55:53,613: log_options() 'lightness_mode = 0'
-INFO: 2018-05-04 19:55:53,613: log_options() 'min_rating = 4'
-INFO: 2018-05-04 19:55:53,613: log_options() 'min_rating_enabled = False'
-INFO: 2018-05-04 19:55:53,613: log_options() 'min_size = 80'
-INFO: 2018-05-04 19:55:53,613: log_options() 'min_size_enabled = False'
-INFO: 2018-05-04 19:55:53,613: log_options() 'quota_enabled = True'
-INFO: 2018-05-04 19:55:53,614: log_options() 'quota_size = 500'
-INFO: 2018-05-04 19:55:53,614: log_options() 'quotes_authors = '
-INFO: 2018-05-04 19:55:53,614: log_options() 'quotes_bg_color = [80, 80, 80]'
-INFO: 2018-05-04 19:55:53,614: log_options() 'quotes_bg_opacity = 51'
-INFO: 2018-05-04 19:55:53,614: log_options() 'quotes_change_enabled = False'
-INFO: 2018-05-04 19:55:53,614: log_options() 'quotes_change_interval = 300'
-INFO: 2018-05-04 19:55:53,614: log_options() 'quotes_disabled_sources = [u'QuotesDaddy']'
-INFO: 2018-05-04 19:55:53,614: log_options() 'quotes_enabled = False'
-INFO: 2018-05-04 19:55:53,614: log_options() 'quotes_favorites_file = /home/tgsachse/.config/variety/favorite_quotes.txt'
-INFO: 2018-05-04 19:55:53,614: log_options() 'quotes_font = Ubuntu Light 20'
-INFO: 2018-05-04 19:55:53,614: log_options() 'quotes_hpos = 100'
-INFO: 2018-05-04 19:55:53,614: log_options() 'quotes_tags = '
-INFO: 2018-05-04 19:55:53,614: log_options() 'quotes_text_color = [255, 255, 255]'
-INFO: 2018-05-04 19:55:53,614: log_options() 'quotes_text_shadow = True'
-INFO: 2018-05-04 19:55:53,614: log_options() 'quotes_vpos = 40'
-INFO: 2018-05-04 19:55:53,614: log_options() 'quotes_width = 88'
-INFO: 2018-05-04 19:55:53,614: log_options() 'safe_mode = False'
-INFO: 2018-05-04 19:55:53,614: log_options() 'slideshow_custom_enabled = False'
-INFO: 2018-05-04 19:55:53,614: log_options() 'slideshow_custom_folder = /home/tgsachse/Pictures'
-INFO: 2018-05-04 19:55:53,614: log_options() 'slideshow_downloads_enabled = False'
-INFO: 2018-05-04 19:55:53,614: log_options() 'slideshow_fade = 0.4'
-INFO: 2018-05-04 19:55:53,614: log_options() 'slideshow_favorites_enabled = True'
-INFO: 2018-05-04 19:55:53,614: log_options() 'slideshow_mode = Fullscreen'
-INFO: 2018-05-04 19:55:53,614: log_options() 'slideshow_monitor = All'
-INFO: 2018-05-04 19:55:53,614: log_options() 'slideshow_pan = 0.05'
-INFO: 2018-05-04 19:55:53,614: log_options() 'slideshow_seconds = 6.0'
-INFO: 2018-05-04 19:55:53,614: log_options() 'slideshow_sort_order = Random'
-INFO: 2018-05-04 19:55:53,614: log_options() 'slideshow_sources_enabled = True'
-INFO: 2018-05-04 19:55:53,614: log_options() 'slideshow_zoom = 0.2'
-INFO: 2018-05-04 19:55:53,615: log_options() 'smart_enabled = False'
-INFO: 2018-05-04 19:55:53,615: log_options() 'smart_notice_shown = False'
-INFO: 2018-05-04 19:55:53,615: log_options() 'smart_register_shown = False'
-INFO: 2018-05-04 19:55:53,615: log_options() 'sources = [[False, 3, u'The Favorites folder'], [False, 4, u'The Fetched folder'], [False, 2, u'/usr/share/backgrounds'], [False, 6, u'Random wallpapers from Desktoppr.co'], [False, 15, u'Bing Photo of the Day'], [False, 16, u'High-resolution photos from Unsplash.com'], [False, 8, u"NASA's Astronomy Picture of the Day"], [False, 11, u'World Sunlight Map - live wallpaper from Die.net'], [False, 7, u'user:www.flickr.com/photos/peter-levi/;user_id:93647178@N00;'], [True, 2, u'/home/tgsachse/Dropbox/Wallpapers/Current']]'
-INFO: 2018-05-04 19:55:53,615: log_options() 'stats_enabled = True'
-INFO: 2018-05-04 19:55:53,615: log_options() 'stats_notice_shown = False'
-INFO: 2018-05-04 19:55:53,615: log_options() 'sync_enabled = True'
-INFO: 2018-05-04 19:55:53,615: log_options() 'use_landscape_enabled = True'
-INFO: 2018-05-04 19:55:53,615: reload_config() 'No need to clear prepared queue'
-INFO: 2018-05-04 19:55:53,615: load_last_change_time() 'Change interval < 6 hours, ignore persisted last_change_time, wait initially the whole interval: 18000'
-INFO: 2018-05-04 19:55:53,615: update_indicator() 'Setting file info to: /home/tgsachse/Dropbox/Wallpapers/Current/Valley.jpg'
-INFO: 2018-05-04 19:55:53,620: regular_change_thread() 'regular_change thread running'
-INFO: 2018-05-04 19:55:53,620: prepare_thread() 'Prepare thread running'
-INFO: 2018-05-04 19:55:53,620: prepare_thread() 'Prepared buffer contains 0 images'
-INFO: 2018-05-04 19:55:53,620: prepare_thread() 'Preparing some images'
-INFO: 2018-05-04 19:55:53,632: prepare_thread() 'After search prepared buffer contains 12 images'
-INFO: 2018-05-04 19:55:53,682: update_indicator_icon() 'Creating indicator'
-WARNING: 2018-05-04 19:55:53,689: create_menu() 'Variety Slideshow is not installed. This is an optional extension adding pan-and-zoom slideshows to Variety: see https://github.com/peterlevi/variety-slideshow for details'
-INFO: 2018-05-04 19:55:53,706: set_from_theme_icon() 'Showing indicator icon variety-indicator from GTK theme'
-INFO: 2018-05-04 19:55:53,706: update_indicator() 'Setting file info to: /home/tgsachse/Dropbox/Wallpapers/Current/Valley.jpg'
-INFO: 2018-05-04 19:55:53,715: do_set_wp() 'Calling do_set_wp with /home/tgsachse/Dropbox/Wallpapers/Current/Valley.jpg, time: 1525478153.72'
-INFO: 2018-05-04 19:55:53,731: update_indicator() 'Setting file info to: /home/tgsachse/Dropbox/Wallpapers/Current/Valley.jpg'
-INFO: 2018-05-04 19:55:54,879: reload() 'Reloading preferences dialog'
-ERROR: 2018-05-04 19:55:54,879: get_xdg_pictures_folder() 'Could not get path to Pictures folder. Defaulting to ~/Pictures.'
+  File "/usr/lib/python2.7/dist-packages/variety/VarietyWindow.py", line 2436, in set_desktop_wallpaper
+    subprocess.check_call(["timeout", "--kill-after=5", "10", script, wallpaper, auto, original_file])
+  File "/usr/lib/python2.7/subprocess.py", line 190, in check_call
+    raise CalledProcessError(retcode, cmd)
+CalledProcessError: Command '['timeout', '--kill-after=5', '10', u'/home/tgsachse/.config/variety/scripts/set_wallpaper', u'/home/tgsachse/Dropbox/Wallpapers/Current/Cave.jpg', 'refresh', u'/home/tgsachse/Dropbox/Wallpapers/Current/Cave.jpg']' returned non-zero exit status 127
+INFO: 2018-05-08 09:27:08,510: reload() 'Reloading preferences dialog'
+INFO: 2018-05-08 09:27:12,144: set_wallpaper() 'Calling set_wallpaper with /home/tgsachse/Dropbox/Wallpapers/Current/Tranquil.jpg'
+INFO: 2018-05-08 09:27:12,145: prepare_thread() 'Prepared buffer contains 10 images'
+INFO: 2018-05-08 09:27:12,147: do_set_wp() 'Calling do_set_wp with /home/tgsachse/Dropbox/Wallpapers/Current/Tranquil.jpg, time: 1525786032.15'
+INFO: 2018-05-08 09:27:12,176: update_indicator() 'Setting file info to: /home/tgsachse/Dropbox/Wallpapers/Current/Tranquil.jpg'
+ERROR: 2018-05-08 09:27:12,233: set_desktop_wallpaper() 'Exception when calling set_wallpaper script: 127'
 Traceback (most recent call last):
-  File "/usr/lib/python2.7/dist-packages/variety/Util.py", line 674, in get_xdg_pictures_folder
-    raise Exception("Could not get path to Pictures folder. Defaulting to ~/Pictures.")
-Exception: Could not get path to Pictures folder. Defaulting to ~/Pictures.
-ERROR: 2018-05-04 19:55:54,883: get_xdg_pictures_folder() 'Could not get path to Pictures folder. Defaulting to ~/Pictures.'
+  File "/usr/lib/python2.7/dist-packages/variety/VarietyWindow.py", line 2436, in set_desktop_wallpaper
+    subprocess.check_call(["timeout", "--kill-after=5", "10", script, wallpaper, auto, original_file])
+  File "/usr/lib/python2.7/subprocess.py", line 190, in check_call
+    raise CalledProcessError(retcode, cmd)
+CalledProcessError: Command '['timeout', '--kill-after=5', '10', u'/home/tgsachse/.config/variety/scripts/set_wallpaper', u'/home/tgsachse/Dropbox/Wallpapers/Current/Tranquil.jpg', 'auto', u'/home/tgsachse/Dropbox/Wallpapers/Current/Tranquil.jpg']' returned non-zero exit status 127
+INFO: 2018-05-08 09:27:27,162: server_options_thread() 'Fetching server options from http://tiny.cc/variety-options-063'
+INFO: 2018-05-08 09:27:27,720: server_options_thread() 'Fetched server options: {u'unsplash': {u'min_fill_queue_interval': 20000000000, u'min_download_interval': 20000000000}, u'unsplash_v2': {u'min_fill_queue_interval': 1800, u'min_download_interval': 600}, u'wallpapers.net': {u'min_fill_queue_interval': 600, u'min_download_interval': 0}, u'wallhaven': {u'min_fill_queue_interval': 1800, u'min_download_interval': 1800}, u'wallbase': {u'min_fill_queue_interval': 1800, u'min_download_interval': 1800}, u'flickr': {u'min_fill_queue_interval': 1200, u'min_download_interval': 1200}, u'status_message': {u'*': u'', u'0.0.1': u''}}'
+INFO: 2018-05-08 14:27:12,234: regular_change_thread() 'regular_change changes wallpaper'
+INFO: 2018-05-08 14:27:12,234: set_wallpaper() 'Calling set_wallpaper with /home/tgsachse/Dropbox/Wallpapers/Current/Range.jpg'
+INFO: 2018-05-08 14:27:12,235: prepare_thread() 'Prepared buffer contains 9 images'
+INFO: 2018-05-08 14:27:12,235: do_set_wp() 'Calling do_set_wp with /home/tgsachse/Dropbox/Wallpapers/Current/Range.jpg, time: 1525804032.24'
+INFO: 2018-05-08 14:27:12,253: update_indicator() 'Setting file info to: /home/tgsachse/Dropbox/Wallpapers/Current/Range.jpg'
+ERROR: 2018-05-08 14:27:12,306: set_desktop_wallpaper() 'Exception when calling set_wallpaper script: 127'
 Traceback (most recent call last):
-  File "/usr/lib/python2.7/dist-packages/variety/Util.py", line 674, in get_xdg_pictures_folder
-    raise Exception("Could not get path to Pictures folder. Defaulting to ~/Pictures.")
-Exception: Could not get path to Pictures folder. Defaulting to ~/Pictures.
-ERROR: 2018-05-04 19:55:54,883: get_file_icon_name() 'Exception while obtaining folder icon for /home/tgsachse/Pictures:'
+  File "/usr/lib/python2.7/dist-packages/variety/VarietyWindow.py", line 2436, in set_desktop_wallpaper
+    subprocess.check_call(["timeout", "--kill-after=5", "10", script, wallpaper, auto, original_file])
+  File "/usr/lib/python2.7/subprocess.py", line 190, in check_call
+    raise CalledProcessError(retcode, cmd)
+CalledProcessError: Command '['timeout', '--kill-after=5', '10', u'/home/tgsachse/.config/variety/scripts/set_wallpaper', u'/home/tgsachse/Dropbox/Wallpapers/Current/Range.jpg', 'auto', u'/home/tgsachse/Dropbox/Wallpapers/Current/Range.jpg']' returned non-zero exit status 127
+INFO: 2018-05-08 19:27:12,307: regular_change_thread() 'regular_change changes wallpaper'
+INFO: 2018-05-08 19:27:12,308: set_wallpaper() 'Calling set_wallpaper with /home/tgsachse/Dropbox/Wallpapers/Current/Island.jpg'
+INFO: 2018-05-08 19:27:12,308: prepare_thread() 'Prepared buffer contains 8 images'
+INFO: 2018-05-08 19:27:12,308: do_set_wp() 'Calling do_set_wp with /home/tgsachse/Dropbox/Wallpapers/Current/Island.jpg, time: 1525822032.31'
+INFO: 2018-05-08 19:27:12,324: update_indicator() 'Setting file info to: /home/tgsachse/Dropbox/Wallpapers/Current/Island.jpg'
+ERROR: 2018-05-08 19:27:12,376: set_desktop_wallpaper() 'Exception when calling set_wallpaper script: 127'
 Traceback (most recent call last):
-  File "/usr/lib/python2.7/dist-packages/variety/Util.py", line 659, in get_file_icon_name
-    query_info = f.query_info("standard::icon", Gio.FileQueryInfoFlags.NONE, None)
-Error: g-io-error-quark: Error when getting information for file “/home/tgsachse/Pictures”: No such file or directory (1)
-ERROR: 2018-05-04 19:55:54,893: get_file_icon_name() 'Exception while obtaining folder icon for /home/tgsachse/Pictures:'
+  File "/usr/lib/python2.7/dist-packages/variety/VarietyWindow.py", line 2436, in set_desktop_wallpaper
+    subprocess.check_call(["timeout", "--kill-after=5", "10", script, wallpaper, auto, original_file])
+  File "/usr/lib/python2.7/subprocess.py", line 190, in check_call
+    raise CalledProcessError(retcode, cmd)
+CalledProcessError: Command '['timeout', '--kill-after=5', '10', u'/home/tgsachse/.config/variety/scripts/set_wallpaper', u'/home/tgsachse/Dropbox/Wallpapers/Current/Island.jpg', 'auto', u'/home/tgsachse/Dropbox/Wallpapers/Current/Island.jpg']' returned non-zero exit status 127
+INFO: 2018-05-09 00:27:12,377: regular_change_thread() 'regular_change changes wallpaper'
+INFO: 2018-05-09 00:27:12,377: set_wallpaper() 'Calling set_wallpaper with /home/tgsachse/Dropbox/Wallpapers/Current/Teepee.jpg'
+INFO: 2018-05-09 00:27:12,379: prepare_thread() 'Prepared buffer contains 7 images'
+INFO: 2018-05-09 00:27:12,380: do_set_wp() 'Calling do_set_wp with /home/tgsachse/Dropbox/Wallpapers/Current/Teepee.jpg, time: 1525840032.38'
+INFO: 2018-05-09 00:27:12,402: update_indicator() 'Setting file info to: /home/tgsachse/Dropbox/Wallpapers/Current/Teepee.jpg'
+ERROR: 2018-05-09 00:27:12,459: set_desktop_wallpaper() 'Exception when calling set_wallpaper script: 127'
 Traceback (most recent call last):
-  File "/usr/lib/python2.7/dist-packages/variety/Util.py", line 659, in get_file_icon_name
-    query_info = f.query_info("standard::icon", Gio.FileQueryInfoFlags.NONE, None)
-Error: g-io-error-quark: Error when getting information for file “/home/tgsachse/Pictures”: No such file or directory (1)
-INFO: 2018-05-04 19:55:58,621: set_wallpaper() 'Calling set_wallpaper with /home/tgsachse/Dropbox/Wallpapers/Current/Flight.jpg'
-INFO: 2018-05-04 19:55:58,622: prepare_thread() 'Prepared buffer contains 11 images'
-INFO: 2018-05-04 19:55:58,623: do_set_wp() 'Calling do_set_wp with /home/tgsachse/Dropbox/Wallpapers/Current/Flight.jpg, time: 1525478158.62'
-INFO: 2018-05-04 19:55:58,647: update_indicator() 'Setting file info to: /home/tgsachse/Dropbox/Wallpapers/Current/Flight.jpg'
-INFO: 2018-05-04 19:56:13,639: server_options_thread() 'Fetching server options from http://tiny.cc/variety-options-063'
-INFO: 2018-05-04 19:56:14,491: server_options_thread() 'Fetched server options: {u'unsplash': {u'min_fill_queue_interval': 20000000000, u'min_download_interval': 20000000000}, u'unsplash_v2': {u'min_fill_queue_interval': 1800, u'min_download_interval': 600}, u'wallpapers.net': {u'min_fill_queue_interval': 600, u'min_download_interval': 0}, u'wallhaven': {u'min_fill_queue_interval': 1800, u'min_download_interval': 1800}, u'wallbase': {u'min_fill_queue_interval': 1800, u'min_download_interval': 1800}, u'flickr': {u'min_fill_queue_interval': 1200, u'min_download_interval': 1200}, u'status_message': {u'*': u'', u'0.0.1': u''}}'
+  File "/usr/lib/python2.7/dist-packages/variety/VarietyWindow.py", line 2436, in set_desktop_wallpaper
+    subprocess.check_call(["timeout", "--kill-after=5", "10", script, wallpaper, auto, original_file])
+  File "/usr/lib/python2.7/subprocess.py", line 190, in check_call
+    raise CalledProcessError(retcode, cmd)
+CalledProcessError: Command '['timeout', '--kill-after=5', '10', u'/home/tgsachse/.config/variety/scripts/set_wallpaper', u'/home/tgsachse/Dropbox/Wallpapers/Current/Teepee.jpg', 'auto', u'/home/tgsachse/Dropbox/Wallpapers/Current/Teepee.jpg']' returned non-zero exit status 127
+INFO: 2018-05-09 05:27:12,460: regular_change_thread() 'regular_change changes wallpaper'
+INFO: 2018-05-09 05:27:12,461: set_wallpaper() 'Calling set_wallpaper with /home/tgsachse/Dropbox/Wallpapers/Current/Turbulance.jpg'
+INFO: 2018-05-09 05:27:12,462: prepare_thread() 'Prepared buffer contains 6 images'
+INFO: 2018-05-09 05:27:12,463: do_set_wp() 'Calling do_set_wp with /home/tgsachse/Dropbox/Wallpapers/Current/Turbulance.jpg, time: 1525858032.46'
+INFO: 2018-05-09 05:27:12,488: update_indicator() 'Setting file info to: /home/tgsachse/Dropbox/Wallpapers/Current/Turbulance.jpg'
+ERROR: 2018-05-09 05:27:12,537: set_desktop_wallpaper() 'Exception when calling set_wallpaper script: 127'
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/variety/VarietyWindow.py", line 2436, in set_desktop_wallpaper
+    subprocess.check_call(["timeout", "--kill-after=5", "10", script, wallpaper, auto, original_file])
+  File "/usr/lib/python2.7/subprocess.py", line 190, in check_call
+    raise CalledProcessError(retcode, cmd)
+CalledProcessError: Command '['timeout', '--kill-after=5', '10', u'/home/tgsachse/.config/variety/scripts/set_wallpaper', u'/home/tgsachse/Dropbox/Wallpapers/Current/Turbulance.jpg', 'auto', u'/home/tgsachse/Dropbox/Wallpapers/Current/Turbulance.jpg']' returned non-zero exit status 127
+INFO: 2018-05-09 10:18:06,803: server_options_thread() 'Fetching server options from http://tiny.cc/variety-options-063'
+INFO: 2018-05-09 10:18:07,348: server_options_thread() 'Fetched server options: {u'unsplash': {u'min_fill_queue_interval': 20000000000, u'min_download_interval': 20000000000}, u'unsplash_v2': {u'min_fill_queue_interval': 1800, u'min_download_interval': 600}, u'wallpapers.net': {u'min_fill_queue_interval': 600, u'min_download_interval': 0}, u'wallhaven': {u'min_fill_queue_interval': 1800, u'min_download_interval': 1800}, u'wallbase': {u'min_fill_queue_interval': 1800, u'min_download_interval': 1800}, u'flickr': {u'min_fill_queue_interval': 1200, u'min_download_interval': 1200}, u'status_message': {u'*': u'', u'0.0.1': u''}}'
+INFO: 2018-05-09 10:27:12,538: regular_change_thread() 'regular_change changes wallpaper'
+INFO: 2018-05-09 10:27:12,539: set_wallpaper() 'Calling set_wallpaper with /home/tgsachse/Dropbox/Wallpapers/Current/Predator.jpg'
+INFO: 2018-05-09 10:27:12,539: prepare_thread() 'Prepared buffer contains 5 images'
+INFO: 2018-05-09 10:27:12,539: prepare_thread() 'Preparing some images'
+INFO: 2018-05-09 10:27:12,541: do_set_wp() 'Calling do_set_wp with /home/tgsachse/Dropbox/Wallpapers/Current/Predator.jpg, time: 1525876032.54'
+INFO: 2018-05-09 10:27:12,554: prepare_thread() 'After search prepared buffer contains 11 images'
+INFO: 2018-05-09 10:27:12,567: update_indicator() 'Setting file info to: /home/tgsachse/Dropbox/Wallpapers/Current/Predator.jpg'
+ERROR: 2018-05-09 10:27:12,638: set_desktop_wallpaper() 'Exception when calling set_wallpaper script: 127'
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/variety/VarietyWindow.py", line 2436, in set_desktop_wallpaper
+    subprocess.check_call(["timeout", "--kill-after=5", "10", script, wallpaper, auto, original_file])
+  File "/usr/lib/python2.7/subprocess.py", line 190, in check_call
+    raise CalledProcessError(retcode, cmd)
+CalledProcessError: Command '['timeout', '--kill-after=5', '10', u'/home/tgsachse/.config/variety/scripts/set_wallpaper', u'/home/tgsachse/Dropbox/Wallpapers/Current/Predator.jpg', 'auto', u'/home/tgsachse/Dropbox/Wallpapers/Current/Predator.jpg']' returned non-zero exit status 127
+INFO: 2018-05-09 15:27:12,639: regular_change_thread() 'regular_change changes wallpaper'
+INFO: 2018-05-09 15:27:12,640: set_wallpaper() 'Calling set_wallpaper with /home/tgsachse/Dropbox/Wallpapers/Current/Summit.jpg'
+INFO: 2018-05-09 15:27:12,641: prepare_thread() 'Prepared buffer contains 10 images'
+INFO: 2018-05-09 15:27:12,642: do_set_wp() 'Calling do_set_wp with /home/tgsachse/Dropbox/Wallpapers/Current/Summit.jpg, time: 1525894032.64'
+INFO: 2018-05-09 15:27:12,665: update_indicator() 'Setting file info to: /home/tgsachse/Dropbox/Wallpapers/Current/Summit.jpg'
+ERROR: 2018-05-09 15:27:12,722: set_desktop_wallpaper() 'Exception when calling set_wallpaper script: 127'
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/variety/VarietyWindow.py", line 2436, in set_desktop_wallpaper
+    subprocess.check_call(["timeout", "--kill-after=5", "10", script, wallpaper, auto, original_file])
+  File "/usr/lib/python2.7/subprocess.py", line 190, in check_call
+    raise CalledProcessError(retcode, cmd)
+CalledProcessError: Command '['timeout', '--kill-after=5', '10', u'/home/tgsachse/.config/variety/scripts/set_wallpaper', u'/home/tgsachse/Dropbox/Wallpapers/Current/Summit.jpg', 'auto', u'/home/tgsachse/Dropbox/Wallpapers/Current/Summit.jpg']' returned non-zero exit status 127
+INFO: 2018-05-09 20:27:12,723: regular_change_thread() 'regular_change changes wallpaper'
+INFO: 2018-05-09 20:27:12,724: set_wallpaper() 'Calling set_wallpaper with /home/tgsachse/Dropbox/Wallpapers/Current/Tranquil.jpg'
+INFO: 2018-05-09 20:27:12,725: prepare_thread() 'Prepared buffer contains 9 images'
+INFO: 2018-05-09 20:27:12,726: do_set_wp() 'Calling do_set_wp with /home/tgsachse/Dropbox/Wallpapers/Current/Tranquil.jpg, time: 1525912032.73'
+INFO: 2018-05-09 20:27:12,753: update_indicator() 'Setting file info to: /home/tgsachse/Dropbox/Wallpapers/Current/Tranquil.jpg'
+ERROR: 2018-05-09 20:27:12,803: set_desktop_wallpaper() 'Exception when calling set_wallpaper script: 127'
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/variety/VarietyWindow.py", line 2436, in set_desktop_wallpaper
+    subprocess.check_call(["timeout", "--kill-after=5", "10", script, wallpaper, auto, original_file])
+  File "/usr/lib/python2.7/subprocess.py", line 190, in check_call
+    raise CalledProcessError(retcode, cmd)
+CalledProcessError: Command '['timeout', '--kill-after=5', '10', u'/home/tgsachse/.config/variety/scripts/set_wallpaper', u'/home/tgsachse/Dropbox/Wallpapers/Current/Tranquil.jpg', 'auto', u'/home/tgsachse/Dropbox/Wallpapers/Current/Tranquil.jpg']' returned non-zero exit status 127
+INFO: 2018-05-10 01:27:12,804: regular_change_thread() 'regular_change changes wallpaper'
+INFO: 2018-05-10 01:27:12,805: set_wallpaper() 'Calling set_wallpaper with /home/tgsachse/Dropbox/Wallpapers/Current/Island.jpg'
+INFO: 2018-05-10 01:27:12,805: prepare_thread() 'Prepared buffer contains 8 images'
+INFO: 2018-05-10 01:27:12,807: do_set_wp() 'Calling do_set_wp with /home/tgsachse/Dropbox/Wallpapers/Current/Island.jpg, time: 1525930032.81'
+INFO: 2018-05-10 01:27:12,831: update_indicator() 'Setting file info to: /home/tgsachse/Dropbox/Wallpapers/Current/Island.jpg'
+ERROR: 2018-05-10 01:27:12,885: set_desktop_wallpaper() 'Exception when calling set_wallpaper script: 127'
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/variety/VarietyWindow.py", line 2436, in set_desktop_wallpaper
+    subprocess.check_call(["timeout", "--kill-after=5", "10", script, wallpaper, auto, original_file])
+  File "/usr/lib/python2.7/subprocess.py", line 190, in check_call
+    raise CalledProcessError(retcode, cmd)
+CalledProcessError: Command '['timeout', '--kill-after=5', '10', u'/home/tgsachse/.config/variety/scripts/set_wallpaper', u'/home/tgsachse/Dropbox/Wallpapers/Current/Island.jpg', 'auto', u'/home/tgsachse/Dropbox/Wallpapers/Current/Island.jpg']' returned non-zero exit status 127
+INFO: 2018-05-10 06:27:12,886: regular_change_thread() 'regular_change changes wallpaper'
+INFO: 2018-05-10 06:27:12,887: set_wallpaper() 'Calling set_wallpaper with /home/tgsachse/Dropbox/Wallpapers/Current/Cave.jpg'
+INFO: 2018-05-10 06:27:12,888: prepare_thread() 'Prepared buffer contains 7 images'
+INFO: 2018-05-10 06:27:12,890: do_set_wp() 'Calling do_set_wp with /home/tgsachse/Dropbox/Wallpapers/Current/Cave.jpg, time: 1525948032.89'
+INFO: 2018-05-10 06:27:12,915: update_indicator() 'Setting file info to: /home/tgsachse/Dropbox/Wallpapers/Current/Cave.jpg'
+ERROR: 2018-05-10 06:27:12,988: set_desktop_wallpaper() 'Exception when calling set_wallpaper script: 127'
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/variety/VarietyWindow.py", line 2436, in set_desktop_wallpaper
+    subprocess.check_call(["timeout", "--kill-after=5", "10", script, wallpaper, auto, original_file])
+  File "/usr/lib/python2.7/subprocess.py", line 190, in check_call
+    raise CalledProcessError(retcode, cmd)
+CalledProcessError: Command '['timeout', '--kill-after=5', '10', u'/home/tgsachse/.config/variety/scripts/set_wallpaper', u'/home/tgsachse/Dropbox/Wallpapers/Current/Cave.jpg', 'auto', u'/home/tgsachse/Dropbox/Wallpapers/Current/Cave.jpg']' returned non-zero exit status 127
+INFO: 2018-05-10 10:43:35,034: server_options_thread() 'Fetching server options from http://tiny.cc/variety-options-063'
+INFO: 2018-05-10 10:43:35,776: server_options_thread() 'Fetched server options: {u'unsplash': {u'min_fill_queue_interval': 20000000000, u'min_download_interval': 20000000000}, u'unsplash_v2': {u'min_fill_queue_interval': 1800, u'min_download_interval': 600}, u'wallpapers.net': {u'min_fill_queue_interval': 600, u'min_download_interval': 0}, u'wallhaven': {u'min_fill_queue_interval': 1800, u'min_download_interval': 1800}, u'wallbase': {u'min_fill_queue_interval': 1800, u'min_download_interval': 1800}, u'flickr': {u'min_fill_queue_interval': 1200, u'min_download_interval': 1200}, u'status_message': {u'*': u'', u'0.0.1': u''}}'
+INFO: 2018-05-10 11:27:12,989: regular_change_thread() 'regular_change changes wallpaper'
+INFO: 2018-05-10 11:27:12,989: set_wallpaper() 'Calling set_wallpaper with /home/tgsachse/Dropbox/Wallpapers/Current/Turbulance.jpg'
+INFO: 2018-05-10 11:27:12,990: prepare_thread() 'Prepared buffer contains 6 images'
+INFO: 2018-05-10 11:27:12,992: do_set_wp() 'Calling do_set_wp with /home/tgsachse/Dropbox/Wallpapers/Current/Turbulance.jpg, time: 1525966032.99'
+INFO: 2018-05-10 11:27:13,013: update_indicator() 'Setting file info to: /home/tgsachse/Dropbox/Wallpapers/Current/Turbulance.jpg'
+ERROR: 2018-05-10 11:27:13,064: set_desktop_wallpaper() 'Exception when calling set_wallpaper script: 127'
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/variety/VarietyWindow.py", line 2436, in set_desktop_wallpaper
+    subprocess.check_call(["timeout", "--kill-after=5", "10", script, wallpaper, auto, original_file])
+  File "/usr/lib/python2.7/subprocess.py", line 190, in check_call
+    raise CalledProcessError(retcode, cmd)
+CalledProcessError: Command '['timeout', '--kill-after=5', '10', u'/home/tgsachse/.config/variety/scripts/set_wallpaper', u'/home/tgsachse/Dropbox/Wallpapers/Current/Turbulance.jpg', 'auto', u'/home/tgsachse/Dropbox/Wallpapers/Current/Turbulance.jpg']' returned non-zero exit status 127
