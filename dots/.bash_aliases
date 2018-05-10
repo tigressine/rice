@@ -2,25 +2,26 @@
 
 # tweaks for ls
 alias ls='ls --color -I snap -I Downloads'
-alias pls='echo "CWD: $(pwd)"; ls'
+alias pls='pwd; ls'
 
 # clear and list contents
 alias cls='clear; ls'
-alias pcls='clear; echo "CWD: $(pwd)"; ls'
+alias pcls='clear; pwd; ls'
 alias clsa='clear; ls -A'
-alias pclsa='clear; echo "CWD: $(pwd)"; ls -A'
+alias pclsa='clear; pwd; ls -A'
 
 # reload .bashrc
-alias reload-bashrc='. ~/.bashrc'
+alias reload='. ~/.bashrc'
 
 # connect to Eustis
 alias eustis='ssh ti406994@eustis.eecs.ucf.edu'
 
-# map vim to nvim
+# aliases for neovim
+alias v='nvim'
 alias vim='nvim'
 
 # clean the slate
-alias clean-slate='rm -r ~/Slate/*'
+alias clean-slate='rm -rf ~/Slate/*'
 
 # open pdfs
 function pdf {
