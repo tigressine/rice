@@ -39,6 +39,7 @@ function main {
     echo "u) set system settings"
     echo "v) install Golang"
     echo "w) install Dash to Dock"
+    echo "x) install and configure neovim"
     echo
     echo "e.g. To install Discord, Google Chrome, and Java 10, enter \"kmo\""
     echo
@@ -118,6 +119,9 @@ function main {
             w|W)
                 install_dash_to_dock
                 ;;
+            x|X)
+                install_nvim
+                ;;
         esac
     done
 }
@@ -142,6 +146,7 @@ function run_all {
     set_system_settings
     install_golang
     install_dash_to_dock
+    install_nvim
 }
 
 ### SETUP ###
@@ -184,6 +189,17 @@ function install_utilities {
     sudo apt install -y vpnc network-manager-vpnc network-manager-vpnc-gnome
     sudo apt install -y neovim tree zsh fish gcc
     sudo apt install -y fortune cowsay lolcat screenfetch
+}
+
+# Install and configure neovim
+function install_nvim {
+    # DEPENDS: apt, dotfiles, pip3, git
+
+    sudo apt install -y neovim
+    /usr/bin/yes | sudo pip3 install pylint
+    install_dots
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
+    vim +PluginInstall +qall
 }
 
 # Install shellcuts utility
