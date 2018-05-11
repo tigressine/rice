@@ -30,6 +30,19 @@ set foldmethod=syntax
 " CLIPBOARD
 set clipboard=unnamedplus
 
+" AUTO-CLOSING CHARACTERS
+inoremap ( ()<Esc>i
+inoremap [ []<Esc>i
+inoremap { {}<Esc>i
+inoremap ' ''<Esc>i
+inoremap " ""<Esc>i
+
+" MOVE WITH HJKL IN INSERT MODE
+inoremap <a-h> <left>
+inoremap <a-j> <down>
+inoremap <a-k> <up>
+inoremap <a-l> <right>
+
 " TABS
 set tabstop=4
 set softtabstop=4
