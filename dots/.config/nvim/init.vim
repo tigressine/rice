@@ -41,18 +41,39 @@ set autoindent
 au FileType python setlocal cc=80
 
 " SYNTASTIC
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+let g:syntastic_stl_format = '%t'
 
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_highlighting = 0
 
-let g:syntastic_error_symbol = "!!"
-let g:syntastic_warning_symbol = "?"
-hi SyntasticErrorSign ctermfg=red
+let g:syntastic_python_checkers = ['pylint']
+
+let g:syntastic_error_symbol = "!>"
+let g:syntastic_warning_symbol = "?>"
+
+hi SyntasticErrorSign ctermfg=196
 hi SyntasticWarningSign ctermfg=yellow
 
 set signcolumn=yes
 highlight clear SignColumn
+
+" LIGHTLINE
+function! GetIssues()
+    let count = SyntasticStatuslineFlag()
+
+    return (count > 0 ? count : 0) . " issue" . (count == 1 ? "" : "s")
+endfunction
+
+set noshowmode
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'right': [ [ 'lineinfo' ],
+      \              [ 'percent' ],
+      \              [ 'fileformat', 'fileencoding', 'filetype', 'issues' ] ]
+      \ },
+      \ 'component_function': {
+      \   'issues': 'GetIssues'
+      \ },
+      \ }
