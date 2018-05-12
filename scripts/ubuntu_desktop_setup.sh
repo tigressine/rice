@@ -1,9 +1,6 @@
 # Full desktop installation script for Ubuntu systems
 # Written by Tiger Sachse 
 
-# TO DO
-# 
-
 ### SCRIPT DIRECTORY ###
 D_SCRIPTS="$HOME/.scripts"
 
@@ -40,6 +37,8 @@ function main {
     echo "v) install Golang"
     echo "w) install Dash to Dock"
     echo "x) install and configure neovim"
+    echo "y) install npm and utilities"
+    echo "z) install tigerseye colorscheme" 
     echo
     echo "e.g. To install Discord, Google Chrome, and Java 10, enter \"kmo\""
     echo
@@ -122,6 +121,12 @@ function main {
             x|X)
                 install_nvim
                 ;;
+            y|Y)
+                install_npm
+                ;;
+            z|Z)
+                install_tigerseye
+                ;;
         esac
     done
 }
@@ -147,6 +152,8 @@ function run_all {
     install_golang
     install_dash_to_dock
     install_nvim
+    install_npm
+    install_tigerseye
 }
 
 ### SETUP ###
@@ -279,6 +286,19 @@ function install_dash_to_dock {
     gnome-shell-extension-tool -e dash-to-dock@micxgx.gmail.com
 }
 
+# Install tigerseye colorscheme for shell and vim
+function install_tigerseye {
+    # DEPENDS git, bash, base16-shell, base16-vim
+    TEMP_DIR="/tmp/tigerseye"
+    CURRENT_DIR="$(pwd)"
+    rm -rf $TEMP_DIR 
+    git clone https://www.github.com/tgsachse/tigerseye.git $TEMP_DIR
+    cd $TEMP_DIR/scripts
+    bash installTemplates.sh
+    cd $CURRENT_DIR
+}
+
+
 ### DEVELOPMENT TOOLS ###
 # Install Java10
 function install_java {
@@ -300,6 +320,14 @@ function install_golang {
     # DEPENDS: apt
     sudo apt install -y golang-go
 }
+
+# Install NPM and Base16 builder
+function install_npm {
+    # DEPENDS: apt
+    sudo apt install -y npm
+    sudo npm install --global base16-builder
+}
+
 
 ### SOFTWARE ###
 # Install Google Chrome
