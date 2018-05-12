@@ -16,6 +16,9 @@ alias reload='. ~/.bashrc'
 # connect to Eustis
 alias eustis='ssh ti406994@eustis.eecs.ucf.edu'
 
+# for when you're tilted
+alias fucking='sudo'
+
 # aliases for neovim
 alias v='nvim'
 alias vim='nvim'
