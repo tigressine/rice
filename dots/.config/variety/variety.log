@@ -129,3 +129,15 @@ CalledProcessError: Command '['timeout', '--kill-after=5', '10', u'/home/tgsachs
 INFO: 2018-05-12 11:04:04,187: reload() 'Reloading preferences dialog'
 INFO: 2018-05-12 11:04:04,582: list_files() 'More than 1 files in the folders, stop listing'
 INFO: 2018-05-12 11:05:17,515: update_indicator() 'Setting file info to: /home/tgsachse/Dropbox/Wallpapers/Current/Tranquil.jpg'
+INFO: 2018-05-12 16:03:55,181: regular_change_thread() 'regular_change changes wallpaper'
+INFO: 2018-05-12 16:03:55,182: set_wallpaper() 'Calling set_wallpaper with /home/tgsachse/Dropbox/Wallpapers/Current/Range.jpg'
+INFO: 2018-05-12 16:03:55,182: prepare_thread() 'Prepared buffer contains 9 images'
+INFO: 2018-05-12 16:03:55,184: do_set_wp() 'Calling do_set_wp with /home/tgsachse/Dropbox/Wallpapers/Current/Range.jpg, time: 1526155435.18'
+INFO: 2018-05-12 16:03:55,209: update_indicator() 'Setting file info to: /home/tgsachse/Dropbox/Wallpapers/Current/Range.jpg'
+ERROR: 2018-05-12 16:03:55,274: set_desktop_wallpaper() 'Exception when calling set_wallpaper script: 127'
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/variety/VarietyWindow.py", line 2436, in set_desktop_wallpaper
+    subprocess.check_call(["timeout", "--kill-after=5", "10", script, wallpaper, auto, original_file])
+  File "/usr/lib/python2.7/subprocess.py", line 190, in check_call
+    raise CalledProcessError(retcode, cmd)
+CalledProcessError: Command '['timeout', '--kill-after=5', '10', u'/home/tgsachse/.config/variety/scripts/set_wallpaper', u'/home/tgsachse/Dropbox/Wallpapers/Current/Range.jpg', 'auto', u'/home/tgsachse/Dropbox/Wallpapers/Current/Range.jpg']' returned non-zero exit status 127

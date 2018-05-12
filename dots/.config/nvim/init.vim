@@ -32,7 +32,8 @@ if filereadable(expand("~/.vimrc_background"))
 endif
 syntax on
 hi ColorColumn ctermbg=235
-hi Normal guibg=NONE ctermbg=NONE " transparency
+hi Normal ctermbg=NONE
+hi LineNr ctermbg=NONE
 
 " CLIPBOARD
 set clipboard=unnamedplus
@@ -82,7 +83,6 @@ hi SyntasticErrorSign ctermfg=196
 hi SyntasticWarningSign ctermfg=yellow
 
 set signcolumn=yes
-highlight clear SignColumn
 
 " LIGHTLINE
 function! GetIssues()
