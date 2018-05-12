@@ -6,6 +6,10 @@ case $- in
       *) return;;
 esac
 
+# configuration for Base16-shell
+BASE16_SHELL=$HOME/.config/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+
 # configuration for bash_history
 shopt -s histappend
 HISTSIZE=1000
@@ -23,20 +27,22 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# set look for prompt
-PS1="\[\033[38;5;11m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]:\[$(tput sgr0)\]\[\033[38;5;6m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\] \\$\[$(tput sgr0)\] "
+# load Shellcuts controller file if it exists.
+if [ -f ~/.config/shellcuts/bash/controller.sh ]; then
+    . ~/.config/shellcuts/bash/controller.sh
+fi
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/Bin" ] ; then
     PATH="$HOME/Bin:$PATH"; export PATH
 fi
 
+# this is for Shellcuts and I'm still working on it
 #MANPATH="$(manpath):$HOME/Slate/"; export MANPATH
+
+# set look for prompt
+# gorgeous right?
+PS1="\[\033[38;5;11m\]\u\[$(tput sgr0)\]\[\033[38;5;17m\]:\[$(tput sgr0)\]\[\033[38;5;14m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;17m\]\\$\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
 
 # initial prompt
 fortune -s | cowsay | lolcat; echo ""
-
-# load Shellcuts controller file if it exists.
-if [ -f ~/.config/shellcuts/bash/controller.sh ]; then
-    . ~/.config/shellcuts/bash/controller.sh
-fi
