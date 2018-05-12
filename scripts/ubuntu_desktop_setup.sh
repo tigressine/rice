@@ -38,7 +38,8 @@ function main {
     echo "w) install Dash to Dock"
     echo "x) install and configure neovim"
     echo "y) install npm and utilities"
-    echo "z) install tigerseye colorscheme" 
+    echo "z) install Base16 shell" 
+    echo "A) install tigerseye colorscheme"
     echo
     echo "e.g. To install Discord, Google Chrome, and Java 10, enter \"kmo\""
     echo
@@ -48,7 +49,7 @@ function main {
 
     for ((i = 0; i < LEN; i++)); do
         case ${COMMANDS:$i:1} in
-            a|A)
+            a)
                 run_all
                 break
                 ;;
@@ -125,6 +126,9 @@ function main {
                 install_npm
                 ;;
             z|Z)
+                install_base16_shell
+                ;;
+            A)
                 install_tigerseye
                 ;;
         esac
@@ -153,6 +157,7 @@ function run_all {
     install_dash_to_dock
     install_nvim
     install_npm
+    install_base16_shell
     install_tigerseye
 }
 
@@ -284,6 +289,13 @@ function install_dash_to_dock {
     make -C $MAKE_DIR install
     gnome-shell --replace 2>/dev/null 1>&2 &
     gnome-shell-extension-tool -e dash-to-dock@micxgx.gmail.com
+}
+
+# Install Base16 for the Bash shell
+function install_base16_shell {
+    # DEPENDS: git
+    # Assumes required bashrc and vimrc lines already exist
+    git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
 }
 
 # Install tigerseye colorscheme for shell and vim
