@@ -10,15 +10,12 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'vim-syntastic/syntastic'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'chriskempson/base16-vim'
 
 call vundle#end()
 filetype plugin indent on
-
-" COLORS
-set t_Co=256
-colorscheme slate
-syntax on
-hi ColorColumn ctermbg=235
 
 " GENERAL
 set number
@@ -26,6 +23,16 @@ set mouse=a
 set encoding=utf-8
 set fileformat=unix
 set foldmethod=syntax
+let loaded_matchparen=1
+
+" COLORSCHEME
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
+syntax on
+hi ColorColumn ctermbg=235
+hi Normal guibg=NONE ctermbg=NONE " transparency
 
 " CLIPBOARD
 set clipboard=unnamedplus
@@ -38,10 +45,14 @@ inoremap ' ''<Esc>i
 inoremap " ""<Esc>i
 
 " MOVE WITH HJKL IN INSERT MODE
-inoremap <a-h> <left>
-inoremap <a-j> <down>
-inoremap <a-k> <up>
-inoremap <a-l> <right>
+imap <a-h> <left>
+imap <a-j> <down>
+imap <a-k> <up>
+imap <a-l> <right>
+
+" SCROLL FASTER
+nmap <a-j> <c-d>
+nmap <a-k> <c-u>
 
 " TABS
 set tabstop=4
@@ -61,9 +72,11 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_highlighting = 0
 
 let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_go_checkers = ['go']
+let g:syntastic_c_checkers = ['gcc']
 
-let g:syntastic_error_symbol = "!>"
-let g:syntastic_warning_symbol = "?>"
+let g:syntastic_error_symbol = "!"
+let g:syntastic_warning_symbol = "?"
 
 hi SyntasticErrorSign ctermfg=196
 hi SyntasticWarningSign ctermfg=yellow
@@ -90,3 +103,6 @@ let g:lightline = {
       \   'issues': 'GetIssues'
       \ },
       \ }
+
+" GITGUTTER
+set updatetime=100
