@@ -26,17 +26,34 @@ alias vim='nvim'
 # clean the slate
 alias clean-slate='rm -rf ~/Slate/*'
 
+# open a file window at location
+alias f='nautilus . &> /dev/null'
+
 # open pdfs
 function pdf {
     gio open $1 &> /dev/null
 }
 
-# open a file window at location
-alias f='nautilus . &> /dev/null'
+# Git functions
+alias clone='clonessh'
 
-# easily clone my repos
-function clone {
+function acp {
+    git add $1
+    git commit -m "$2"
+    git push
+}
+
+function clonehttps {
     git clone "https://www.github.com/tgsachse/$1.git"
+}
+
+function clonessh {
+    git clone "git@github.com:tgsachse/$1.git"
+}
+
+function switchssh {
+    git remote set-url origin git@github.com:tgsachse/$1.git
+    git remote -v
 }
 
 # compile and execute Java within package
