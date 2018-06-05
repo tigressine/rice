@@ -289,6 +289,7 @@ function install_dash_to_dock {
     make -C $MAKE_DIR install
     gnome-shell --replace 2>/dev/null 1>&2 &
     gnome-shell-extension-tool -e dash-to-dock@micxgx.gmail.com
+    sudo apt remove -y gnome-shell-extension-ubuntu-dock
 }
 
 # Install Base16 for the Bash shell
