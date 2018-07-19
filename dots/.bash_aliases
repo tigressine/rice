@@ -1,7 +1,7 @@
 # CUSTOM ALIASES
 
 # tweaks for ls
-alias ls='ls --color -I snap -I Downloads'
+alias ls='ls --color -I snap -I Downloads -I Steam'
 alias pls='pwd; ls'
 
 # clear and list contents
@@ -16,6 +16,10 @@ alias reload='. ~/.bashrc'
 # connect to Eustis
 alias eustis='ssh ti406994@eustis.eecs.ucf.edu'
 
+function mveustis {
+    scp $1 ti406994@eustis.eecs.ucf.edu:$2
+}
+
 # for when you're tilted
 alias fucking='sudo'
 
@@ -27,11 +31,11 @@ alias vim='nvim'
 alias clean-slate='rm -rf ~/Slate/*'
 
 # open a file window at location
-alias f='nautilus . &> /dev/null'
+alias f='nautilus . &> /dev/null &'
 
 # open pdfs
 function pdf {
-    gio open $1 &> /dev/null
+    gio open $1 &> /dev/null &
 }
 
 # Git functions

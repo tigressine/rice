@@ -4,6 +4,9 @@
 ### SCRIPT DIRECTORY ###
 D_SCRIPTS="$HOME/.scripts"
 
+# TODO
+# Add script to install Steam?, Slack, Samba
+
 ### GENERAL FUNCTIONS ###
 # Entry point of the script
 function main {
