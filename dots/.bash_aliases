@@ -13,11 +13,21 @@ alias pclsa='clear; pwd; ls -A'
 # reload .bashrc
 alias reload='. ~/.bashrc'
 
-# connect to Eustis
+# SSH connections
 alias eustis='ssh ti406994@eustis.eecs.ucf.edu'
+alias velkoz='ssh velkoz@192.168.1.42'
 
-function mveustis {
+function move-eustis {
     scp $1 ti406994@eustis.eecs.ucf.edu:$2
+}
+
+function move-velkoz {
+    scp $1 velkoz@192.168.1.42:$2
+}
+
+function mount-velkoz {
+    sudo mount //192.168.1.42/backup /mnt/velkoz/backup -o username=velkoz
+    sudo mount //192.168.1.42/landing /mnt/velkoz/landing -o username=velkoz
 }
 
 # for when you're tilted
@@ -59,6 +69,9 @@ function switchssh {
     git remote set-url origin git@github.com:tgsachse/$1.git
     git remote -v
 }
+
+# Minecraft
+alias minecraft="java -jar ~/.minecraft/Minecraft.jar"
 
 # compile and execute Java within package
 function javabr {

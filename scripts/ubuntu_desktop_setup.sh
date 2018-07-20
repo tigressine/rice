@@ -5,7 +5,7 @@
 D_SCRIPTS="$HOME/.scripts"
 
 # TODO
-# Add script to install Steam?, Slack, Samba
+# Add script to install Slack, Sambaclient, vlc
 
 ### GENERAL FUNCTIONS ###
 # Entry point of the script

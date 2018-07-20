@@ -45,4 +45,4 @@ fi
 PS1="\[\033[38;5;11m\]\u\[$(tput sgr0)\]\[\033[38;5;17m\]:\[$(tput sgr0)\]\[\033[38;5;12m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;17m\]\\$\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
 
 # initial prompt
-fortune -s | cowsay | lolcat; echo ""
+fortune -s | cowsay; echo ""
