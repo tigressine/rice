@@ -41,11 +41,11 @@ alias vim='nvim'
 alias clean-slate='rm -rf ~/Slate/*'
 
 # open a file window at location
-alias f='nautilus . &> /dev/null &'
+alias f='(nautilus . &> /dev/null &)'
 
 # open pdfs
 function pdf {
-    gio open $1 &> /dev/null &
+    (gio open $1 &> /dev/null &)
 }
 
 # Git functions
