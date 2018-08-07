@@ -6,6 +6,7 @@ D_SCRIPTS="$HOME/.scripts"
 
 # TODO
 # Add script to install Slack, Sambaclient, vlc
+# Add script to install libreoffice, blender
 
 ### GENERAL FUNCTIONS ###
 # Entry point of the script
