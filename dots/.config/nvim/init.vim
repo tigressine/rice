@@ -8,12 +8,10 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'itchyny/lightline.vim'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'vim-syntastic/syntastic'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'scrooloose/nerdtree'
 Plugin 'chriskempson/base16-vim'
-Plugin 'xuhdev/vim-latex-live-preview'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'terryma/vim-multiple-cursors'
 
 call vundle#end()
 filetype plugin indent on

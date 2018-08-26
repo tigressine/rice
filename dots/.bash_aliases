@@ -3,6 +3,10 @@
 # tweaks for ls
 alias ls='ls --color -I snap -I Downloads -I Steam'
 alias pls='pwd; ls'
+alias up='cd .. && ls'
+function down {
+    cd $1 && ls
+}
 
 # clear and list contents
 alias cls='clear; ls'
@@ -15,19 +19,9 @@ alias reload='. ~/.bashrc'
 
 # SSH connections
 alias eustis='ssh ti406994@eustis.eecs.ucf.edu'
-alias velkoz='ssh velkoz@192.168.1.42'
 
 function move-eustis {
     scp $1 ti406994@eustis.eecs.ucf.edu:$2
-}
-
-function move-velkoz {
-    scp $1 velkoz@192.168.1.42:$2
-}
-
-function mount-velkoz {
-    sudo mount //192.168.1.42/backup /mnt/velkoz/backup -o username=velkoz
-    sudo mount //192.168.1.42/landing /mnt/velkoz/landing -o username=velkoz
 }
 
 # for when you're tilted
