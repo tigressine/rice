@@ -24,8 +24,8 @@ function move-eustis {
     scp $1 ti406994@eustis.eecs.ucf.edu:$2
 }
 
-# for when you're tilted
-alias fucking='sudo'
+# for installation fun
+alias fucking='sudo apt'
 
 # aliases for neovim
 alias v='nvim'
@@ -42,7 +42,7 @@ function pdf {
     (gio open $1 &> /dev/null &)
 }
 
-# Git functions
+# git functions
 alias clone='clonessh'
 
 function acp {
@@ -64,7 +64,7 @@ function switchssh {
     git remote -v
 }
 
-# Minecraft
+# minecraft
 alias minecraft="java -jar ~/.minecraft/Minecraft.jar"
 
 # compile and execute Java within package
