@@ -52,11 +52,11 @@ function acp {
 }
 
 function clonehttps {
-    git clone "https://www.github.com/tgsachse/$1.git"
+    git clone "https://www.github.com/tgsachse/$1.git" $2
 }
 
 function clonessh {
-    git clone "git@github.com:tgsachse/$1.git"
+    git clone "git@github.com:tgsachse/$1.git" $2
 }
 
 function switchssh {
