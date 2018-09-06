@@ -1,11 +1,9 @@
-# CUSTOM ALIASES
-
 # tweaks for ls
 alias ls='ls --color -I snap -I Downloads -I Steam'
 alias pls='pwd; ls'
 alias up='cd .. && ls'
 function down {
-    cd $1 && ls
+    cd "$1" && ls
 }
 
 # clear and list contents
