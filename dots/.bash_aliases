@@ -58,7 +58,7 @@ alias f='(nautilus . &> /dev/null &)'
 
 # open pdfs
 function pdf {
-    (gio open $1 &> /dev/null &)
+    (gio open "$@" &> /dev/null &)
 }
 
 # git functions
