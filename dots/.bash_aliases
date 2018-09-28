@@ -49,7 +49,7 @@ function mvslate {
 function toss {
     mkdir -p /tmp/tossed
     for ITEM in "$@"; do
-        mv $ITEM /tmp/tossed
+        mv "$ITEM" /tmp/tossed
     done
 }
 
