@@ -5,8 +5,9 @@
 D_SCRIPTS="$HOME/.scripts"
 
 # TODO
-# Add script to install Slack, Sambaclient, vlc
-# Add script to install libreoffice, blender
+# Add script to install Slack, vlc, libreoffice
+# Remove some old artifacts from this script
+# Add plank, remove ubuntu dock
 
 ### GENERAL FUNCTIONS ###
 # Entry point of the script
