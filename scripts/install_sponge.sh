@@ -5,7 +5,7 @@
 # Change this variable to change the name of the folder created during install
 D_INSTALL="/tmp/sponge_installation"
 
-sudo rm -r $D_INSTALL
+sudo rm -rf $D_INSTALL
 git clone https://github.com/Caleb-Shepard/Scripts.git $D_INSTALL
 
 cd $D_INSTALL
