@@ -89,6 +89,10 @@ function install_git {
 
     git config --global user.email $EMAIL
     git config --global user.name $NAME
+
+    ssh-keygen -t rsa -b 4096 -C $EMAIL
+    eval "$(ssh-agent -s)"
+    ssh-add ~/.ssh/id_rsa
 }
 
 # Install terminal utilities
