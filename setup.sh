@@ -1,9 +1,79 @@
-SCRIPT_DIR="$HOME/.scripts"
+# Installation functions for many of the programs and
+# systems I use on my main machine.
 
-# Add script to install Slack, vlc, libreoffice
-# Remove some old artifacts from this script
-# Add plank, remove ubuntu dock
+SCRIPTS_DIR="$HOME/.scripts"
 
+#### LOOK AND FEEL ####
+# Install Plank
+function install_plank {
+    sudo add-apt-repository -y ppa:docky-core/stable
+    sudo apt-get update
+    sudo apt-get install -y plank
+}
+
+# Install GNOME theme
+function install_theme {
+    sudo add-apt-repository -y ppa:tista/adapta ppa:papirus/papirus
+    sudo apt update
+    sudo apt install -y gnome-shell-extensions gnome-tweak-tool adapta-gtk-theme \
+        papirus-icon-theme chrome-gnome-shell
+    gsettings set org.gnome.desktop.interface gtk-theme Adapta
+    gsettings set org.gnome.desktop.interface icon-theme Papirus-Dark
+    gnome-shell-extension-tool -e user-theme@gnome-shell-extensions.gcampax.github.com
+    gnome-shell --replace 2>/dev/null 1>&2 &
+    gsettings set org.gnome.shell.extensions.user-theme name Adapta-Eta
+}
+
+# Install Variety
+function install_variety {
+    sudo add-apt-repository -y ppa:peterlevi/ppa
+    sudo apt update
+    sudo apt install -y variety
+}
+
+# Install Base16 for the shell
+function install_base16_shell {
+    git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
+}
+
+# Install Tigerseye colorscheme
+function install_tigerseye {
+    INSTALL_DIR="/tmp/tigerseye"
+    rm -rf $INSTALL_DIR 
+    
+    git clone https://www.github.com/tgsachse/tigerseye.git $INSTALL_DIR
+
+    cd $INSTALL_DIR/scripts
+    bash installTemplates.sh
+    cd -
+}
+
+# Install personal dotfiles
+function install_dots {
+    git clone https://www.github.com/tgsachse/scripts $SCRIPTS_DIR
+    bash $SCRIPTS_DIR/dots/install_dots.sh
+}
+
+# Install Base16 Builder
+function install_base16_builder {
+    sudo apt install -y npm
+    sudo npm install --global base16-builder
+}
+
+# Enable UFW firewall
+function enable_firewall {
+    sudo ufw enable
+}
+
+# Configure home directory
+function configure_home_directory {
+    rm -r $HOME/Music $HOME/Pictures $HOME/Public $HOME/Downloads \
+        $HOME/Templates $HOME/Videos $HOME/Desktop $HOME/Documents
+    mkdir $HOME/Slate
+}
+
+
+#### DEVELOPMENT TOOLS ####
 # Install and configure Git
 function install_git {
     sudo apt install git -y
@@ -27,11 +97,6 @@ function install_shells {
     sudo apt install -y zsh fish ksh
 }
 
-# Install VPN packages
-function install_vpn {
-    sudo apt install -y vpnc network-manager-vpnc network-manager-vpnc-gnome
-}
-
 # Install and configure Neovim
 function install_nvim {
     sudo apt install -y neovim
@@ -45,74 +110,6 @@ function install_shellcuts {
     cd /tmp && wget https://github.com/tgsachse/shellcuts/archive/v1.2.3.tar.gz
     tar -xzf v1.2.3.tar.gz && cd shellcuts-1.2.3
     python3 install.py
-}
-
-# Install SpOnGe
-function install_sponge {
-    INSTALL_DIR="/tmp/sponge"
-    sudo rm -rf $INSTALL_DIR
-
-    git clone https://github.com/Caleb-Shepard/Scripts.git $INSTALL_DIR
-
-    cd $INSTALL_DIR
-    sudo gcc Scripts_General/sources/sPoNgEbOb.c -o /usr/bin/sponge
-    cd -
-}
-
-# Enable UFW firewall
-function enable_firewall {
-    sudo ufw enable
-}
-
-# Configure home directory
-function configure_home_directory {
-    rm -r $HOME/Music $HOME/Pictures $HOME/Public $HOME/Downloads \
-        $HOME/Templates $HOME/Videos $HOME/Desktop $HOME/Documents
-    mkdir $HOME/Slate
-}
-
-# Install dotfiles from GitHub
-function install_dots {
-    bash $SCRIPT_DIR/dots/install_dots.sh
-}
-
-# Install icon theme, GTK theme and enable shell themes
-function install_themes {
-    sudo add-apt-repository -y ppa:tista/adapta
-    sudo add-apt-repository -y ppa:papirus/papirus
-    sudo apt update
-    sudo apt install -y gnome-shell-extensions gnome-tweak-tool
-    sudo apt install -y adapta-gtk-theme papirus-icon-theme
-    sudo apt install -y chrome-gnome-shell
-    gsettings set org.gnome.desktop.interface gtk-theme Adapta
-    gsettings set org.gnome.desktop.interface icon-theme Papirus-Dark
-    gnome-shell-extension-tool -e user-theme@gnome-shell-extensions.gcampax.github.com
-    gnome-shell --replace 2>/dev/null 1>&2 &
-    gsettings set org.gnome.shell.extensions.user-theme name Adapta-Eta
-}
-
-# Install Variety
-function install_variety {
-    sudo add-apt-repository -y ppa:peterlevi/ppa
-    sudo apt update
-    sudo apt install -y variety
-}
-
-# Install Base16 colorscheme system
-function install_base16_shell {
-    git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
-}
-
-# Install Tigerseye colorscheme
-function install_tigerseye {
-    INSTALL_DIR="/tmp/tigerseye"
-    rm -rf $INSTALL_DIR 
-    
-    git clone https://www.github.com/tgsachse/tigerseye.git $INSTALL_DIR
-
-    cd $INSTALL_DIR/scripts
-    bash installTemplates.sh
-    cd -
 }
 
 # Install Slack
@@ -145,20 +142,45 @@ function install_selenium {
     /usr/bin/yes | sudo pip3 install selenium
 }
 
-# Install Engima
-function install_enigma {
-    /usr/bin/yes | sudo pip3 install enigmamachine
-}
-
 # Install Golang
 function install_golang {
     sudo apt install -y golang-go
 }
 
-# Install Base16 Builder
-function install_base16_builder {
-    sudo apt install -y npm
-    sudo npm install --global base16-builder
+
+#### UTILITIES/FUN ####
+# Install VPN packages
+function install_vpn {
+    sudo apt install -y vpnc network-manager-vpnc network-manager-vpnc-gnome
+}
+
+# Install SpOnGe
+function install_sponge {
+    INSTALL_DIR="/tmp/sponge"
+    sudo rm -rf $INSTALL_DIR
+
+    git clone https://github.com/Caleb-Shepard/Scripts.git $INSTALL_DIR
+
+    cd $INSTALL_DIR
+    sudo gcc Scripts_General/sources/sPoNgEbOb.c -o /usr/bin/sponge
+    cd -
+}
+
+# Install Engima
+function install_enigma {
+    /usr/bin/yes | sudo pip3 install enigmamachine
+}
+
+
+#### LARGE PROGRAMS ####
+# Install LibreOffice
+function install_libreoffice {
+    sudo apt install -y libreoffice
+}
+
+# Install VLC
+function install_vlc {
+    sudo apt install -y vlc
 }
 
 # Install Google Chrome
@@ -188,3 +210,12 @@ function install_discord {
     sudo apt --fix-broken install
     sudo dpkg -i /tmp/discord.deb
 }
+
+
+#### BEGINNING OF EXECUTION ####
+for ARGUMENT in "$@"
+do
+    case $ARGUMENT in
+        chrome) install_chrome;;
+    esac
+done
