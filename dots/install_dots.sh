@@ -1,15 +1,18 @@
-D_DOTS="$HOME/.scripts/dots"
+# Install dots found in this repository.
 
-cp $D_DOTS/.bashrc ~/
-cp $D_DOTS/.bash_aliases ~/
-cp $D_DOTS/.bash_profile ~/
-cp $D_DOTS/.face ~/
-cp $D_DOTS/.pylintrc ~/
-cp $D_DOTS/.hidden ~/
+DOTS_DIR="$HOME/.scripts/dots"
+
+cp $DOTS_DIR/.face ~/
+cp $DOTS_DIR/.hidden ~/
+cp $DOTS_DIR/.bashrc ~/
+cp $DOTS_DIR/.pylintrc ~/
+cp $DOTS_DIR/.bash_aliases ~/
+cp $DOTS_DIR/.bash_profile ~/
 
 mkdir -p ~/.config/nvim
 mkdir -p ~/.shellcuts/data
 mkdir -p ~/.config/variety
-cp $D_DOTS/.config/nvim/init.vim ~/.config/nvim/
-cp $D_DOTS/.shellcuts/data/shellcuts.json ~/.shellcuts/data/
-cp $D_DOTS/.config/variety/variety.conf ~/.config/variety/
+
+cp $DOTS_DIR/.config/nvim/init.vim ~/.config/nvim/
+cp $DOTS_DIR/.config/variety/variety.conf ~/.config/variety/
+cp $DOTS_DIR/.shellcuts/data/shellcuts.json ~/.shellcuts/data/
