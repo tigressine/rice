@@ -3,6 +3,10 @@
 
 SCRIPTS_DIR="$HOME/.scripts"
 
+## Tasks
+# Add installation process for mouse theme
+# Make Plank auto startup
+
 #### LOOK AND FEEL ####
 # Install Plank
 function install_plank {
@@ -217,5 +221,32 @@ for ARGUMENT in "$@"
 do
     case $ARGUMENT in
         chrome) install_chrome;;
+        plank) install_plank;;
+        theme) install_theme;;
+        variety) install_variety;;
+        base16-shell) install_base16_shell;;
+        tigerseye) install_tigerseye;;
+        dots) install_dots;;
+        base16-builder) install_base16_builder;;
+        firewall) enable_firewall;;
+        home) configure_home_directory;;
+        git) install_git;;
+        terminal-utils) install_terminal_utils;;
+        shells) install_shells;;
+        nvim) install_nvim;;
+        shellcuts) install_shellcuts;;
+        java8) install_java8;;
+        java11) install_java11;;
+        pip3) install_pip3;;
+        selenium) install_selenium;;
+        golang) install_golang;;
+        sponge) install_sponge;;
+        enigma) install_enigma;;
+        libreoffice) install_libreoffice;;
+        vlc) install_vlc;;
+        chrome) install_chrome;;
+        dropbox) install_dropbox;;
+        gimp) install_gimp;;
+        discord) install_discord;;
     esac
 done
