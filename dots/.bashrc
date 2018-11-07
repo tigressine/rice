@@ -7,8 +7,8 @@ case $- in
 esac
 
 # Configuration for Base16-shell
-BASE16_SHELL=$HOME/.config/base16-shell/
-[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+#BASE16_SHELL=$HOME/.config/base16-shell/
+#[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
 # Configuration for bash_history
 shopt -s histappend
@@ -28,13 +28,16 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # Set look for prompt
-PS1="\[\033[38;5;11m\]\u\[$(tput sgr0)\]\[\033[38;5;17m\]:\[$(tput sgr0)\]\[\033[38;5;12m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;17m\]\\$\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
+PS1="\[\033[38;5;11m\]\u\[$(tput sgr0)\]\[\033[38;5;12m\]:\[$(tput sgr0)\]\[\033[38;5;15m\]\w \[$(tput sgr0)\]\[\033[38;5;12m\]\\$\[$(tput sgr0)\] "
 
 # Initial prompt
-fortune -s | cowsay; echo ""
+fortune -s | cowsay | lolcat; echo ""
 
 # Load the Shellcuts controller file if it exists.
 if [ -f $HOME/.shellcuts/shells/bash/controller.bash ]; then
     . $HOME/.shellcuts/shells/bash/controller.bash
-    #source ~/.local/bin/bashmarks.sh
+fi
+
+if [ -f $HOME/.shellcuts/shells/bash/controller.sh ]; then
+    . $HOME/.shellcuts/shells/bash/controller.sh
 fi
