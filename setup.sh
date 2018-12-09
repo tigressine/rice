@@ -6,6 +6,7 @@ SCRIPTS_DIR="$HOME/.scripts"
 ## Tasks
 # Add installation process for mouse theme
 # Make Plank auto startup
+# Add pdftk
 
 #### LOOK AND FEEL ####
 # Install Plank
