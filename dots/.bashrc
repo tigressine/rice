@@ -6,9 +6,9 @@ case $- in
       *) return;;
 esac
 
-# Configuration for Base16-shell
-#BASE16_SHELL=$HOME/.config/base16-shell/
-#[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+# Set the editor to be neovim
+export VISUAL=nvim
+export EDITOR="$VISUAL"
 
 # Configuration for bash_history
 shopt -s histappend
@@ -36,8 +36,4 @@ fortune -s | cowsay | lolcat; echo ""
 # Load the Shellcuts controller file if it exists.
 if [ -f $HOME/.shellcuts/shells/bash/controller.bash ]; then
     . $HOME/.shellcuts/shells/bash/controller.bash
-fi
-
-if [ -f $HOME/.shellcuts/shells/bash/controller.sh ]; then
-    . $HOME/.shellcuts/shells/bash/controller.sh
 fi
