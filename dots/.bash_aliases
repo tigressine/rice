@@ -15,15 +15,6 @@ alias pclsa='clear; pwd; ls -A'
 # reload .bashrc
 alias reload='. ~/.bashrc'
 
-# SSH connections
-alias eustis='ssh ti406994@eustis.eecs.ucf.edu'
-alias zajedno='ssh root@206.189.228.110'
-alias stokes='ssh stokes'
-alias pi='ssh pi@192.168.1.42'
-function cpeustis {
-    scp $1 ti406994@eustis.eecs.ucf.edu:$2
-}
-
 # for installation fun
 alias fucking='sudo apt'
 
