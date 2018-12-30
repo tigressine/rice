@@ -12,8 +12,10 @@ let loaded_matchparen=1
 " COLORSCHEME
 syntax on
 colorscheme slate
-hi ColorColumn ctermbg=235
-hi StatusLine ctermfg=235 ctermbg=white
+highlight ColorColumn ctermbg=235
+highlight StatusLine ctermfg=235 ctermbg=white
+highlight Search ctermfg=white ctermbg=black
+highlight Visual ctermfg=188 ctermbg=black
 
 " CONFIGURE CLIPBOARD
 set clipboard=unnamedplus
