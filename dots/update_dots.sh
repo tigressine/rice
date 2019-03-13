@@ -4,6 +4,7 @@ cp $HOME/.face .
 cp $HOME/.bashrc .
 cp $HOME/.Xresources .
 cp $HOME/.bash_profile .
+cp $HOME/.bashrc_simple .
 cp $HOME/.shell_aliases .
 
 mkdir -p .config/nvim
