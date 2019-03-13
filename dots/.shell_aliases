@@ -1,0 +1,75 @@
+# A collection of aliases to make life easier!
+# Written by Tiger Sachse.
+TOSSED_DIR="$HOME/.tossed"
+SLATE_DIR="$HOME/Slate"
+
+# General navigation and visual aliases.
+alias ls="ls --color"
+alias cls="clear && ls"
+alias up="cd .. && pwd && ls"
+function down {
+    cd "$1" && pwd && ls
+}
+
+# Reload this script.
+alias reload="source $HOME/.bashrc"
+
+# For when you're tilted.
+alias fucking="sudo apt"
+
+# Open Neovim with a short command.
+alias v="nvim"
+
+# Toss files into the rubbish bin.
+function toss {
+    mkdir -p "$TOSSED_DIR"
+    for ITEM in "$@"; do
+        mv "$ITEM" "$TOSSED_DIR" &> /dev/null
+        if [ $? -ne 0 ]; then
+            printf "toss: could not toss '%s'\n" "$ITEM"
+        fi
+    done
+}
+
+# Copy files to the slate.
+function slate {
+    mkdir -p "$SLATE_DIR"
+    for ITEM in "$@"; do
+        if [ -d "$ITEM" ]; then
+            cp -r "$ITEM" "$SLATE_DIR"
+        elif [ -f "$ITEM" ]; then
+            cp "$ITEM" "$SLATE_DIR"
+        fi
+    done
+}
+
+# Clean out the slate or the rubbish bin.
+function clean {
+    case $1 in
+        slate)
+            toss "$SLATE_DIR"/*
+            ;;
+        tossed)
+            rm -rf "$TOSSED_DIR"/*
+            ;;
+        *)
+            echo "clean: please specify 'tossed' or 'slate'"
+            ;;
+    esac
+}
+
+# Roll the three main git functions into one.
+function acp {
+    git add "$1"
+    git commit -m "$2"
+    git push
+}
+
+# Clone one of my personal repositories. Use SSH by default.
+alias clone="clonessh"
+function clonehttps {
+    git clone "https://www.github.com/tgsachse/$1.git" $2
+}
+function clonessh {
+    git clone "git@github.com:tgsachse/$1.git" $2
+}

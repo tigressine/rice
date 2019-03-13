@@ -7,6 +7,13 @@ SCRIPTS_DIR="$HOME/.scripts"
 # Add installation process for mouse theme
 # Make Plank auto startup
 # Add pdftk
+# add flake8 to vim setup
+
+# git clone https://github.com/ruanyf/fortunes.git
+# sudo mv fortunes/data/fortunes* /usr/share/games/fortunes/
+# cd /usr/share/games/fortunes/
+# sudo strfile % fortunes fortunes.dat
+
 
 #### LOOK AND FEEL ####
 # Install Plank
