@@ -42,19 +42,6 @@ highlight Search ctermfg=white ctermbg=black
 " USE THE SYSTEM CLIPBOARD
 set clipboard=unnamedplus
 
-" MOVE WITH hjkl IN INSERT MODE
-imap <a-k> <up>
-imap <a-h> <left>
-imap <a-j> <down>
-imap <a-l> <right>
-
-" SCROLL FASTER
-nmap <a-j> <c-d>
-nmap <a-k> <c-u>
-
-" REDO SHOULD BE r
-nmap r <c-r>
-
 " USE SPACES INSTEAD OF TABS
 set tabstop=4
 set expandtab
