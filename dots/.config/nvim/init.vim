@@ -27,6 +27,9 @@ set fileformat=unix
 set foldmethod=syntax
 let loaded_matchparen=1
 
+" FIX NEOVIM BREAKING MY TERMINAL CURSOR
+autocmd vimLeave * set guicursor=a:hor50-blinkon1
+
 " COLORS!
 syntax on
 colorscheme slate
