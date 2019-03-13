@@ -11,6 +11,7 @@ if [ "$1" == "--simple" ]; then
 else
     cp .face $HOME/
     cp .bashrc $HOME/
+    cp .tmux.conf $HOME/
     cp .Xresources $HOME/
     cp .bashrc_simple $HOME/
 
