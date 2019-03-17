@@ -1,15 +1,6 @@
 # The full version of my Bash configuration.
 # Written by Tiger Sachse.
 
-# Start TMUX.
-if command -v tmux &> /dev/null \
-   && [ -n "$PS1" ] \
-   && [[ ! "$TERM" =~ screen ]] \
-   && [[ ! "$TERM" =~ tmux ]] \
-   && [ -z "$TMUX" ]; then
-    exec tmux
-fi
-
 # Source the simple version of this Bash configuration.
 if [ -f "$HOME/.bashrc_simple" ]; then
     source "$HOME/.bashrc_simple"

@@ -49,6 +49,19 @@ set autoindent
 set shiftwidth=4
 set softtabstop=4
 
+" MOVE WITH hjkl IN INSERT MODE
+imap <a-k> <up>
+imap <a-h> <left>
+imap <a-j> <down>
+imap <a-l> <right>
+
+" SCROLL FASTER
+nmap <a-j> <c-d>
+nmap <a-k> <c-u>
+
+" REDO SHOULD BE r
+nmap r <c-r>
+
 " FILE SPECIFIC SETTINGS
 autocmd FileType c setlocal cc=80
 autocmd FileType go setlocal cc=80

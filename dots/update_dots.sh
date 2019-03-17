@@ -2,7 +2,6 @@
 # Written by Tiger Sachse.
 cp $HOME/.face .
 cp $HOME/.bashrc .
-cp $HOME/.tmux.conf .
 cp $HOME/.Xresources .
 cp $HOME/.bash_profile .
 cp $HOME/.bashrc_simple .
