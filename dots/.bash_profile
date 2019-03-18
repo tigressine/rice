@@ -11,6 +11,3 @@ fi
 if [ -d "$HOME/Bin" ] ; then
     PATH="$HOME/Bin:$PATH"
 fi
-
-# Swap <caps lock> and <escape>.
-setxkbmap -option caps:swapescape

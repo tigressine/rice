@@ -1,6 +1,9 @@
 # The full version of my Bash configuration.
 # Written by Tiger Sachse.
 
+# Swap <caps lock> and <escape>.
+setxkbmap -option caps:swapescape
+
 # Source the simple version of this Bash configuration.
 if [ -f "$HOME/.bashrc_simple" ]; then
     source "$HOME/.bashrc_simple"
