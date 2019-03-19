@@ -1,5 +1,6 @@
 # Install dots found in this repository.
 # Written by Tiger Sachse.
+cp .vimrc $HOME/
 cp .bash_profile $HOME/
 cp .shell_aliases $HOME/
 

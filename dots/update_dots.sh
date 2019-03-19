@@ -1,6 +1,7 @@
 # Update the dots located in this repository.
 # Written by Tiger Sachse.
 cp $HOME/.face .
+cp $HOME/.vimrc .
 cp $HOME/.bashrc .
 cp $HOME/.Xresources .
 cp $HOME/.bash_profile .
