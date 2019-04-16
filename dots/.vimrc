@@ -6,6 +6,7 @@
 set number
 set mouse=a
 set expandtab
+set linebreak
 set tabstop=4
 set autoindent
 set shiftwidth=4
