@@ -15,6 +15,7 @@ call vundle#rc('~/.config/nvim/bundle')
 call vundle#begin()
 
 " List of all active plugins.
+Plugin 'udalov/kotlin-vim'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'terryma/vim-multiple-cursors'

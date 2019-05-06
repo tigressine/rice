@@ -22,9 +22,10 @@ alias v="nvim"
 
 # Toss files into the rubbish bin.
 function toss {
-    mkdir -p "$TOSSED_DIR"
+    TOSSED_STAMPED_DIR="$TOSSED_DIR/$(date +%s)"
+    mkdir -p "$TOSSED_STAMPED_DIR"
     for ITEM in "$@"; do
-        mv "$ITEM" "$TOSSED_DIR" &> /dev/null
+        mv "$ITEM" "$TOSSED_STAMPED_DIR" &> /dev/null
         if [ $? -ne 0 ]; then
             printf "toss: could not toss '%s'\n" "$ITEM"
         fi
