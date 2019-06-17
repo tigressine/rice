@@ -8,7 +8,14 @@ alias ls="ls --color"
 alias cls="clear && ls"
 alias up="cd .. && pwd && ls"
 function down {
-    cd "$1" && pwd && ls
+    cd "$1" && {
+        pwd
+        command -v "git" > /dev/null 2>&1
+        if [ $? -eq 0 -a -d ".git" ]; then
+            git branch | grep '^*' | sed 's/*/branch:/g'
+        fi
+        ls
+    }
 }
 
 # Reload this script.
