@@ -31,21 +31,6 @@ highlight Folded ctermfg=white ctermbg=236
 highlight Search ctermfg=white ctermbg=black
 
 
-" *** KEYBINDINGS ***
-" Move in insert mode with 'hjkl'.
-imap <a-k> <up>
-imap <a-h> <left>
-imap <a-j> <down>
-imap <a-l> <right>
-
-" Scroll with 'jk'.
-nmap <a-j> <c-d>
-nmap <a-k> <c-u>
-
-" Redo an undo with 'r'.
-nmap r <c-r>
-
-
 " *** FILE SPECIFICS ***
 autocmd FileType xml setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType js setlocal tabstop=2 shiftwidth=2 softtabstop=2
