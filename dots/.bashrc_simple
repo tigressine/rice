@@ -18,8 +18,8 @@ export EDITOR="$VISUAL"
 set -o vi
 
 # Include the aliases file, if it exists.
-if [ -f $HOME/.shell_aliases ]; then
-    source $HOME/.shell_aliases
+if [ -f "$HOME/.shell_aliases" ]; then
+    source "$HOME/.shell_aliases"
 fi
 
 # Set the terminal prompt.

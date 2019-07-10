@@ -1,7 +1,7 @@
-# A collection of aliases to make life easier!
+# A collection of aliases that make life easier!
 # Written by Tiger Sachse.
-TOSSED_DIR="$HOME/.tossed"
-SLATE_DIR="$HOME/Slate"
+tossed_dir="$HOME/.tossed"
+slate_dir="$HOME/Slate"
 
 # General navigation and visual aliases.
 alias ls="ls --color"
@@ -24,29 +24,29 @@ alias reload="source $HOME/.bashrc"
 # For when you're tilted.
 alias fucking="sudo apt"
 
-# Open Neovim with a short command.
-alias v="nvim"
+# Open Vim with a short command.
+alias v="vim"
 
 # Toss files into the rubbish bin.
 function toss {
-    TOSSED_STAMPED_DIR="$TOSSED_DIR/$(date +%s)"
-    mkdir -p "$TOSSED_STAMPED_DIR"
-    for ITEM in "$@"; do
-        mv "$ITEM" "$TOSSED_STAMPED_DIR" &> /dev/null
+    tossed_stamped_dir="$tossed_dir/$(date +%s)"
+    mkdir -p "$tossed_stamped_dir"
+    for item in "$@"; do
+        mv "$item" "$tossed_stamped_dir" &> /dev/null
         if [ $? -ne 0 ]; then
-            printf "toss: could not toss '%s'\n" "$ITEM"
+            printf "toss: could not toss '%s'\n" "$item"
         fi
     done
 }
 
 # Copy files to the slate.
 function slate {
-    mkdir -p "$SLATE_DIR"
-    for ITEM in "$@"; do
-        if [ -d "$ITEM" ]; then
-            cp -r "$ITEM" "$SLATE_DIR"
-        elif [ -f "$ITEM" ]; then
-            cp "$ITEM" "$SLATE_DIR"
+    mkdir -p "$slate_dir"
+    for item in "$@"; do
+        if [ -d "$item" ]; then
+            cp -r "$item" "$slate_dir"
+        elif [ -f "$item" ]; then
+            cp "$item" "$slate_dir"
         fi
     done
 }
@@ -55,10 +55,10 @@ function slate {
 function clean {
     case $1 in
         slate)
-            toss "$SLATE_DIR"/*
+            toss "$slate_dir"/*
             ;;
         tossed)
-            rm -rf "$TOSSED_DIR"/*
+            rm -rf "$tossed_dir"/*
             ;;
         *)
             echo "clean: please specify 'tossed' or 'slate'"
@@ -76,8 +76,12 @@ function acp {
 # Clone one of my personal repositories. Use SSH by default.
 alias clone="clonessh"
 function clonehttps {
-    git clone "https://www.github.com/tgsachse/$1.git" $2
+    repository="$1"
+    shift
+    git clone "https://www.github.com/tgsachse/$repository.git" "$@"
 }
 function clonessh {
-    git clone "git@github.com:tgsachse/$1.git" $2
+    repository="$1"
+    shift
+    git clone "git@github.com:tgsachse/$repository.git" "$@"
 }
