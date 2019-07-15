@@ -22,7 +22,6 @@ autocmd vimLeave * set guicursor=a:hor50-blinkon1
 
 " *** VISUALS ***
 syntax on
-set cc=80
 colorscheme slate
 set background=dark
 highlight ColorColumn ctermbg=235
@@ -30,6 +29,9 @@ highlight Visual ctermfg=188 ctermbg=black
 highlight Folded ctermfg=white ctermbg=236
 highlight Search ctermfg=white ctermbg=black
 
+if v:version > 703
+    set cc=80
+endif
 
 " *** FILE SPECIFICS ***
 autocmd FileType xml setlocal tabstop=2 shiftwidth=2 softtabstop=2

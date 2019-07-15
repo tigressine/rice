@@ -16,3 +16,5 @@ if [ -f "$HOME/.shellcuts/shells/bash/controller.bash" ]; then
     . "$HOME/.shellcuts/shells/bash/controller.bash"
 fi
 
+# Set the terminal prompt.
+PS1="\[\033[38;5;11m\]->\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"

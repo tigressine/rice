@@ -16,3 +16,5 @@ if [ -f "$HOME/.shellcuts/shells/zsh/controller.zsh" ]; then
     . "$HOME/.shellcuts/shells/zsh/controller.zsh"
 fi
 
+# Set the terminal prompt.
+PROMPT=">> "
