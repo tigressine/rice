@@ -6,6 +6,11 @@ if [ -f "$HOME/.shellrc" ]; then
     . "$HOME/.shellrc"
 fi
 
+# Source the Amazon-specific configuration file, if available.
+if [ -f "$HOME/.amazon_zshrc" ]; then
+    . "$HOME/.amazon_zshrc"
+fi
+
 # Load the Shellcuts controller file if it exists.
 if [ -f "$HOME/.shellcuts/shells/zsh/controller.zsh" ]; then
     . "$HOME/.shellcuts/shells/zsh/controller.zsh"
