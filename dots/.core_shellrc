@@ -1,4 +1,4 @@
-# A slim version of my Bash configuration for use on remote machines.
+# My core shell configuration (suitable for local or remote machines).
 # Written by Tiger Sachse.
 
 # If not running interactively, do nothing.
@@ -10,16 +10,12 @@ case $- in
         ;;
 esac
 
-# Set the default editor to be Vi.
-export VISUAL=vi
-export EDITOR="$VISUAL"
-
 # Enable Vi keybindings.
 set -o vi
 
-# Include the aliases file, if it exists.
-if [ -f "$HOME/.shell_aliases" ]; then
-    source "$HOME/.shell_aliases"
+# Include the .aliases file, if it exists.
+if [ -f "$HOME/.aliases" ]; then
+    source "$HOME/.aliases"
 fi
 
 # Set the terminal prompt.

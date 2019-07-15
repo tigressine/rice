@@ -1,5 +1,6 @@
 # A collection of aliases that make life easier!
 # Written by Tiger Sachse.
+
 tossed_dir="$HOME/.tossed"
 slate_dir="$HOME/Slate"
 
@@ -53,11 +54,11 @@ function slate {
 
 # Clean out the slate or the rubbish bin.
 function clean {
-    case $1 in
-        slate)
+    case "$1" in
+        "slate")
             toss "$slate_dir"/*
             ;;
-        tossed)
+        "tossed")
             rm -rf "$tossed_dir"/*
             ;;
         *)
@@ -75,11 +76,13 @@ function acp {
 
 # Clone one of my personal repositories. Use SSH by default.
 alias clone="clonessh"
+
 function clonehttps {
     repository="$1"
     shift
     git clone "https://www.github.com/tgsachse/$repository.git" "$@"
 }
+
 function clonessh {
     repository="$1"
     shift

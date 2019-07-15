@@ -1,0 +1,16 @@
+# An extended Shell configuration (only suitable for local machines).
+# Written by Tiger Sachse.
+
+# Source the core Shell configuration if it exists.
+if [ -f "$HOME/.core_shellrc" ]; then
+    source "$HOME/.core_shellrc"
+fi
+
+# Set the default editor to be Vim.
+export VISUAL="vim"
+export EDITOR="$VISUAL"
+
+# Display a fun cowsay message.
+good_cows="cock default dragon elephant gnu stegosaurus tux turtle sheep moose flaming-sheep"
+selected_cow="$(shuf -e $good_cows | head -1)"
+fortune fortunes | cowsay -f "$selected_cow.cow" | lolcat; echo ""

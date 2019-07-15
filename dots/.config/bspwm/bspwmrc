@@ -1,0 +1,39 @@
+#! /bin/sh
+# BSPWM configuration, written by Tiger Sachse.
+
+# Some monitor constants.
+INTERNAL_MONITOR="eDP1"
+EXTERNAL_LEFT_MONITOR="DP1-1"
+EXTERNAL_RIGHT_MONITOR="DP1-2"
+CURRENT_WALLPAPER_DIR="$HOME/Dropbox/Wallpapers/Current"
+
+sxhkd &
+compton &
+~/.dropbox-dist/dropboxd &
+
+feh --randomize --bg-scale "$CURRENT_WALLPAPER_DIR"/*
+
+# If there are three detected monitors, I'm probably at work. Execute xrandr
+# and configure the monitors.
+if [ $(eval "bspc query -M | wc -l") -eq 3 ]; then
+    xrandr --output "$INTERNAL_MONITOR" --auto --pos 0x0 \
+           --output "$EXTERNAL_LEFT_MONITOR" --auto --above "$INTERNAL_MONITOR" \
+           --output "$EXTERNAL_RIGHT_MONITOR" --auto --right-of "$EXTERNAL_LEFT_MONITOR"
+    bspc monitor "$INTERNAL_MONITOR" -d 1 4
+    bspc monitor "$EXTERNAL_LEFT_MONITOR" -d 2 5
+    bspc monitor "$EXTERNAL_RIGHT_MONITOR" -d 3 6
+
+# Otherwise, I'm using the laptop without extra monitors. Assign all windows
+# to the main monitor.
+else
+    bspc monitor -d 1 2 3
+fi
+
+bspc config window_gap 24
+bspc config border_width 0
+bspc config split_ratio 0.52
+bspc config gapless_monocle true
+bspc config borderless_monocle true
+
+bspc config focus_follows_pointer true
+bspc config pointer_follows_monitor true

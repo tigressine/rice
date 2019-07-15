@@ -1,17 +1,21 @@
 # Update the dots located in this repository.
 # Written by Tiger Sachse.
-cp $HOME/.face .
-cp $HOME/.vimrc .
-cp $HOME/.bashrc .
-cp $HOME/.Xresources .
-cp $HOME/.bash_profile .
-cp $HOME/.bashrc_simple .
-cp $HOME/.shell_aliases .
 
-mkdir -p .config/nvim
-mkdir -p .config/variety
-mkdir -p .shellcuts/data
+cp "$HOME/.face" . > /dev/null 2>&1
+cp "$HOME/.vimrc" . > /dev/null 2>&1
+cp "$HOME/.zshrc" . > /dev/null 2>&1
+cp "$HOME/.bashrc" . > /dev/null 2>&1
+cp "$HOME/.shellrc" . > /dev/null 2>&1
+cp "$HOME/.aliases" . > /dev/null 2>&1
+cp "$HOME/.profile" . > /dev/null 2>&1
+cp "$HOME/.Xresources" . > /dev/null 2>&1
+cp "$HOME/.core_shellrc" . > /dev/null 2>&1
+cp "$HOME/.bash_profile" . > /dev/null 2>&1
 
-cp $HOME/.config/nvim/init.vim .config/nvim/
-cp $HOME/.config/variety/variety.conf .config/variety/
-cp $HOME/.shellcuts/data/shellcuts.json .shellcuts/data/
+mkdir -p .config/bspwm/
+mkdir -p .config/sxhkd/
+mkdir -p .shellcuts/data/
+
+cp "$HOME/.config/bspwm/bspwmrc" .config/bspwm/ > /dev/null 2>&1
+cp "$HOME/.config/sxhkd/sxhkdrc" .config/sxhkd/ > /dev/null 2>&1
+cp "$HOME/.shellcuts/data/shellcuts.json" .shellcuts/data/ > /dev/null 2>&1
