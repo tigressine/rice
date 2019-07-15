@@ -11,6 +11,9 @@ if [ -f "$HOME/.amazon_zshrc" ]; then
     . "$HOME/.amazon_zshrc"
 fi
 
+# Use Vi bindings.
+bindkey -v
+
 # Load the Shellcuts controller file if it exists.
 if [ -f "$HOME/.shellcuts/shells/zsh/controller.zsh" ]; then
     . "$HOME/.shellcuts/shells/zsh/controller.zsh"

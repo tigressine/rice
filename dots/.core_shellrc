@@ -10,9 +10,6 @@ case $- in
         ;;
 esac
 
-# Enable Vi keybindings.
-set -o vi
-
 # Include the .aliases file, if it exists.
 if [ -f "$HOME/.aliases" ]; then
     source "$HOME/.aliases"

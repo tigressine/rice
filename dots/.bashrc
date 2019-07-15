@@ -11,6 +11,9 @@ if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi
 
+# Enable Vi keybindings.
+set -o vi
+
 # Load the Shellcuts controller file if it exists.
 if [ -f "$HOME/.shellcuts/shells/bash/controller.bash" ]; then
     . "$HOME/.shellcuts/shells/bash/controller.bash"
