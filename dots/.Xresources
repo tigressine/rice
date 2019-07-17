@@ -37,6 +37,10 @@
 *.cursorColor: #ffffff
 
 ! *** GENERAL ***
+*.scrollTtyOutput: False
+*.scrollTtyKeypress: True
+
+! *** VISUALS ***
 *.depth: 32
 *.scrollBar: False
 *.cursorBlink: True
@@ -44,3 +48,14 @@
 *.cursorUnderline: True
 *.font: xft:ubuntumono:size=14
 *.background: rgba:0000/0000/0200/c800
+
+! *** COPY/PASTE ***
+*.iso14755: false
+*.iso14755_52: false
+*.keysym.Shift-Control-V: eval:paste_clipboard
+*.keysym.Shift-Control-C: eval:selection_to_clipboard
+
+! *** SERVE LINKS ***
+*.perl-ext-common: default, matcher
+*.url-launcher: /usr/bin/xdg-open
+*.matcher.Button: 1

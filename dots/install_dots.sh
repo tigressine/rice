@@ -20,10 +20,12 @@ else
     cp .Xresources "$HOME/"
     cp .core_shellrc "$HOME/"
 
+    mkdir -p "$HOME/.config/nvim/"
     mkdir -p "$HOME/.config/bspwm/"
     mkdir -p "$HOME/.config/sxhkd/"
     mkdir -p "$HOME/.shellcuts/data/"
 
+    cp .config/nvim/init.vim "$HOME/.config/nvim/"
     cp .config/bspwm/bspwmrc "$HOME/.config/bspwm/"
     cp .config/sxhkd/sxhkdrc "$HOME/.config/sxhkd/"
     cp .shellcuts/data/shellcuts.json "$HOME/.shellcuts/data/"
