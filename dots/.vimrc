@@ -1,7 +1,6 @@
 " My configuration for Vim.
 " Written by Tiger Sachse.
 
-
 " *** GENERAL ***
 set number
 set mouse=a
@@ -19,19 +18,66 @@ set clipboard=unnamedplus
 filetype plugin indent on
 autocmd vimLeave * set guicursor=a:hor50-blinkon1
 
-
 " *** VISUALS ***
 syntax on
 colorscheme slate
 set background=dark
-highlight ColorColumn ctermbg=235
-highlight Visual ctermfg=188 ctermbg=black
-highlight Folded ctermfg=white ctermbg=236
-highlight Search ctermfg=white ctermbg=black
-
 if v:version > 703
     set cc=80
 endif
+
+" *** BLACK ITEMS ***
+highlight ColorColumn ctermbg=0
+
+" *** DARK GREEN ITEMS ***
+highlight Type ctermfg=2
+highlight String ctermfg=2
+highlight MoreMsg ctermfg=2
+highlight vimSyncC ctermfg=2
+highlight SpecialKey ctermfg=2
+highlight vimHiGuiFont ctermfg=2
+
+" *** DARK YELLOW ITEMS ***
+highlight LineNr ctermfg=3
+
+" *** YELLOW ITEMS ***
+highlight Comment ctermfg=11
+
+" *** DARK ORANGE ITEMS ***
+highlight Type ctermfg=6
+highlight vimSep ctermfg=6
+highlight Special ctermfg=6
+highlight Constant ctermfg=6
+highlight NvimDict ctermfg=6
+highlight Function ctermfg=6
+highlight vimMarkNumber ctermfg=6
+
+" *** BLUE ITEMS ***
+highlight nvimMap ctermfg=12
+highlight vimSubst ctermfg=12
+highlight vimCondHL ctermfg=12
+highlight Statement ctermfg=12
+highlight Structure ctermfg=12
+highlight StorageClass ctermfg=12
+
+" *** RED ITEMS ***
+highlight Include ctermfg=9
+highlight Operator ctermfg=9
+highlight NvimDict ctermfg=9
+highlight Identifier ctermfg=9
+highlight NvimComparison ctermfg=9
+highlight WarningMsg ctermfg=9
+
+" *** INVERTED ITEMS ***
+highlight Error ctermfg=white ctermbg=1
+highlight Search ctermfg=white ctermbg=0
+highlight Folded ctermfg=white ctermbg=0
+highlight Visual ctermfg=white ctermbg=0
+highlight ErrorMsg ctermfg=white ctermbg=1
+highlight DiffText ctermfg=white ctermbg=1
+highlight SpellBad ctermfg=white ctermbg=1
+highlight IncSearch ctermfg=white ctermbg=0
+highlight TermCursor ctermfg=white ctermbg=0
 
 " *** FILE SPECIFICS ***
 autocmd FileType xml setlocal tabstop=2 shiftwidth=2 softtabstop=2

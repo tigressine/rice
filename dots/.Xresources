@@ -1,39 +1,39 @@
 ! special
-*.foreground:   #c5c8c6
-!*.background:   #1d1f21
-*.cursorColor:  #c5c8c6
+*.foreground:   #ffffff
+!*.background:   #000000
+*.cursorColor:  #ffffff
 
 ! black
-*.color0:       #282a2e
-*.color8:       #373b41
+*.color0:       #2e3436
+*.color8:       #555753
 
 ! red
-*.color1:       #a54242
-*.color9:       #cc6666
+*.color1:       #a40000
+*.color9:       #ef2929
 
 ! green
-*.color2:       #8c9440
-*.color10:      #b5bd68
+*.color2:       #4e9a06
+*.color10:      #7cd227
 
 ! yellow
-*.color3:       #de935f
-*.color11:      #f0c674
+*.color3:       #c4a000
+*.color11:      #e9d63e
 
 ! blue
-*.color4:       #5f819d
-*.color12:      #81a2be
+*.color4:       #3465a4
+*.color12:      #6596cb
 
 ! magenta
-*.color5:       #85678f
-*.color13:      #b294bb
+*.color5:       #75507b
+*.color13:      #b280ac
 
 ! cyan
-*.color6:       #5e8d87
-*.color14:      #8abeb7
+*.color6:       #ce5c00
+*.color14:      #fcaf3e
 
 ! white
-*.color7:       #707880
-*.color15:      #c5c8c6
+*.color7:       #babdb9
+*.color15:      #eeeeec
 
 *.font: xft:ubuntumono:size=14
 *.scrollBar: False
