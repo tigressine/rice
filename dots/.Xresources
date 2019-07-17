@@ -55,7 +55,8 @@
 *.keysym.Shift-Control-V: eval:paste_clipboard
 *.keysym.Shift-Control-C: eval:selection_to_clipboard
 
-! *** SERVE LINKS ***
-*.perl-ext-common: default, matcher
+! *** EXTENSIONS ***
+*.perl-ext-common: default,matcher
 *.url-launcher: /usr/bin/xdg-open
-*.matcher.Button: 1
+*.matcher.rend.0: Uline Bold fg14
+*.matcher.button: 1
