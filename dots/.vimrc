@@ -26,10 +26,10 @@ if v:version > 703
     set cc=80
 endif
 
-" *** BLACK ITEMS ***
+" *** BLACK COLORED ITEMS ***
 highlight ColorColumn ctermbg=0
 
-" *** DARK GREEN ITEMS ***
+" *** DARK GREEN COLORED ITEMS ***
 highlight Type ctermfg=2
 highlight String ctermfg=2
 highlight MoreMsg ctermfg=2
@@ -37,35 +37,31 @@ highlight vimSyncC ctermfg=2
 highlight SpecialKey ctermfg=2
 highlight vimHiGuiFont ctermfg=2
 
-" *** DARK YELLOW ITEMS ***
+" *** DARK YELLOW COLORED ITEMS ***
 highlight LineNr ctermfg=3
 
-" *** YELLOW ITEMS ***
+" *** YELLOW COLORED ITEMS ***
 highlight Comment ctermfg=11
 
-" *** DARK ORANGE ITEMS ***
+" *** DARK ORANGE COLORED ITEMS ***
 highlight Type ctermfg=6
 highlight vimSep ctermfg=6
 highlight Special ctermfg=6
 highlight Constant ctermfg=6
-highlight NvimDict ctermfg=6
 highlight Function ctermfg=6
 highlight vimMarkNumber ctermfg=6
 
-" *** BLUE ITEMS ***
-highlight nvimMap ctermfg=12
+" *** BLUE COLORED ITEMS ***
 highlight vimSubst ctermfg=12
 highlight vimCondHL ctermfg=12
 highlight Statement ctermfg=12
 highlight Structure ctermfg=12
 highlight StorageClass ctermfg=12
 
-" *** RED ITEMS ***
+" *** RED COLORED ITEMS ***
 highlight Include ctermfg=9
 highlight Operator ctermfg=9
-highlight NvimDict ctermfg=9
 highlight Identifier ctermfg=9
-highlight NvimComparison ctermfg=9
 highlight WarningMsg ctermfg=9
 
 " *** INVERTED ITEMS ***
@@ -76,7 +72,7 @@ highlight Visual ctermfg=white ctermbg=0
 highlight ErrorMsg ctermfg=white ctermbg=1
 highlight DiffText ctermfg=white ctermbg=1
 highlight SpellBad ctermfg=white ctermbg=1
-highlight IncSearch ctermfg=white ctermbg=0
+highlight IncSearch ctermfg=0 ctermbg=white
 highlight TermCursor ctermfg=white ctermbg=0
 
 " *** FILE SPECIFICS ***
