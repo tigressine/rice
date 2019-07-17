@@ -1,45 +1,46 @@
-! special
-*.foreground:   #ffffff
-!*.background:   #000000
-*.cursorColor:  #ffffff
+! My Xresources dot file.
+! Written by Tiger Sachse.
 
-! black
-*.color0:       #2e3436
-*.color8:       #555753
+! *** COLORS ***
+! BLACK
+*.color0: #2e3436
+*.color8: #555753
 
-! red
-*.color1:       #a40000
-*.color9:       #ef2929
+! RED
+*.color1: #a40000
+*.color9: #ef2929
 
-! green
-*.color2:       #4e9a06
-*.color10:      #7cd227
+! GREEN
+*.color2: #4e9a06
+*.color10: #7cd227
 
-! yellow
-*.color3:       #c4a000
-*.color11:      #e9d63e
+! YELLOW
+*.color3: #c4a000
+*.color11: #e9d63e
 
-! blue
-*.color4:       #3465a4
-*.color12:      #6596cb
+! BLUE 
+*.color4: #3465a4
+*.color12: #6596cb
 
-! magenta
-*.color5:       #75507b
-*.color13:      #b280ac
+! MAGENTA
+*.color5: #75507b
+*.color13: #b280ac
 
-! cyan
-*.color6:       #ce5c00
-*.color14:      #fcaf3e
+! CYAN
+*.color6: #ce5c00
+*.color14: #fcaf3e
 
-! white
-*.color7:       #babdb9
-*.color15:      #eeeeec
+! WHITE
+*.color7: #babdb9
+*.color15: #eeeeec
+*.foreground: #ffffff
+*.cursorColor: #ffffff
 
-*.font: xft:ubuntumono:size=14
+! *** GENERAL ***
+*.depth: 32
 *.scrollBar: False
 *.cursorBlink: True
-*.cursorUnderline: True
-
-*.depth: 32
-*.background: rgba:0000/0000/0200/c800
 *.internalBorder: 20
+*.cursorUnderline: True
+*.font: xft:ubuntumono:size=14
+*.background: rgba:0000/0000/0200/c800
