@@ -6,8 +6,8 @@ if [ -f "$HOME/.core_shellrc" ]; then
     source "$HOME/.core_shellrc"
 fi
 
-# Set the default editor to be Vim.
-export VISUAL="vim"
+# Set the default editor to be Neovim.
+export VISUAL="nvim"
 export EDITOR="$VISUAL"
 
 # Display a fun cowsay message.

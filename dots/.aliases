@@ -25,8 +25,11 @@ alias reload="source $HOME/.bashrc"
 # For when you're tilted.
 alias fucking="sudo apt"
 
-# Open Vim with a short command.
-alias v="vim"
+# Open the default editor with a short command.
+# Note that this string must be wrapped in single quotes
+# to avoid evaluating the argument here (before it has
+# been changed in the main shell configuration script).
+alias v='$EDITOR'
 
 # Toss files into the rubbish bin.
 function toss {

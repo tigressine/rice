@@ -79,3 +79,13 @@ highlight TermCursor ctermfg=white ctermbg=0
 autocmd FileType xml setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType js setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType c autocmd BufWritePre <buffer> %s/\s\+$//e
+autocmd FileType cpp autocmd BufWritePre <buffer> %s/\s\+$//e
+autocmd FileType java autocmd BufWritePre <buffer> %s/\s\+$//e
+autocmd FileType go autocmd BufWritePre <buffer> %s/\s\+$//e
+autocmd FileType py autocmd BufWritePre <buffer> %s/\s\+$//e
+autocmd FileType kt autocmd BufWritePre <buffer> %s/\s\+$//e
+autocmd FileType sh autocmd BufWritePre <buffer> %s/\s\+$//e
+autocmd FileType xml autocmd BufWritePre <buffer> %s/\s\+$//e
+autocmd FileType html autocmd BufWritePre <buffer> %s/\s\+$//e
+autocmd FileType js autocmd BufWritePre <buffer> %s/\s\+$//e
