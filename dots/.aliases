@@ -4,6 +4,11 @@
 tossed_dir="$HOME/.tossed"
 slate_dir="$HOME/Slate"
 
+# Source work aliases if available.
+if [ -f "$HOME/.amazon_aliases" ]; then
+    . "$HOME/.amazon_aliases"
+fi
+
 # General navigation and visual aliases.
 alias ls="ls --color"
 alias cls="clear && ls"
@@ -70,10 +75,13 @@ function clean {
     esac
 }
 
-# Roll the three main git functions into one.
-function acp {
+# Can't be bothered to type all those different git commands...
+function ac {
     git add "$1"
     git commit -m "$2"
+}
+function acp {
+    ac "$@"
     git push
 }
 
