@@ -30,11 +30,6 @@ git clone https://www.github.com/tgsachse/shellcuts.git "$repo_dir"
 cd "$repo_dir"
 python3 install.py
 
-
-#cd
-git clone https://www.github.com/tgsachse/rice.git
-sh rice/dots/install_dots.sh
-
 # Configure Neovim.
 git clone https://github.com/VundleVim/Vundle.vim.git "$BUNDLE_DIR"
 neovim +PluginInstall +qall

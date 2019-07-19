@@ -21,3 +21,8 @@ fi
 
 # Set the terminal prompt.
 PROMPT=">> "
+
+# Load the Shellcuts controller file if it exists.
+if [ -f $HOME/.shellcuts/shells/zsh/controller.sh ]; then
+    . $HOME/.shellcuts/shells/zsh/controller.sh
+fi

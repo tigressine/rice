@@ -11,8 +11,4 @@ apt install -y python3-pip golang-go gcc g++
 
 add-apt-repository -y ppa:linuxuprising/java
 apt update
-apt install -y oracle-java11-installer
-
-add-apt-repository -y ppa:webupd8team/java
-apt update
-apt install -y oracle-java8-installer oracle-java8-set-default
+apt install -y oracle-java12-installer

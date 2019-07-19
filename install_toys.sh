@@ -18,10 +18,7 @@ mkdir -p "$download_dir"
 cd "$download_dir"
 
 git clone https://github.com/caleb-shepard/scripts.git
-gcc scripts_general/sources/spongebob.c -o /usr/bin/sponge
+gcc scripts/Scripts_General/sources/sPoNgEbOb.c -o /usr/bin/sponge
 
 git clone https://github.com/ruanyf/fortunes.git
 mv fortunes/data/fortunes* "$FORTUNES_DIR"
-
-cd "$FORTUNES_DIR"
-strfile % fortunes fortunes.dat
