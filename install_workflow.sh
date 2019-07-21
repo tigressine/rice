@@ -31,5 +31,6 @@ cd "$repo_dir"
 python3 install.py
 
 # Configure Neovim.
-git clone https://github.com/VundleVim/Vundle.vim.git "$BUNDLE_DIR"
-neovim +PluginInstall +qall
+repo_dir="$BUNDLE_DIR/VundleVim"
+git clone https://github.com/VundleVim/Vundle.vim.git "$repo_dir"
+nvim +PluginInstall +qall
