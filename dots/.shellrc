@@ -13,4 +13,4 @@ export EDITOR="$VISUAL"
 # Display a fun cowsay message.
 good_cows="cock default dragon elephant gnu stegosaurus tux turtle sheep moose flaming-sheep"
 selected_cow="$(shuf -e $good_cows | head -1)"
-fortune fortunes | cowsay -f "$selected_cow.cow" | lolcat; echo ""
+fortune | cowsay -f "$selected_cow.cow" | lolcat; echo ""

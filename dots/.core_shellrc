@@ -10,6 +10,11 @@ case $- in
         ;;
 esac
 
+# Source a work configuration, if available.
+if [ -f "$HOME/.amazon_shellrc" ]; then
+    . "$HOME/.amazon_shellrc"
+fi
+
 # Set the default editor to be Vi.
 export VISUAL="vi"
 export EDITOR="$VISUAL"
