@@ -52,6 +52,7 @@ highlight Function ctermfg=6
 highlight vimMarkNumber ctermfg=6
 
 " *** BLUE COLORED ITEMS ***
+highlight Define ctermfg=12
 highlight vimSubst ctermfg=12
 highlight vimCondHL ctermfg=12
 highlight Statement ctermfg=12
@@ -77,15 +78,17 @@ highlight TermCursor ctermfg=white ctermbg=0
 
 " *** FILE SPECIFICS ***
 autocmd FileType xml setlocal tabstop=2 shiftwidth=2 softtabstop=2
-autocmd FileType js setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType c autocmd BufWritePre <buffer> %s/\s\+$//e
 autocmd FileType cpp autocmd BufWritePre <buffer> %s/\s\+$//e
 autocmd FileType java autocmd BufWritePre <buffer> %s/\s\+$//e
 autocmd FileType go autocmd BufWritePre <buffer> %s/\s\+$//e
-autocmd FileType py autocmd BufWritePre <buffer> %s/\s\+$//e
-autocmd FileType kt autocmd BufWritePre <buffer> %s/\s\+$//e
+autocmd FileType python autocmd BufWritePre <buffer> %s/\s\+$//e
+autocmd FileType kotlin autocmd BufWritePre <buffer> %s/\s\+$//e
 autocmd FileType sh autocmd BufWritePre <buffer> %s/\s\+$//e
 autocmd FileType xml autocmd BufWritePre <buffer> %s/\s\+$//e
+autocmd FileType ruby autocmd BufWritePre <buffer> %s/\s\+$//e
 autocmd FileType html autocmd BufWritePre <buffer> %s/\s\+$//e
-autocmd FileType js autocmd BufWritePre <buffer> %s/\s\+$//e
+autocmd FileType javascript autocmd BufWritePre <buffer> %s/\s\+$//e
