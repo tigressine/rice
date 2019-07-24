@@ -1,20 +1,23 @@
-super + alt + w
+alt + shift + w
     rofi -show run
 
-super + alt + e
+alt + shift + r
     urxvt
 
-super + alt + r
+alt + shift + e
     chromium-browser
 
-super + alt + s
+alt + shift + s
     thunderbird
 
-super + alt + d
+alt + shift + d
     amazonchime
 
-super + {h, j, k, l}
-    bspc node -f {west, south, north, east}
+alt + {h, j, k, l}
+	bspc node --focus {west, south, north, east}
+
+alt + shift + {h, j, k, l}
+	bspc node --swap {west, south, north, east} --follow
 
 super + ctrl + {h, j, k, l}
 	bspc node -z {left -20 0, bottom 0 20, top 0 -20, right 20 0}
@@ -22,17 +25,11 @@ super + ctrl + {h, j, k, l}
 super + ctrl + shift + {h, j, k, l}
 	bspc node -z {right -20 0, top 0 20, bottom 0 -20, left 20 0}
 
-super + {1-3}
-    bspc desktop -f '{1-3}'
+alt + {1-6}
+    bspc desktop -f '{1-6}'
 
-super + shift + {1-3}
-    bspc desktop -f '{4-6}'
-
-super + ctrl + {1-3}
-    bspc node -d '{1-3}'
-
-super + ctrl + shift + {1-3}
-    bspc node -d '{4-6}'
+alt + shift + {1-6}
+    bspc node -d '{1-6}'
 
 # move a floating window
 super + {Left,Down,Up,Right}
@@ -47,20 +44,13 @@ super + alt + {q,r}
 	bspc {quit,wm -r}
 
 # close and kill
-super + {_,shift + }w
-	bspc node -{c,k}
+alt + shift + q
+	bspc node -c
 
 # alternate between the tiled and monocle layout
 super + m
 	bspc desktop -l next
 
-# send the newest marked node to the newest preselected node
-super + y
-	bspc node newest.marked.local -n newest.!automatic.local
-
-# swap the current node and the biggest node
-super + g
-	bspc node -s biggest
 
 #
 # state/flags
@@ -73,56 +63,3 @@ super + {t,shift + t,s,f}
 # set the node flags
 super + ctrl + {m,x,y,z}
 	bspc node -g {marked,locked,sticky,private}
-
-#
-# focus/swap
-#
-
-
-# focus the node for the given path jump
-super + {p,b,comma,period}
-	bspc node -f @{parent,brother,first,second}
-
-# focus the next/previous node in the current desktop
-super + {_,shift + }c
-	bspc node -f {next,prev}.local
-
-# focus the next/previous desktop in the current monitor
-super + bracket{left,right}
-	bspc desktop -f {prev,next}.local
-
-# focus the last node/desktop
-super + {grave,Tab}
-	bspc {node,desktop} -f last
-
-# focus the older or newer node in the focus history
-super + {o,i}
-	bspc wm -h off; \
-	bspc node {older,newer} -f; \
-	bspc wm -h on
-
-
-#
-# preselect
-#
-
-# preselect the direction
-#super + ctrl + {h,j,k,l}
-#	bspc node -p {west,south,north,east}
-
-# preselect the ratio
-#super + ctrl + {1-9}
-#	bspc node -o 0.{1-9}
-
-# cancel the preselection for the focused node
-#super + ctrl + space
-#	bspc node -p cancel
-
-# cancel the preselection for the focused desktop
-#super + ctrl + shift + space
-#	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
-
-#
-# move/resize
-#
-

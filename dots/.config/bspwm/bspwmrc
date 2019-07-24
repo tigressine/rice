@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 # BSPWM configuration, written by Tiger Sachse.
 
 # Some monitor constants.
@@ -9,7 +9,6 @@ CURRENT_WALLPAPER_DIR="$HOME/Dropbox/Wallpapers/Current"
 
 sxhkd &
 compton &
-~/.dropbox-dist/dropboxd &
 
 feh --randomize --bg-scale "$CURRENT_WALLPAPER_DIR"/*
 
@@ -23,17 +22,18 @@ if [ $(eval "bspc query -M | wc -l") -eq 3 ]; then
     bspc monitor "$EXTERNAL_LEFT_MONITOR" -d 2 5
     bspc monitor "$EXTERNAL_RIGHT_MONITOR" -d 3 6
 
-# Otherwise, I'm using the laptop without extra monitors. Assign all windows
+# Otherwise, I'm using my laptop without extra monitors. Assign all windows
 # to the main monitor.
 else
     bspc monitor -d 1 2 3
 fi
 
-bspc config window_gap 24
+bspc config window_gap 16
 bspc config border_width 0
 bspc config split_ratio 0.52
 bspc config gapless_monocle true
 bspc config borderless_monocle true
+bspc config automatic_scheme spiral
 
 bspc config focus_follows_pointer true
 bspc config pointer_follows_monitor true
