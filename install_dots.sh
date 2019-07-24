@@ -31,4 +31,6 @@ else
     cp "$DOTS_DIR/.config/bspwm/bspwmrc" "$HOME/.config/bspwm/"
     cp "$DOTS_DIR/.config/sxhkd/sxhkdrc" "$HOME/.config/sxhkd/"
     cp "$DOTS_DIR/.shellcuts/data/shellcuts.json" "$HOME/.shellcuts/data/"
+
+    cat "$DOTS_DIR/.plankrc" | dconf load "/net/launchpad/plank/docks/"
 fi
