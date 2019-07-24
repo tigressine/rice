@@ -7,10 +7,11 @@ EXTERNAL_LEFT_MONITOR="DP1-1"
 EXTERNAL_RIGHT_MONITOR="DP1-2"
 CURRENT_WALLPAPER_DIR="$HOME/Dropbox/Wallpapers/Current"
 
+plank &
 sxhkd &
 compton &
 
-feh --randomize --bg-scale "$CURRENT_WALLPAPER_DIR"/*
+feh --randomize --bg-fill "$CURRENT_WALLPAPER_DIR"/*
 
 # If there are three detected monitors, I'm probably at work. Execute xrandr
 # and configure the monitors.
