@@ -17,11 +17,13 @@ cp "$HOME/.bash_profile" "$DOTS_DIR" > /dev/null 2>&1
 mkdir -p "$DOTS_DIR/.config/nvim/"
 mkdir -p "$DOTS_DIR/.config/bspwm/"
 mkdir -p "$DOTS_DIR/.config/sxhkd/"
+mkdir -p "$DOTS_DIR/.config/polybar/"
 mkdir -p "$DOTS_DIR/.shellcuts/data/"
 
 cp "$HOME/.config/nvim/init.vim" "$DOTS_DIR/.config/nvim/" > /dev/null 2>&1
 cp "$HOME/.config/bspwm/bspwmrc" "$DOTS_DIR/.config/bspwm/" > /dev/null 2>&1
 cp "$HOME/.config/sxhkd/sxhkdrc" "$DOTS_DIR/.config/sxhkd/" > /dev/null 2>&1
+cp "$HOME/.config/polybar/config" "$DOTS_DIR/.config/polybar/" > /dev/null 2>&1
 cp "$HOME/.shellcuts/data/shellcuts.json" "$DOTS_DIR/.shellcuts/data/" > /dev/null 2>&1
 
 dconf dump "/net/launchpad/plank/docks/" > "$DOTS_DIR/.plankrc"

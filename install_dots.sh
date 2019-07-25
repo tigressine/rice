@@ -25,11 +25,13 @@ else
     mkdir -p "$HOME/.config/nvim/"
     mkdir -p "$HOME/.config/bspwm/"
     mkdir -p "$HOME/.config/sxhkd/"
+    mkdir -p "$HOME/.config/polybar/"
     mkdir -p "$HOME/.shellcuts/data/"
 
     cp "$DOTS_DIR/.config/nvim/init.vim" "$HOME/.config/nvim/"
     cp "$DOTS_DIR/.config/bspwm/bspwmrc" "$HOME/.config/bspwm/"
     cp "$DOTS_DIR/.config/sxhkd/sxhkdrc" "$HOME/.config/sxhkd/"
+    cp "$DOTS_DIR/.config/polybar/config" "$HOME/.config/polybar/"
     cp "$DOTS_DIR/.shellcuts/data/shellcuts.json" "$HOME/.shellcuts/data/"
 
     cat "$DOTS_DIR/.plankrc" | dconf load "/net/launchpad/plank/docks/"
