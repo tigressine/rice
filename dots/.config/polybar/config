@@ -24,11 +24,11 @@ font = ${xrdb:color7:}
 underline = ${xrdb:color3:}
 
 [global]
-;font-0 = "Amazon:size=12;2"
+font-0 = "Ubuntu:size=12;2"
 width = 99%
 offset-y = 1%
 offset-x = .5%
-monitor = ${env:POLY_MONITOR:}
+monitor = ${env:POLYBAR_MONITOR:}
 background = ${colors.background}
 
 [bar/solobar]
@@ -47,7 +47,7 @@ modules-right =
 inherit = global
 modules-left = bspwm
 modules-center =
-modules-right = date
+modules-right = 
 
 [bar/rightbar]
 inherit = global
@@ -66,19 +66,17 @@ type = internal/bspwm
 pin-workspaces = true
 enable-click = true
 enable-scroll = true
+label-focused-background = ${colors.light-background}
+label-separator = |
+label-state = "      %name%    "
+format = "     <label-state>     "
+;label-monitor = " %name%     "
+;label-seperator-padding =
 
 ;[module/wired-network]
 ;type = internal/network
 ;interface = wlan1
 
-label-focused-foreground=#000000
-;label-occupied-foreground=#000000
-label-focused-background = ${colors.light-background}
-
-label-dimmed-underline = #000000
-label-focused-underline = ${colors.underline}
-label-occupied-underline = ${colors.underline}
-label-urgent-underline = ${colors.underline}
 
 
 ;[colors]

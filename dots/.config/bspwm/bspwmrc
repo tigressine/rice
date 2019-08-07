@@ -19,6 +19,9 @@ if [ $(eval "bspc query -M | wc -l") -eq 3 ]; then
     xrandr --output "$INTERNAL_MONITOR" --auto --pos 0x0 \
            --output "$EXTERNAL_LEFT_MONITOR" --auto --above "$INTERNAL_MONITOR" \
            --output "$EXTERNAL_RIGHT_MONITOR" --auto --right-of "$EXTERNAL_LEFT_MONITOR"
+    POLYBAR_MONITOR="$INTERNAL_MONITOR" polybar leftbar &
+    POLYBAR_MONITOR="$EXTERNAL_LEFT_MONITOR" polybar centerbar &
+    POLYBAR_MONITOR="$EXTERNAL_RIGHT_MONITOR" polybar rightbar &
     bspc monitor "$INTERNAL_MONITOR" -d 1 4
     bspc monitor "$EXTERNAL_LEFT_MONITOR" -d 2 5
     bspc monitor "$EXTERNAL_RIGHT_MONITOR" -d 3 6
@@ -27,6 +30,7 @@ if [ $(eval "bspc query -M | wc -l") -eq 3 ]; then
 # to the main monitor.
 else
     bspc monitor -d 1 2 3
+    POLYBAR_MONITOR="INTERNAL_MONITOR" polybar solobar &
 fi
 
 bspc config window_gap 16

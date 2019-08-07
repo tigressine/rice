@@ -78,9 +78,11 @@ highlight TermCursor ctermfg=white ctermbg=0
 
 " *** FILE SPECIFICS ***
 autocmd FileType xml setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType ant setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType eruby setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType c autocmd BufWritePre <buffer> %s/\s\+$//e
 autocmd FileType cpp autocmd BufWritePre <buffer> %s/\s\+$//e
 autocmd FileType java autocmd BufWritePre <buffer> %s/\s\+$//e
