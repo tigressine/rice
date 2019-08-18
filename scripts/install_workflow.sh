@@ -5,7 +5,7 @@
 DOWNLOAD_PARTIAL_DIR="/tmp/downloaded"
 BUNDLE_DIR="$HOME/.config/nvim/bundle"
 
-sudo apt install -y neovim git tree
+sudo apt install -y neovim tree
 
 sudo add-apt-repository ppa:malteworld/ppa
 sudo apt update

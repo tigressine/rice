@@ -3,6 +3,7 @@
 # Written by Tiger Sachse.
 
 DOWNLOAD_PARTIAL_DIR="/tmp/download"
+POLYBAR_VERSION="3.4.0"
 
 if ! [ $(id -u) = 0 ]; then
     echo "This script must be run as root."
@@ -42,3 +43,37 @@ cd sxhkd
 make
 make install
 cd ..
+
+# Install Polybar.
+apt install -y \
+    git \
+    cmake \
+    gcc \
+    python-xcbgen \
+    libxcb-ewmh-dev \
+    libxcb-icccm4-dev \
+    libxcb1-dev \
+    libxcb-xrm-dev \
+    xcb-proto \
+    libxcb-util-dev \
+    libxcb-image0-dev \
+    libxcb-randr0-dev \
+    libxcb-xkb-dev \
+    libalsaplayer-dev \
+    wireless-tools \
+    libcurlpp-dev \
+    libcairo2-dev \
+    libxcb-composite0-dev
+
+download_dir="${DOWNLOAD_PARTIAL_DIR}_$(date +%s)"
+mkdir -p "$download_dir"
+cd "$download_dir"
+
+wget "https://github.com/jaagr/polybar/releases/download/$POLYBAR_VERSION/polybar-$POLYBAR_VERSION.tar"
+tar -xf "polybar-$POLYBAR_VERSION.tar"
+cd polybar
+mkdir build
+cd build
+cmake ..
+make -j"$(nproc)"
+make install

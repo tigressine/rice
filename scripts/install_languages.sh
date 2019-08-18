@@ -7,7 +7,11 @@ if ! [ $(id -u) = 0 ]; then
     exit 1
 fi
 
-apt install -y python3-pip golang-go gcc g++ make cmake
+# Install shipping tools.
+apt install -y git python3-pip make cmake
+
+# Install various languages.
+apt install -y golang-go gcc g++
 snap install --classic kotlin
 add-apt-repository -y ppa:linuxuprising/java
 apt update
