@@ -10,9 +10,22 @@ if [ -f "$HOME/.amazon_aliases" ]; then
 fi
 
 # General navigation and visual aliases.
-alias ls="ls --color"
+alias ls="ls -N --color"
+alias la="ls -la -h"
 alias cls="clear && ls"
-alias up="cd .. && pwd && ls"
+function up {
+    case "$1" in
+        0|1|""|*[!0-9]*)
+            cd ..
+            pwd
+            ls
+            ;;
+        *)
+            cd ..
+            up "$(($1 - 1))"
+            ;;
+    esac
+}
 function down {
     cd "$1" && {
         pwd
@@ -24,8 +37,9 @@ function down {
     }
 }
 
-# Reload this script.
-alias reload="source $HOME/.bashrc"
+# Reload various configurations.
+alias reloadrc=". $HOME/.bashrc"
+alias reloadx="xrdb $HOME/.Xresources"
 
 # For when you're tilted.
 alias fucking="sudo apt"
@@ -87,13 +101,11 @@ function acp {
 
 # Clone one of my personal repositories. Use SSH by default.
 alias clone="clonessh"
-
 function clonehttps {
     repository="$1"
     shift
     git clone "https://www.github.com/tgsachse/$repository.git" "$@"
 }
-
 function clonessh {
     repository="$1"
     shift

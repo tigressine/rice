@@ -27,7 +27,7 @@ URxvt.color14: #A3BABF
 URxvt.color7: #DBDCDC
 URxvt.color15: #FDFDFD
 ! BACKGROUND/FOREGROUND
-URxvt*background: [95]#151515
+URxvt*background: [90]#151515
 URxvt*foreground: #ffffff
 
 ! *** GENERAL ***
