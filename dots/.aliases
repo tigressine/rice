@@ -99,6 +99,3 @@ function clonessh {
     shift
     git clone "git@github.com:tgsachse/$repository.git" "$@"
 }
-
-# Get the time and date.
-alias when="date +'%A, %B %d, %I:%M %p' | cowsay -f tux | lolcat"

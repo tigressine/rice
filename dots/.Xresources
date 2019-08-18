@@ -3,60 +3,53 @@
 
 ! *** COLORS ***
 ! BLACK
-*.color0: #2e3436
-*.color8: #555753
-
+URxvt.color0: #252525
+URxvt.color8: #454545
 ! RED
-*.color1: #a40000
-*.color9: #ef2929
-
+URxvt.color1: #FF9F95
+URxvt.color9: #FF8D80
 ! GREEN
-*.color2: #4e9a06
-*.color10: #7cd227
-
+URxvt.color2: #A6E22E
+URxvt.color10: #B6E354
 ! YELLOW
-*.color3: #c4a000
-*.color11: #e9d63e
-
-! BLUE 
-*.color4: #3465a4
-*.color12: #6596cb
-
+URxvt.color3: #FD971F
+URxvt.color11: #FD971F
+! BLUE
+URxvt.color4: #435e87
+URxvt.color12: #587aa4
 ! MAGENTA
-*.color5: #75507b
-*.color13: #b280ac
-
+URxvt.color5: #789ec6
+URxvt.color13: #46a4ff
 ! CYAN
-*.color6: #ce5c00
-*.color14: #fcaf3e
-
+URxvt.color6: #5E7175
+URxvt.color14: #A3BABF
 ! WHITE
-*.color7: #babdb9
-*.color15: #eeeeec
-*.foreground: #ffffff
-*.cursorColor: #ffffff
+URxvt.color7: #DBDCDC
+URxvt.color15: #FDFDFD
+! BACKGROUND/FOREGROUND
+URxvt*background: [95]#151515
+URxvt*foreground: #ffffff
 
 ! *** GENERAL ***
-*.scrollTtyOutput: False
-*.scrollTtyKeypress: True
+URxvt.scrollTtyOutput: False
+URxvt.scrollTtyKeypress: True
 
 ! *** VISUALS ***
-*.depth: 32
-*.scrollBar: False
-*.cursorBlink: True
-*.internalBorder: 20
-*.cursorUnderline: True
-*.font: xft:ubuntumono:size=14
-*.background: rgba:0825/0825/0825/c800
+URxvt.depth: 32
+URxvt.scrollBar: False
+URxvt.cursorBlink: True
+URxvt.internalBorder: 20
+URxvt.cursorUnderline: True
+URxvt.font: xft:sharetechmono:size=14
 
 ! *** COPY/PASTE ***
-*.iso14755: false
-*.iso14755_52: false
-*.keysym.Shift-Control-V: eval:paste_clipboard
-*.keysym.Shift-Control-C: eval:selection_to_clipboard
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 
 ! *** EXTENSIONS ***
-*.perl-ext-common: default,matcher
-*.url-launcher: /usr/bin/xdg-open
-*.matcher.rend.0: Uline Bold fg14
-*.matcher.button: 1
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.rend.0: Uline Bold fg14
+URxvt.matcher.button: 1

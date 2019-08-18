@@ -15,11 +15,6 @@ if [ -f "$HOME/.amazon_shellrc" ]; then
     . "$HOME/.amazon_shellrc"
 fi
 
-# If a personal bin exists, add it to the path.
-if [ -d "$HOME/bin" ]; then
-    PATH="$PATH:$HOME/bin"
-fi
-
 # Set the default editor to be Vi.
 export VISUAL="vi"
 export EDITOR="$VISUAL"
