@@ -12,16 +12,16 @@ cp "$HOME/.Xresources" . > /dev/null 2>&1
 cp "$HOME/.core_shellrc" . > /dev/null 2>&1
 cp "$HOME/.bash_profile" . > /dev/null 2>&1
 
-mkdir -p ".config/nvim/"
-mkdir -p ".config/bspwm/"
-mkdir -p ".config/sxhkd/"
-mkdir -p ".config/polybar/"
-mkdir -p ".shellcuts/data/"
+mkdir -p .config/nvim/
+mkdir -p .config/bspwm/
+mkdir -p .config/sxhkd/
+mkdir -p .config/polybar/
+mkdir -p .shellcuts/data/
 
-cp "$HOME/.config/nvim/init.vim" ".config/nvim/" > /dev/null 2>&1
-cp "$HOME/.config/bspwm/bspwmrc" ".config/bspwm/" > /dev/null 2>&1
-cp "$HOME/.config/sxhkd/sxhkdrc" ".config/sxhkd/" > /dev/null 2>&1
-cp "$HOME/.config/polybar/config" ".config/polybar/" > /dev/null 2>&1
-cp "$HOME/.shellcuts/data/shellcuts.json" ".shellcuts/data/" > /dev/null 2>&1
+cp "$HOME/.config/nvim/init.vim" .config/nvim/ > /dev/null 2>&1
+cp "$HOME/.config/bspwm/bspwmrc" .config/bspwm/ > /dev/null 2>&1
+cp "$HOME/.config/sxhkd/sxhkdrc" .config/sxhkd/ > /dev/null 2>&1
+cp "$HOME/.config/polybar/config" .config/polybar/ > /dev/null 2>&1
+cp "$HOME/.shellcuts/data/shellcuts.json" .shellcuts/data/ > /dev/null 2>&1
 
-dconf dump "/net/launchpad/plank/docks/" > ".plankrc"
+dconf dump /net/launchpad/plank/docks/ > .plankrc
