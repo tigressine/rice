@@ -3,12 +3,16 @@
 
 # Source the core Shell configuration if it exists.
 if [ -f "$HOME/.core_shellrc" ]; then
-    source "$HOME/.core_shellrc"
+    . "$HOME/.core_shellrc"
 fi
 
 # Set the default editor to be Neovim.
 export VISUAL="nvim"
 export EDITOR="$VISUAL"
+
+# Configure 'ls' to be prettier.
+LS_COLORS="$LS_COLORS":'di=1;95':'ex=1;32':'ln=1;33'
+export LS_COLORS
 
 # Display a fun cowsay message.
 good_cows="cock default dragon elephant gnu stegosaurus tux turtle sheep moose flaming-sheep"

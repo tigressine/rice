@@ -21,8 +21,3 @@ fi
 
 # Set the terminal prompt.
 PS1="\[\e[1;93m\]>> \[\e[21;39m\]"
-
-# Load the Shellcuts controller file if it exists.
-if [ -f $HOME/.shellcuts/shells/bash/controller.sh ]; then
-    . $HOME/.shellcuts/shells/bash/controller.sh
-fi
