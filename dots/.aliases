@@ -38,8 +38,9 @@ function down {
 }
 
 # Reload various configurations.
-alias reloadrc=". $HOME/.bashrc"
-alias reloadx="xrdb $HOME/.Xresources"
+alias rerc=". $HOME/.bashrc"
+alias rex="xrdb $HOME/.Xresources"
+alias rehkd="pkill -USR1 -x sxhkd"
 
 # For when you're tilted.
 alias fucking="sudo apt"
