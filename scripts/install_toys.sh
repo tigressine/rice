@@ -17,8 +17,5 @@ download_dir="${DOWNLOAD_PARTIAL_DIR}_$(date +%s)"
 mkdir -p "$download_dir"
 cd "$download_dir"
 
-git clone https://github.com/caleb-shepard/scripts.git
-gcc scripts/Scripts_General/sources/sPoNgEbOb.c -o /usr/bin/sponge
-
 git clone https://github.com/ruanyf/fortunes.git
 mv fortunes/data/fortunes* "$FORTUNES_DIR"
