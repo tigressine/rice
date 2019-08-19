@@ -10,6 +10,7 @@ CURRENT_WALLPAPER_DIR="$HOME/Dropbox/Wallpapers/Current"
 sxhkd &
 compton &
 ~/.dropbox-dist/dropboxd &
+pulse_listener | xob &
 
 feh --randomize --bg-scale "$CURRENT_WALLPAPER_DIR"/*
 

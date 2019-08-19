@@ -36,3 +36,11 @@ alt + shift + {1-3}
 # Toggle fullscreen.
 alt + shift + f
 	bspc node -t '~fullscreen'
+
+# Handle volume controls.
+XF86AudioRaiseVolume
+    amixer set Master 2%+
+XF86AudioLowerVolume
+    amixer set Master 2%-
+XF86AudioMute
+    amixer -D pulse set Master 1+ toggle
