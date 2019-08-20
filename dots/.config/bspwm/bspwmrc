@@ -8,7 +8,7 @@ EXTERNAL_RIGHT_MONITOR="DP1-2"
 CURRENT_WALLPAPER_DIR="$HOME/Dropbox/Wallpapers/Current"
 
 sxhkd &
-compton &
+compton --config "$HOME/.config/compton/compton.conf" &
 ~/.dropbox-dist/dropboxd &
 pulse_listener | xob &
 
