@@ -39,8 +39,12 @@ alt + shift + f
 
 # Handle volume controls.
 XF86AudioRaiseVolume
-    amixer set Master 2%+
+    pactl set-sink-volume @DEFAULT_SINK@ +10%
 XF86AudioLowerVolume
-    amixer set Master 2%-
+    pactl set-sink-volume @DEFAULT_SINK@ -10%
+alt + XF86AudioRaiseVolume
+    pactl set-sink-volume @DEFAULT_SINK@ +1%
+alt + XF86AudioLowerVolume
+    pactl set-sink-volume @DEFAULT_SINK@ -1%
 XF86AudioMute
-    amixer -D pulse set Master 1+ toggle
+    pactl set-sink-mute @DEFAULT_SINK@ toggle

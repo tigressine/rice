@@ -86,6 +86,7 @@ install_polybar() {
     make install
 }
 
+# Install the XOB status bar.
 install_xob() {
     apt install -y git make libx11-dev libconfig-dev python3-pip
     /usr/bin/yes | pip3 install pulsectl
