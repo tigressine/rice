@@ -25,6 +25,7 @@ else
     mkdir -p "$HOME/.config/bspwm/"
     mkdir -p "$HOME/.config/sxhkd/"
     mkdir -p "$HOME/.config/polybar/"
+    mkdir -p "$HOME/.config/compton/"
     mkdir -p "$HOME/.shellcuts/data/"
 
     cp .config/xob/styles.cfg "$HOME/.config/xob"
@@ -32,6 +33,7 @@ else
     cp .config/bspwm/bspwmrc "$HOME/.config/bspwm/"
     cp .config/sxhkd/sxhkdrc "$HOME/.config/sxhkd/"
     cp .config/polybar/config "$HOME/.config/polybar/"
+    cp .config/compton/compton.conf "$HOME/.config/compton/"
     cp .shellcuts/data/shellcuts.json "$HOME/.shellcuts/data/"
 
     cat .plankrc | dconf load /net/launchpad/plank/docks/
