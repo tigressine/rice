@@ -67,6 +67,7 @@ install_polybar() {
         libxcb-xkb-dev \
         libalsaplayer-dev \
         wireless-tools \
+        network-manager \
         libcurlpp-dev \
         libcairo2-dev \
         libxcb-composite0-dev

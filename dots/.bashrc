@@ -20,4 +20,5 @@ if [ -f "$HOME/.shellcuts/shells/bash/controller.bash" ]; then
 fi
 
 # Set the terminal prompt.
-PS1="\[\e[1;93m\]>> \[\e[21;39m\]"
+#PS1="\[\e[1;93m\]>> \[\e[21;39m\]"
+PS1="\[\e[1;93m\]>> \[\e[0m\]"
