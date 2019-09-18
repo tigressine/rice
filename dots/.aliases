@@ -13,34 +13,43 @@ fi
 alias ls="ls -N --color"
 alias la="ls -la -h"
 alias cls="clear && ls"
-function up {
-    case "$1" in
-        0|1|""|*[!0-9]*)
-            cd ..
-            pwd
-            ls
-            ;;
-        *)
-            cd ..
-            up "$(($1 - 1))"
-            ;;
-    esac
-}
-function down {
-    cd "$1" && {
-        pwd
-        command -v "git" > /dev/null 2>&1
-        if [ $? -eq 0 -a -d ".git" ]; then
-            git branch | grep '^*' | sed 's/*/branch:/g'
+
+up() {
+    cd ..
+    if [ ! "$1" = "-1" ]; then
+        item_count=$(find . -maxdepth 1 -not -name ".*" | wc -l)
+        if [ $item_count -eq 1 -a -d "$(ls --color=none)" ]; then
+            up
+            return
         fi
-        ls
-    }
+    fi
+
+    pwd
+    ls
+}
+
+down() {
+    cd "$1"
+    if [ ! "$2" = "-1" ]; then
+        item_count=$(find . -maxdepth 1 -not -name ".*" | wc -l)
+        if [ $item_count -eq 1 -a -d "$(ls --color=none)" ]; then
+            down "$(ls --color=none)"
+            return
+        fi
+    fi
+
+    pwd
+    command -v "git" > /dev/null 2>&1
+    if [ $? -eq 0 -a -d ".git" ]; then
+        git branch | grep '^*' | sed 's/*/branch:/g'
+    fi
+    ls
 }
 
 # Reload various configurations.
-alias rerc=". $HOME/.bashrc"
-alias rex="xrdb $HOME/.Xresources"
-alias rehkd="pkill -USR1 -x sxhkd"
+alias rebashrc=". $HOME/.bashrc"
+alias rexresources="xrdb $HOME/.Xresources"
+alias resxhkd="pkill -USR1 -x sxhkd"
 
 # For when you're tilted.
 alias fucking="sudo apt"
@@ -52,7 +61,7 @@ alias fucking="sudo apt"
 alias v='$EDITOR'
 
 # Toss files into the rubbish bin.
-function toss {
+toss() {
     tossed_stamped_dir="$tossed_dir/$(date +%s)"
     mkdir -p "$tossed_stamped_dir"
     for item in "$@"; do
@@ -64,7 +73,7 @@ function toss {
 }
 
 # Copy files to the slate.
-function slate {
+slate() {
     mkdir -p "$slate_dir"
     for item in "$@"; do
         if [ -d "$item" ]; then
@@ -76,7 +85,7 @@ function slate {
 }
 
 # Clean out the slate or the rubbish bin.
-function clean {
+clean() {
     case "$1" in
         "slate")
             toss "$slate_dir"/*
@@ -91,23 +100,23 @@ function clean {
 }
 
 # Can't be bothered to type all those different git commands...
-function ac {
+ac() {
     git add "$1"
     git commit -m "$2"
 }
-function acp {
+acp() {
     ac "$@"
     git push
 }
 
 # Clone one of my personal repositories. Use SSH by default.
 alias clone="clonessh"
-function clonehttps {
+clonehttps() {
     repository="$1"
     shift
     git clone "https://www.github.com/tgsachse/$repository.git" "$@"
 }
-function clonessh {
+clonessh() {
     repository="$1"
     shift
     git clone "git@github.com:tgsachse/$repository.git" "$@"
