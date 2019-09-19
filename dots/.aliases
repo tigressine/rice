@@ -4,11 +4,6 @@
 tossed_dir="$HOME/.tossed"
 slate_dir="$HOME/Slate"
 
-# Source work aliases if available.
-if [ -f "$HOME/.amazon_aliases" ]; then
-    . "$HOME/.amazon_aliases"
-fi
-
 # General navigation and visual aliases.
 alias ls="ls -N --color"
 alias la="ls -la -h"
@@ -16,6 +11,10 @@ alias cls="clear && ls"
 
 up() {
     cd ..
+    if [ $? -ne 0 ]; then
+        return
+    fi
+
     if [ ! "$1" = "-1" ]; then
         item_count=$(find . -maxdepth 1 -not -name ".*" | wc -l)
         if [ $item_count -eq 1 -a -d "$(ls --color=none)" ]; then
@@ -30,6 +29,10 @@ up() {
 
 down() {
     cd "$1"
+    if [ $? -ne 0 ]; then
+        return
+    fi
+
     if [ ! "$2" = "-1" ]; then
         item_count=$(find . -maxdepth 1 -not -name ".*" | wc -l)
         if [ $item_count -eq 1 -a -d "$(ls --color=none)" ]; then
@@ -99,23 +102,15 @@ clean() {
     esac
 }
 
-# Can't be bothered to type all those different git commands...
-ac() {
-    git add "$1"
-    git commit -m "$2"
-}
-acp() {
-    ac "$@"
-    git push
-}
-
 # Clone one of my personal repositories. Use SSH by default.
 alias clone="clonessh"
+
 clonehttps() {
     repository="$1"
     shift
     git clone "https://www.github.com/tgsachse/$repository.git" "$@"
 }
+
 clonessh() {
     repository="$1"
     shift
