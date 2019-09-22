@@ -57,6 +57,11 @@ alias resxhkd="pkill -USR1 -x sxhkd"
 # For when you're tilted.
 alias fucking="sudo apt"
 
+# Search the Internet from the command line!
+ffs() {
+    firefox -new-tab "duckduckgo.com/$*" > /dev/null 2>&1
+}
+
 # Open the default editor with a short command.
 # Note that this string must be wrapped in single quotes
 # to avoid evaluating the argument here (before it has
@@ -68,7 +73,7 @@ toss() {
     tossed_stamped_dir="$tossed_dir/$(date +%s)"
     mkdir -p "$tossed_stamped_dir"
     for item in "$@"; do
-        mv "$item" "$tossed_stamped_dir" &> /dev/null
+        mv "$item" "$tossed_stamped_dir" > /dev/null 2>&1
         if [ $? -ne 0 ]; then
             printf "toss: could not toss '%s'\n" "$item"
         fi
