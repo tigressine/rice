@@ -17,7 +17,7 @@ if [ "$1" == --core ]; then
 else
     cp .face "$HOME/"
     cp .shellrc "$HOME/"
-    cp .Xresources "$HOME/"
+    cp .Xdefaults "$HOME/"
     cp .core_shellrc "$HOME/"
 
     mkdir -p "$HOME/.config/xob/"
