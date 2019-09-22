@@ -18,6 +18,7 @@ else
     cp .face "$HOME/"
     cp .shellrc "$HOME/"
     cp .Xdefaults "$HOME/"
+    cp .tmux.conf "$HOME/"
     cp .core_shellrc "$HOME/"
 
     mkdir -p "$HOME/.config/xob/"

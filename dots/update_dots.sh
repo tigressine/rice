@@ -9,6 +9,7 @@ cp "$HOME/.shellrc" . > /dev/null 2>&1
 cp "$HOME/.aliases" . > /dev/null 2>&1
 cp "$HOME/.profile" . > /dev/null 2>&1
 cp "$HOME/.Xdefaults" . > /dev/null 2>&1
+cp "$HOME/.tmux.conf" . > /dev/null 2>&1
 cp "$HOME/.core_shellrc" . > /dev/null 2>&1
 cp "$HOME/.bash_profile" . > /dev/null 2>&1
 
