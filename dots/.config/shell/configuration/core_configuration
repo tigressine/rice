@@ -1,14 +1,5 @@
-# My core shell configuration (suitable for local or remote machines).
+# My core shell configuration.
 # Written by Tiger Sachse.
-
-# If not running interactively, do nothing.
-case $- in
-    *i*)
-        ;;
-    *)
-        return
-        ;;
-esac
 
 # Set the default editor to be Vi.
 export VISUAL="vi"

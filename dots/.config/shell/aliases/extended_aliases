@@ -1,0 +1,7 @@
+# Some fancy extended aliases that are only meant for local machines.
+# Written by Tiger Sachse.
+
+# Search the Internet from the command line!
+ffs() {
+    firefox -new-tab "duckduckgo.com/$*" > /dev/null 2>&1
+}

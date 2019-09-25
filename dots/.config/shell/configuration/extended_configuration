@@ -1,6 +1,8 @@
 # An extended Shell configuration (only suitable for local machines).
 # Written by Tiger Sachse.
 
+GOOD_COWS="cock default dragon elephant gnu stegosaurus tux turtle sheep moose flaming-sheep"
+
 # Set the default editor to be Neovim.
 export VISUAL="nvim"
 export EDITOR="$VISUAL"
@@ -10,6 +12,5 @@ LS_COLORS="$LS_COLORS":'di=1;95':'ex=1;32':'ln=1;33'
 export LS_COLORS
 
 # Display a fun cowsay message.
-good_cows="cock default dragon elephant gnu stegosaurus tux turtle sheep moose flaming-sheep"
-selected_cow="$(shuf -e $good_cows | head -1)"
+selected_cow="$(shuf -e $GOOD_COWS | head -1)"
 fortune | cowsay -f "$selected_cow.cow" | lolcat; echo ""
