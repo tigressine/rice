@@ -3,7 +3,9 @@
 
 " *** GENERAL ***
 set number
-set mouse=a
+if exists('mouse')
+    set mouse=a
+endif
 set expandtab
 set linebreak
 set tabstop=4
@@ -12,7 +14,9 @@ set shiftwidth=4
 set softtabstop=4
 set encoding=utf-8
 set fileformat=unix
-set foldmethod=syntax
+if exists('foldmethod')
+    set foldmethod=syntax
+endif
 let loaded_matchparen=1
 set clipboard=unnamedplus
 filetype plugin indent on
@@ -22,7 +26,7 @@ autocmd vimLeave * set guicursor=a:hor50-blinkon1
 syntax on
 colorscheme slate
 set background=dark
-if v:version > 703
+if exists('cc')
     set cc=80
 endif
 
