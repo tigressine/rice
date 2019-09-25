@@ -1,32 +1,30 @@
 # Update the dots located in this repository.
 # Written by Tiger Sachse.
 
-cp "$HOME/.face" . > /dev/null 2>&1
-cp "$HOME/.vimrc" . > /dev/null 2>&1
-cp "$HOME/.zshrc" . > /dev/null 2>&1
-cp "$HOME/.bashrc" . > /dev/null 2>&1
-cp "$HOME/.shellrc" . > /dev/null 2>&1
-cp "$HOME/.aliases" . > /dev/null 2>&1
-cp "$HOME/.profile" . > /dev/null 2>&1
-cp "$HOME/.Xdefaults" . > /dev/null 2>&1
-cp "$HOME/.tmux.conf" . > /dev/null 2>&1
-cp "$HOME/.core_shellrc" . > /dev/null 2>&1
-cp "$HOME/.bash_profile" . > /dev/null 2>&1
+cp "$HOME/.face" .
+cp "$HOME/.vimrc" .
+cp "$HOME/.bashrc" .
+cp "$HOME/.Xdefaults" .
+cp "$HOME/.tmux.conf" .
+cp "$HOME/.bash_profile" .
 
-mkdir -p .config/xob/
 mkdir -p .config/nvim/
-mkdir -p .config/bspwm/
-mkdir -p .config/sxhkd/
-mkdir -p .config/polybar/
-mkdir -p .config/compton/
+mkdir -p .config/shell/
 mkdir -p .shellcuts/data/
+mkdir -p .config/shell/aliases/
+mkdir -p .config/shell/configuration/
 
-cp "$HOME/.config/xob/styles.cfg" .config/xob/ > /dev/null 2>&1
-cp "$HOME/.config/nvim/init.vim" .config/nvim/ > /dev/null 2>&1
-cp "$HOME/.config/bspwm/bspwmrc" .config/bspwm/ > /dev/null 2>&1
-cp "$HOME/.config/sxhkd/sxhkdrc" .config/sxhkd/ > /dev/null 2>&1
-cp "$HOME/.config/polybar/config" .config/polybar/ > /dev/null 2>&1
-cp "$HOME/.config/compton/compton.conf" .config/compton/ > /dev/null 2>&1
-cp "$HOME/.shellcuts/data/shellcuts.json" .shellcuts/data/ > /dev/null 2>&1
-
-dconf dump /net/launchpad/plank/docks/ > .plankrc
+cp "$HOME/.config/nvim/init.vim" .config/nvim/
+cp "$HOME/.config/shell/shellrc" .config/shell/
+cp "$HOME/.config/shell/shellrc" .config/shell/
+cp "$HOME/.config/shell/shellrc" .config/shell/
+cp "$HOME/.config/shell/shellrc" .config/shell/
+cp "$HOME/.config/shell/shellrc" .config/shell/
+cp "$HOME/.config/shell/shellrc" .config/shell/
+cp "$HOME/.shellcuts/data/shellcuts.json" .shellcuts/data/
+cp "$HOME/.config/shell/aliases/core_aliases" .config/shell/aliases/
+cp "$HOME/.config/shell/aliases/extended_aliases" .config/shell/aliases/
+cp "$HOME/.config/shell/configuration/core_configuration" \
+    .config/shell/configuration/
+cp "$HOME/.config/shell/configuration/extended_configuration" \
+    .config/shell/configuration/

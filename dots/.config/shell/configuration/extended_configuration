@@ -1,11 +1,6 @@
 # An extended Shell configuration (only suitable for local machines).
 # Written by Tiger Sachse.
 
-# Source the core Shell configuration if it exists.
-if [ -f "$HOME/.core_shellrc" ]; then
-    . "$HOME/.core_shellrc"
-fi
-
 # Set the default editor to be Neovim.
 export VISUAL="nvim"
 export EDITOR="$VISUAL"

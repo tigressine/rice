@@ -1,0 +1,29 @@
+# Sources all available shell configuration files and alias files.
+# Written by Tiger Sachse.
+
+ALIASES_DIR="$HOME/.config/shell/aliases"
+CONFIGURATION_DIR="$HOME/.config/shell/configuration"
+
+# Source configuration files in order. Local configurations can override
+# extended configurations, which can override core configurations.
+if [ -f "$CONFIGURATION_DIR/core_configuration" ]; then
+    . "$CONFIGURATION_DIR/core_configuration"
+fi
+if [ -f "$CONFIGURATION_DIR/extended_configuration" ]; then
+    . "$CONFIGURATION_DIR/extended_configuration"
+fi
+if [ -f "$CONFIGURATION_DIR/local_configuration" ]; then
+    . "$CONFIGURATION_DIR/local_configuration"
+fi
+
+# Source alias files in order. Local aliases can override extended
+# aliases, which can override core aliases.
+if [ -f "$ALIASES_DIR/core_aliases" ]; then
+    . "$ALIASES_DIR/core_aliases"
+fi
+if [ -f "$ALIASES_DIR/extended_aliases" ]; then
+    . "$ALIASES_DIR/extended_aliases"
+fi
+if [ -f "$ALIASES_DIR/local_aliases" ]; then
+    . "$ALIASES_DIR/local_aliases"
+fi

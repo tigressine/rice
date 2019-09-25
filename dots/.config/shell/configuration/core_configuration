@@ -10,16 +10,6 @@ case $- in
         ;;
 esac
 
-# Source my work configuration, if available.
-if [ -f "$HOME/.amazon_shellrc" ]; then
-    . "$HOME/.amazon_shellrc"
-fi
-
 # Set the default editor to be Vi.
 export VISUAL="vi"
 export EDITOR="$VISUAL"
-
-# Include the .aliases file, if it exists.
-if [ -f "$HOME/.aliases" ]; then
-    source "$HOME/.aliases"
-fi

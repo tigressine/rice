@@ -1,41 +1,39 @@
-# Install dots found in this repository.
+# Install dots located in this repository.
 # Written by Tiger Sachse.
 
+mkdir -p "$HOME/.config/nvim/"
+mkdir -p "$HOME/.config/shell/"
+mkdir -p "$HOME/.shellcuts/data/"
+mkdir -p "$HOME/.config/shell/aliases/"
+mkdir -p "$HOME/.config/shell/configuration/"
+
+cp .face "$HOME/"
 cp .vimrc "$HOME/"
-cp .zshrc "$HOME/"
 cp .bashrc "$HOME/"
-cp .shellrc "$HOME/"
-cp .aliases "$HOME/"
-cp .profile "$HOME/"
+cp .Xdefaults "$HOME/"
+cp .tmux.conf "$HOME/"
 cp .bash_profile "$HOME/"
+cp .config/nvim/init.vim "$HOME/.config/nvim/"
+cp .config/shell/shellrc "$HOME/.config/shell/"
+cp .shellcuts/data/shellcuts.json "$HOME/.shellcuts/data/"
+cp .config/shell/aliases/core_aliases "$HOME/.config/shell/aliases/"
+cp .config/shell/configuration/core_configuration \
+    "$HOME/.config/shell/configuration"
 
-# If a core installation is requested, only copy the
-# core version of the Shell configuration in place of
-# the extended Shell configuration, else copy everything.
-if [ "$1" == --core ]; then
-    cp .core_shellrc "$HOME/.shellrc"
-else
-    cp .face "$HOME/"
-    cp .shellrc "$HOME/"
-    cp .Xdefaults "$HOME/"
-    cp .tmux.conf "$HOME/"
-    cp .core_shellrc "$HOME/"
+# Copy example local-override files onto the machine if no local overrides
+# exist.
+if [ ! -f "$HOME/.config/shell/configuration/local_configuration" ]; then
+    cp .config/shell/configuration/local_configuration \
+        "$HOME/.config/shell/configuration"
+fi
+if [ ! -f "$HOME/.config/shell/aliases/local_aliases" ]; then
+    cp .config/shell/aliases/local_aliases "$HOME/.config/shell/aliases"
+fi
 
-    mkdir -p "$HOME/.config/xob/"
-    mkdir -p "$HOME/.config/nvim/"
-    mkdir -p "$HOME/.config/bspwm/"
-    mkdir -p "$HOME/.config/sxhkd/"
-    mkdir -p "$HOME/.config/polybar/"
-    mkdir -p "$HOME/.config/compton/"
-    mkdir -p "$HOME/.shellcuts/data/"
-
-    cp .config/xob/styles.cfg "$HOME/.config/xob"
-    cp .config/nvim/init.vim "$HOME/.config/nvim/"
-    cp .config/bspwm/bspwmrc "$HOME/.config/bspwm/"
-    cp .config/sxhkd/sxhkdrc "$HOME/.config/sxhkd/"
-    cp .config/polybar/config "$HOME/.config/polybar/"
-    cp .config/compton/compton.conf "$HOME/.config/compton/"
-    cp .shellcuts/data/shellcuts.json "$HOME/.shellcuts/data/"
-
-    cat .plankrc | dconf load /net/launchpad/plank/docks/
+# If a core installation is not requested, install extended configuration
+# and alias files.
+if [ "$1" != --core ]; then
+    cp .config/shell/aliases/extended_aliases "$HOME/.config/shell/aliases/"
+    cp .config/shell/configuration/extended_configuration \
+        "$HOME/.config/shell/configuration"
 fi
