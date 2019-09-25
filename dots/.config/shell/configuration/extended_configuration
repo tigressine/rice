@@ -7,6 +7,10 @@ GOOD_COWS="cock default dragon elephant gnu stegosaurus tux turtle sheep moose f
 export VISUAL="nvim"
 export EDITOR="$VISUAL"
 
+# Configure 'ls' to be prettier.
+LS_COLORS="$LS_COLORS":'di=1;95':'ex=1;32':'ln=1;33'
+export LS_COLORS
+
 # Display a fun cowsay message.
 selected_cow="$(shuf -e $GOOD_COWS | head -1)"
 fortune | cowsay -f "$selected_cow.cow" | lolcat; echo ""
