@@ -3,7 +3,7 @@
 
 " *** GENERAL ***
 set number
-if exists('mouse')
+if exists('&mouse')
     set mouse=a
 endif
 set expandtab
@@ -14,7 +14,7 @@ set shiftwidth=4
 set softtabstop=4
 set encoding=utf-8
 set fileformat=unix
-if exists('foldmethod')
+if exists('&foldmethod')
     set foldmethod=syntax
 endif
 let loaded_matchparen=1
@@ -26,7 +26,7 @@ autocmd vimLeave * set guicursor=a:hor50-blinkon1
 syntax on
 colorscheme slate
 set background=dark
-if exists('cc')
+if exists('&cc')
     set cc=80
 endif
 
