@@ -1,8 +1,10 @@
 # A collection of aliases that make life easier!
 # Written by Tiger Sachse.
 
+export GIT_TREE_DIR="$HOME/.trees"
 export TOSSED_DIR="$HOME/.tossed"
 export SLATE_DIR="$HOME/Slate"
+export GIT_USER="tgsachse"
 
 # General navigation and visual aliases.
 alias ls="ls -N --color"
@@ -98,17 +100,33 @@ clean() {
     esac
 }
 
-# Clone one of my personal repositories. Use SSH by default.
+# Clone Github repositories. Uses SSH by default and saves the git tree in a
+# separate directory by default (to keep it out of my Dropbox).
 alias clone="clonessh"
+alias clonehttps="_clone 'https://www.github.com/'"
+alias clonessh="_clone 'git@github.com:'"
+_clone() {
+    method="$1"
+    if [ $# -lt 3 ]; then
+        user="$GIT_USER"
+        repository="$2"
+        shift
+        shift
+    else
+        user="$2"
+        repository="$3"
+        shift
+        shift
+        shift
+    fi
 
-clonehttps() {
-    repository="$1"
-    shift
-    git clone "https://www.github.com/tgsachse/$repository.git" "$@"
-}
+    target_dir="$GIT_TREE_DIR/$user/$repository"
+    if [ -d "$target_dir" ]; then
+        rm -rf "$target_dir"
+    fi
+    mkdir -p "$GIT_TREE_DIR/$user"
 
-clonessh() {
-    repository="$1"
-    shift
-    git clone "git@github.com:tgsachse/$repository.git" "$@"
+    git clone "$method$user/$repository.git" \
+        --separate-git-dir "$target_dir" \
+        "$@"
 }
