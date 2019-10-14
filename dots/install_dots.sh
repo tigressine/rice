@@ -3,6 +3,7 @@
 
 mkdir -p "$HOME/.config/nvim/"
 mkdir -p "$HOME/.config/shell/"
+mkdir -p "$HOME/.config/dropbox/"
 mkdir -p "$HOME/.shellcuts/data/"
 mkdir -p "$HOME/.config/shell/aliases/"
 mkdir -p "$HOME/.config/shell/configuration/"
@@ -36,4 +37,6 @@ if [ "$1" != --core ]; then
     cp .config/shell/aliases/extended_aliases "$HOME/.config/shell/aliases/"
     cp .config/shell/configuration/extended_configuration \
         "$HOME/.config/shell/configuration"
+    cp .config/dropbox/config.sh "$HOME/.config/dropbox/"
+    sh "$HOME/.config/dropbox/"
 fi
