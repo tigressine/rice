@@ -45,8 +45,8 @@ down() {
 
     pwd
     command -v git > /dev/null 2>&1
-    if [ $? -eq 0 -a -d .git ]; then
-        git branch | grep '^*' | sed 's/*/branch:/g'
+    if [ $? -eq 0 -a -e .git ]; then
+        git branch 2>/dev/null | grep '^*' | sed 's/*/branch:/g'
     fi
     ls
 }
