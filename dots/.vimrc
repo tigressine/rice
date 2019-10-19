@@ -9,6 +9,7 @@ endif
 set expandtab
 set linebreak
 set tabstop=4
+set noshowmode
 set autoindent
 set shiftwidth=4
 set softtabstop=4
@@ -72,7 +73,7 @@ highlight WarningMsg ctermfg=1
 
 " *** ODDBALL COLORED ITEMS ***
 highlight ColorColumn ctermbg=0
-highlight User1 ctermbg=0
+highlight User1 ctermfg=0 ctermbg=0
 highlight DiffText ctermfg=white ctermbg=1
 highlight Folded ctermfg=white ctermbg=0
 highlight IncSearch ctermfg=0 ctermbg=white
@@ -81,61 +82,76 @@ highlight SpellBad ctermfg=white ctermbg=1
 highlight TermCursor ctermfg=white ctermbg=0
 highlight Visual ctermfg=white ctermbg=0
 
-let g:MODES={
-  \'n' : [' NORMAL ', 1, 0],
-  \'no' : [' PENDING ', 9, 9],
-  \'v' : [' VISUAL ', 2, 0],
-  \'V' : [' VISUAL-LINE ', 9, 9],
-  \'\<C-V>' : [' VISUAL-BLOCK ', 9, 9],
-  \'s' : [' SELECT ', 9, 9],
-  \'S' : [' SELECT-LINE ', 9, 9],
-  \'\<C-S>' : [' SELECT-BLOCK ', 9, 9],
-  \'i' : [' INSERT ', 9, 9],
-  \'R' : [' REPLACE ', 3, 0],
-  \'Rv' : [' VIRTUAL-REPLACE ', 9, 9],
-  \'c' : [' COMMAND ', 9, 9],
-  \'cv' : [' VIM-EX ', 9, 9],
-  \'ce' : [' NORMAL-EX ', 9, 9],
-  \'r' : [' PROMPT ', 9, 9],
-  \'rm' : [' MORE ', 9, 9],
-  \'r?' : [' QUERY ', 9, 9],
-  \'!' : [' SHELL ', 9, 9],
-  \'t' : [' TERMINAL ', 9, 9]
+" *** STATUS LINE ***
+let s:MODES={
+  \'default' : ['  NONE ', 0, 3],
+  \'n' : ['  NORMAL ', 0, 3],
+  \'no' : ['  PENDING ', 0, 3],
+  \'v' : ['  VISUAL ', 0, 1],
+  \'V' : ['  VISUAL-LINE ', 0, 1],
+  \"\<C-V>" : ['  VISUAL-BLOCK ', 0, 1],
+  \'s' : ['  SELECT ', 0, 1],
+  \'S' : ['  SELECT-LINE ', 0, 1],
+  \"\<C-S>" : ['  SELECT-BLOCK ', 0, 1],
+  \'i' : ['  INSERT ', 0, 2],
+  \'R' : ['  REPLACE ', 0, 5],
+  \'Rv' : ['  VIRTUAL-REPLACE ', 0, 5],
+  \'c' : ['  COMMAND ', 0, 6],
+  \'cv' : ['  VIM-EX ', 0, 6],
+  \'ce' : ['  NORMAL-EX ', 0, 6],
+  \'r' : ['  PROMPT ', 0, 9],
+  \'rm' : ['  MORE ', 0, 9],
+  \'r?' : ['  QUERY ', 0, 9],
+  \'!' : ['  SHELL ', 0, 9],
+  \'t' : ['  TERMINAL ', 0, 9]
 \}
 
-function! UpdateUser1Color(givenMode)
-  if has_key(g:MODES, a:givenMode)
-    exe printf(
-      \'hi User1 ctermfg=%s ctermbg=%s',
-      \g:MODES[a:givenMode][1],
-      \g:MODES[a:givenMode][2]
-    \)
+function! GetModeName(mode)
+  if has_key(s:MODES, a:mode)
+    return s:MODES[a:mode][0]
+  else
+    return s:MODES['default'][0]
   endif
+endfunction
 
+function! SetUser1Color(mode)
+  if has_key(s:MODES, a:mode)
+    exe 'hi! User1 ctermfg='
+      \ . s:MODES[a:mode][1]
+      \ . ' ctermbg='
+      \ . s:MODES[a:mode][2]
+      \ . ' cterm=bold'
+  else
+    exe 'hi! User1 ctermfg='
+      \ . s:MODES['default'][1]
+      \ . 'ctermbg='
+      \ . s:MODES['default'][2]
+      \ . ' cterm=bold'
+  endif
   return ''
 endfunction
 
-" HIDE --INSERT-- and the other ones
-" dont bork status line when an error occurs
-" figure color out
+function! GetModificationFlags()
+  if (&readonly || !&modifiable) && &modified
+    return '[RO, +] '
+  elseif &readonly || !&modifiable
+    return '[RO] '
+  elseif &modified
+    return '[+] '
+  else
+    return ''
+  endif
+endfunction
 
-
-"function! ReadOnly()
-"  if &readonly || !&modifiable
-"    return ''
-"  else
-"    return ''
-"endfunction
-
-" *** STATUS LINE ***
 set statusline=%#ColorColumn#
-"set statusline+=%{UpdateUser1Color(mode())}
+set statusline+=%{SetUser1Color(mode())}
 set statusline+=%#User1#
-set statusline+=%{g:MODES[mode()][0]}
+set statusline+=%{GetModeName(mode())}
 set statusline+=%#ColorColumn#
 set statusline+=\ %f
 set statusline+=%=
-set statusline+=%l:%c\ %p%%\ \[%{&fileformat}\]\ 
+set statusline+=%{GetModificationFlags()} 
+set statusline+=%l:%c\ %p%%\ %y\ 
 
 " *** FILE SPECIFICS ***
 autocmd FileType c autocmd BufWritePre <buffer> %s/\s\+$//e
