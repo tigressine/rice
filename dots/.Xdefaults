@@ -6,50 +6,50 @@
 *.color0: #252525
 *.color8: #454545
 ! RED
-*.color1: #FF9F95
-*.color9: #FF8D80
+*.color1: #FF8D80
+*.color9: #FF9F95
 ! GREEN
 *.color2: #A6E22E
 *.color10: #B6E354
 ! YELLOW
 *.color3: #FD971F
-*.color11: #FD971F
+*.color11: #FCA542
 ! BLUE
-*.color4: #435e87
-*.color12: #587aa4
+*.color4: #789EC6
+*.color12: #46A4FF
 ! MAGENTA
-*.color5: #789ec6
-*.color13: #46a4ff
+*.color5: #D182CD
+*.color13: #E67AE0
 ! CYAN
-*.color6: #5E7175
-*.color14: #A3BABF
+*.color6: #69CFC6
+*.color14: #4DE3D6
 ! WHITE
 *.color7: #DBDCDC
 *.color15: #FDFDFD
 ! BACKGROUND/FOREGROUND
 *.background: [90]#151515
-*.foreground: #ffffff
+*.foreground: #FFFFFF
 
 ! *** GENERAL ***
-URxvt.scrollTtyOutput: False
-URxvt.scrollTtyKeypress: True
+*.scrollTtyOutput: False
+*.scrollTtyKeypress: True
 
 ! *** VISUALS ***
-URxvt.depth: 32
-URxvt.scrollBar: False
-URxvt.cursorBlink: True
-URxvt.internalBorder: 20
-URxvt.cursorUnderline: True
-URxvt.font: xft:sharetechmono:size=14
+*.depth: 32
+*.scrollBar: False
+*.cursorBlink: True
+*.internalBorder: 20
+*.cursorUnderline: True
+*.font: xft:sharetechmono:size=14
 
 ! *** COPY/PASTE ***
-URxvt.iso14755: false
-URxvt.iso14755_52: false
-URxvt.keysym.Shift-Control-V: eval:paste_clipboard
-URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+*.iso14755: false
+*.iso14755_52: false
+*.keysym.Shift-Control-V: eval:paste_clipboard
+*.keysym.Shift-Control-C: eval:selection_to_clipboard
 
 ! *** EXTENSIONS ***
-URxvt.perl-ext-common: default,matcher
-URxvt.url-launcher: /usr/bin/xdg-open
-URxvt.matcher.rend.0: Uline Bold fg14
-URxvt.matcher.button: 1
+*.perl-ext-common: default,matcher
+*.url-launcher: /usr/bin/xdg-open
+*.matcher.rend.0: Uline Bold fg14
+*.matcher.button: 1
