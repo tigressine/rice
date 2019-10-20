@@ -6,12 +6,8 @@
 *.scrollTtyKeypress: True
 *.perl-ext:
 *.perl-ext-common:
-
-! *** COPY/PASTE ***
 *.iso14755: false
 *.iso14755_52: false
-*.keysym.Shift-Control-V: eval:paste_clipboard
-*.keysym.Shift-Control-C: eval:selection_to_clipboard
 
 ! *** VISUALS ***
 *.depth: 32

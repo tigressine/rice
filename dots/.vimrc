@@ -3,9 +3,6 @@
 
 " *** GENERAL ***
 set number
-if exists('&mouse')
-  set mouse=a
-endif
 set expandtab
 set linebreak
 set tabstop=4
@@ -19,7 +16,7 @@ if exists('&foldmethod')
   set foldmethod=syntax
 endif
 let loaded_matchparen=1
-set clipboard=unnamedplus
+set clipboard+=unnamedplus
 filetype plugin indent on
 autocmd vimLeave * set guicursor=a:hor50-blinkon1
 
