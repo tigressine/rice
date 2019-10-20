@@ -1,7 +1,29 @@
-! My Xresources dot file.
+! My Xdefaults dot file.
 ! Written by Tiger Sachse.
 
+! *** GENERAL ***
+*.scrollTtyOutput: False
+*.scrollTtyKeypress: True
+*.perl-ext:
+*.perl-ext-common:
+
+! *** COPY/PASTE ***
+*.iso14755: false
+*.iso14755_52: false
+*.keysym.Shift-Control-V: eval:paste_clipboard
+*.keysym.Shift-Control-C: eval:selection_to_clipboard
+
+! *** VISUALS ***
+*.depth: 32
+*.scrollBar: False
+*.cursorBlink: True
+*.internalBorder: 20
+*.cursorUnderline: True
+*.font: xft:sharetechmono:size=14
+
 ! *** COLORS ***
+*.background: [90]#151515
+*.foreground: #FFFFFF
 ! BLACK
 *.color0: #252525
 *.color8: #454545
@@ -26,30 +48,3 @@
 ! WHITE
 *.color7: #DBDCDC
 *.color15: #FDFDFD
-! BACKGROUND/FOREGROUND
-*.background: [90]#151515
-*.foreground: #FFFFFF
-
-! *** GENERAL ***
-*.scrollTtyOutput: False
-*.scrollTtyKeypress: True
-
-! *** VISUALS ***
-*.depth: 32
-*.scrollBar: False
-*.cursorBlink: True
-*.internalBorder: 20
-*.cursorUnderline: True
-*.font: xft:sharetechmono:size=14
-
-! *** COPY/PASTE ***
-*.iso14755: false
-*.iso14755_52: false
-*.keysym.Shift-Control-V: eval:paste_clipboard
-*.keysym.Shift-Control-C: eval:selection_to_clipboard
-
-! *** EXTENSIONS ***
-*.perl-ext-common: default,matcher
-*.url-launcher: /usr/bin/xdg-open
-*.matcher.rend.0: Uline Bold fg14
-*.matcher.button: 1
