@@ -40,4 +40,5 @@ if [ "$1" != --core ]; then
         "$HOME/.config/shell/configuration"
     cp dots/.config/dropbox/config.sh "$HOME/.config/dropbox/"
     sh "$HOME/.config/dropbox/"
+    cat dots/.dconf | dconf load /
 fi

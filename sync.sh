@@ -1,6 +1,24 @@
 # Update the dots located in this repository.
 # Written by Tiger Sachse.
 
+DCONF_SETTINGS_PATHS="
+    org/gnome/settings-daemon/plugins/media-keys
+    org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1
+    org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0
+    org/gnome/shell/keybindings
+    org/gnome/shell/extensions/dash-to-dock
+    org/gnome/desktop/wm/keybindings
+    org/gnome/mutter/keybindings
+"
+
+# Save specific dconf settings into a file.
+rm -f dots/.dconf
+for path in $DCONF_SETTINGS_PATHS; do
+    echo "[$path]" >> dots/.dconf
+    dconf dump "/$path/" | sed -n '1!p' >> dots/.dconf
+    echo "" >> dots/.dconf
+done
+
 cp "$HOME/.face" dots/
 cp "$HOME/.vimrc" dots/
 cp "$HOME/.bashrc" dots/
