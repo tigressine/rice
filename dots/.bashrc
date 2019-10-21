@@ -21,3 +21,8 @@ fi
 if [ -f "$HOME/.shellcuts/shells/bash/controller.bash" ]; then
     . "$HOME/.shellcuts/shells/bash/controller.bash"
 fi
+
+# Load the Shellcuts controller file if it exists.
+if [ -f $HOME/.shellcuts/shells/bash/controller.bash ]; then
+    . $HOME/.shellcuts/shells/bash/controller.bash
+fi
