@@ -1,33 +1,33 @@
 [org/gnome/settings-daemon/plugins/media-keys]
-area-screenshot=['<Super>p']
-area-screenshot-clip=['']
-calculator=['<Super>z']
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']
-email=['<Super>x']
-home=['<Super>d']
-logout=['']
-magnifier=['']
-magnifier-zoom-in=['']
-magnifier-zoom-out=['']
-screencast=['']
-screenreader=['']
-screensaver=['']
-screenshot=['']
 screenshot-clip=['']
+screenreader=['']
+magnifier-zoom-out=['']
+area-screenshot-clip=['']
+screenshot=['']
+logout=['']
+calculator=['<Super>z']
+email=['<Super>x']
 terminal=['']
-window-screenshot=['']
 window-screenshot-clip=['']
-www=['<Super>s']
-
-[custom-keybindings/custom0]
-binding='<Super>a'
-command='urxvt -title Terminal -e tmux'
-name='Launch Terminal with Tmux'
+screencast=['']
+window-screenshot=['']
+www='<Super>s'
+magnifier-zoom-in=['']
+home=['<Super>d']
+screensaver=['']
+area-screenshot=['<Super>p']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']
+magnifier=['']
 
 [custom-keybindings/custom1]
 binding='<Super>c'
 command='signal'
 name='Launch Signal'
+
+[custom-keybindings/custom0]
+binding='<Super>a'
+command='urxvt -title Terminal -e tmux'
+name='Launch Terminal with Tmux'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
 binding='<Super>c'
@@ -40,71 +40,80 @@ command='urxvt -title Terminal -e tmux'
 name='Launch Terminal with Tmux'
 
 [org/gnome/shell/keybindings]
-focus-active-notification=@as []
+toggle-message-tray=@as []
 open-application-menu=@as []
 toggle-application-view=@as []
-toggle-message-tray=@as []
 toggle-overview=@as []
+focus-active-notification=@as []
 
 [org/gnome/shell/extensions/dash-to-dock]
-apply-custom-theme=true
-dash-max-icon-size=48
-dock-position='LEFT'
-hot-keys=false
-icon-size-fixed=false
-intellihide-mode='FOCUS_APPLICATION_WINDOWS'
 preferred-monitor=0
 show-apps-at-top=false
-show-mounts=false
 show-trash=false
+force-straight-corner=true
+intellihide-mode='FOCUS_APPLICATION_WINDOWS'
+show-show-apps-button=true
+hot-keys=false
+show-mounts=false
+custom-background-color=true
+apply-custom-theme=false
+dock-position='LEFT'
+custom-theme-shrink=true
+background-opacity=1.0
+height-fraction=1.0
+dash-max-icon-size=48
+background-color='#21232c'
+running-indicator-style='SQUARES'
+icon-size-fixed=false
+transparency-mode='FIXED'
 
 [org/gnome/desktop/wm/keybindings]
-activate-window-menu=@as []
-begin-move=@as []
-begin-resize=@as []
-close=['<Shift><Alt>q']
-cycle-group=@as []
-cycle-group-backward=@as []
-cycle-panels=@as []
-cycle-panels-backward=@as []
-cycle-windows=@as []
-cycle-windows-backward=@as []
-maximize=@as []
-minimize=['<Shift><Alt>e']
-move-to-monitor-down=@as []
-move-to-monitor-left=@as []
+switch-to-workspace-up=@as []
 move-to-monitor-right=@as []
-move-to-monitor-up=@as []
+unmaximize=@as []
+begin-move=@as []
+move-to-monitor-left=@as []
+switch-to-workspace-1=['<Alt>1']
+panel-run-dialog=@as []
+switch-to-workspace-3=['<Alt>3']
+cycle-windows=@as []
+show-desktop=@as []
+switch-to-workspace-4=['<Alt>4']
+switch-to-workspace-2=['<Alt>2']
+maximize=@as []
+toggle-fullscreen=['<Shift><Alt>w']
+begin-resize=@as []
+panel-main-menu=@as []
+cycle-windows-backward=@as []
+cycle-group-backward=@as []
+cycle-panels-backward=@as []
+switch-input-source=@as []
+move-to-workspace-down=@as []
 move-to-workspace-1=['<Shift><Alt>exclam']
 move-to-workspace-2=['<Shift><Alt>at']
+move-to-workspace-last=@as []
 move-to-workspace-3=['<Shift><Alt>numbersign']
 move-to-workspace-4=['<Shift><Alt>dollar']
-move-to-workspace-down=@as []
-move-to-workspace-last=@as []
-move-to-workspace-up=@as []
-panel-main-menu=@as []
-panel-run-dialog=@as []
-show-desktop=@as []
+minimize=['<Shift><Alt>e']
 switch-applications=@as []
 switch-applications-backward=@as []
-switch-input-source=@as []
-switch-input-source-backward=@as []
-switch-panels=@as []
 switch-panels-backward=@as []
-switch-to-workspace-1=['<Alt>1']
-switch-to-workspace-2=['<Alt>2']
-switch-to-workspace-3=['<Alt>3']
-switch-to-workspace-4=['<Alt>4']
-switch-to-workspace-down=@as []
-switch-to-workspace-last=@as []
-switch-to-workspace-up=@as []
-switch-windows=['<Super>Tab']
-switch-windows-backward=['<Shift><Super>Tab']
-toggle-fullscreen=['<Shift><Alt>w']
+move-to-monitor-down=@as []
 toggle-maximized=@as []
-unmaximize=@as []
+cycle-group=@as []
+activate-window-menu=@as []
+cycle-panels=@as []
+switch-to-workspace-down=@as []
+move-to-workspace-up=@as []
+switch-to-workspace-last=@as []
+switch-windows-backward=['<Shift><Super>Tab']
+switch-panels=@as []
+switch-input-source-backward=@as []
+close=['<Shift><Alt>q']
+switch-windows=['<Super>Tab']
+move-to-monitor-up=@as []
 
 [org/gnome/mutter/keybindings]
-toggle-tiled-left=['<Shift><Alt>a']
 toggle-tiled-right=['<Shift><Alt>d']
+toggle-tiled-left=['<Shift><Alt>a']
 
