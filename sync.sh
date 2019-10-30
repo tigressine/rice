@@ -15,7 +15,7 @@ DCONF_SETTINGS_PATHS="
 rm -f dots/.dconf
 for path in $DCONF_SETTINGS_PATHS; do
     echo "[$path]" >> dots/.dconf
-    dconf dump "/$path/" | sed -n '1!p' >> dots/.dconf
+    dconf dump "/$path/" | sed -n '1!p' | sort >> dots/.dconf
     echo "" >> dots/.dconf
 done
 
