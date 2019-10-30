@@ -2,9 +2,8 @@
 # Written by Tiger Sachse.
 
 DCONF_SETTINGS_PATHS="
-    org/gnome/settings-daemon/plugins/media-keys
-    org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1
     org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0
+    org/gnome/settings-daemon/plugins/media-keys
     org/gnome/shell/keybindings
     org/gnome/shell/extensions/dash-to-dock
     org/gnome/desktop/wm/keybindings
@@ -15,7 +14,11 @@ DCONF_SETTINGS_PATHS="
 rm -f dots/.dconf
 for path in $DCONF_SETTINGS_PATHS; do
     echo "[$path]" >> dots/.dconf
-    dconf dump "/$path/" | sed -n '1!p' | sort >> dots/.dconf
+    dconf dump "/$path/" \
+        | sed -n '1!p' \
+        | awk '/^$/{exit} {print $0}' \
+        | sort \
+        >> dots/.dconf
     echo "" >> dots/.dconf
 done
 

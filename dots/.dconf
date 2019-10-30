@@ -1,24 +1,19 @@
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+binding='<Super>a'
+command='urxvt -title Terminal -e tmux'
+name='Launch Terminal with Tmux'
+
 [org/gnome/settings-daemon/plugins/media-keys]
-
-
 area-screenshot-clip=['']
 area-screenshot=['<Super>p']
-binding='<Super>a'
-binding='<Super>c'
 calculator=['<Super>z']
-command='signal'
-command='urxvt -title Terminal -e tmux'
-[custom-keybindings/custom0]
-[custom-keybindings/custom1]
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
 email=['<Super>x']
 home=['<Super>d']
 logout=['']
 magnifier=['']
 magnifier-zoom-in=['']
 magnifier-zoom-out=['']
-name='Launch Signal'
-name='Launch Terminal with Tmux'
 screencast=['']
 screenreader=['']
 screensaver=['']
@@ -28,16 +23,6 @@ terminal=['']
 window-screenshot=['']
 window-screenshot-clip=['']
 www='<Super>s'
-
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
-binding='<Super>c'
-command='signal'
-name='Launch Signal'
-
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
-binding='<Super>a'
-command='urxvt -title Terminal -e tmux'
-name='Launch Terminal with Tmux'
 
 [org/gnome/shell/keybindings]
 focus-active-notification=@as []
