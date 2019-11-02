@@ -51,6 +51,9 @@ down() {
     ls
 }
 
+# Exit faster.
+alias x="exit"
+
 # Reload the Bash configuration file.
 alias rebashrc=". $HOME/.bashrc"
 
