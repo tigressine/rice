@@ -165,5 +165,6 @@ autocmd FileType python autocmd BufWritePre <buffer> %s/\s\+$//e
 autocmd FileType ruby autocmd BufWritePre <buffer> %s/\s\+$//e
 autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType sh autocmd BufWritePre <buffer> %s/\s\+$//e
+autocmd FileType sh setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType xml autocmd BufWritePre <buffer> %s/\s\+$//e
 autocmd FileType xml setlocal tabstop=2 shiftwidth=2 softtabstop=2
