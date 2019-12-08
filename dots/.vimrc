@@ -12,9 +12,6 @@ set shiftwidth=4
 set softtabstop=4
 set encoding=utf-8
 set fileformat=unix
-if exists('&foldmethod')
-  set foldmethod=syntax
-endif
 let loaded_matchparen=1
 set clipboard+=unnamedplus
 filetype plugin indent on
