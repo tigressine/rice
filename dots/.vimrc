@@ -37,6 +37,11 @@ highlight vimSyncC ctermfg=2
 highlight Comment ctermfg=3 cterm=italic
 highlight LineNr ctermfg=3
 
+highlight DiffAdd ctermbg=0
+highlight DiffChange ctermbg=0
+highlight DiffDelete ctermbg=0
+highlight DiffText ctermbg=0
+
 " *** BLUE COLORED ITEMS ***
 highlight Define ctermfg=4
 highlight Statement ctermfg=4

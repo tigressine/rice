@@ -4,6 +4,9 @@
 # Enable Vi keybindings.
 set -o vi
 
+# Don't exit when I hit Ctrl-d.
+set -o ignoreeof
+
 # Set the terminal prompt.
 PS1="\[\e[1;93m\]>> \[\e[0m\]"
 
