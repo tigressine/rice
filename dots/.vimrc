@@ -158,6 +158,10 @@ autocmd FileType cpp autocmd BufWritePre <buffer> %s/\s\+$//e
 autocmd FileType go autocmd BufWritePre <buffer> %s/\s\+$//e
 autocmd FileType html autocmd BufWritePre <buffer> %s/\s\+$//e
 autocmd FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType yml autocmd BufWritePre <buffer> %s/\s\+$//e
+autocmd FileType yml setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType yaml autocmd BufWritePre <buffer> %s/\s\+$//e
+autocmd FileType yaml setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType vim setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType java autocmd BufWritePre <buffer> %s/\s\+$//e
 autocmd FileType javascript autocmd BufWritePre <buffer> %s/\s\+$//e
