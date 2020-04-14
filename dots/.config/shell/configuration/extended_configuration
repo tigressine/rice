@@ -6,6 +6,7 @@ GOOD_COWS="cock default dragon elephant gnu stegosaurus tux turtle sheep moose f
 # Set the default editor to be Neovim.
 export VISUAL="nvim"
 export EDITOR="$VISUAL"
+export AWS_PROFILE="sigmaprime"
 
 # Display a fun cowsay message.
 selected_cow="$(shuf -e $GOOD_COWS | head -1)"
