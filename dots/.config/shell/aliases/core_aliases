@@ -4,6 +4,7 @@
 export GIT_TREE_DIR="$HOME/.trees"
 export TOSSED_DIR="$HOME/.tossed"
 export SLATE_DIR="$HOME/Slate"
+export AWS_CREDENTIALS="$HOME/.aws/credentials"
 export GIT_USER="tgsachse"
 
 # General navigation and visual aliases.
@@ -132,4 +133,18 @@ _clone() {
     git clone "$method$user/$repository.git" \
         --separate-git-dir "$target_dir" \
         "$@"
+}
+
+aws() {
+    if [ -z "$AWS_PROFILE" ]; then
+        printf "Pick a profile:\n"
+        grep '\[.*\]' "$AWS_CREDENTIALS" | tr -d '[]' | sed 's|^| - |g'
+        printf "\n -> "
+        read profile_name
+        export AWS_PROFILE="$profile_name"
+        /usr/bin/aws "$@"
+    else
+        printf "Running with profile $AWS_PROFILE...\n"
+        /usr/bin/aws "$@"
+    fi
 }
