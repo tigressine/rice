@@ -1,11 +1,9 @@
 # A collection of aliases that make life easier!
 # Written by Tiger Sachse.
 
-export GIT_TREE_DIR="$HOME/.trees"
 export TOSSED_DIR="$HOME/.tossed"
-export SLATE_DIR="$HOME/Slate"
-export AWS_CREDENTIALS="$HOME/.aws/credentials"
-export GIT_USER="tgsachse"
+export SLATE_DIR="$HOME/slate"
+export DEFAULT_GIT_USER="tgsachse"
 
 # General navigation and visual aliases.
 alias ls="ls -N --color"
@@ -104,15 +102,14 @@ clean() {
     esac
 }
 
-# Clone Github repositories. Uses SSH by default and saves the git tree in a
-# separate directory by default (to keep it out of my Dropbox).
+# Clone Github repositories with SSH by default.
 alias clone="clonessh"
 alias clonehttps="_clone 'https://www.github.com/'"
 alias clonessh="_clone 'git@github.com:'"
 _clone() {
-    method="$1"
+    domain="$1"
     if [ $# -lt 3 ]; then
-        user="$GIT_USER"
+        user="$DEFAULT_GIT_USER"
         repository="$2"
         shift
         shift
@@ -124,27 +121,5 @@ _clone() {
         shift
     fi
 
-    target_dir="$GIT_TREE_DIR/$user/$repository"
-    if [ -d "$target_dir" ]; then
-        rm -rf "$target_dir"
-    fi
-    mkdir -p "$GIT_TREE_DIR/$user"
-
-    git clone "$method$user/$repository.git" \
-        --separate-git-dir "$target_dir" \
-        "$@"
-}
-
-aws() {
-    if [ -z "$AWS_PROFILE" ]; then
-        printf "Pick a profile:\n"
-        grep '\[.*\]' "$AWS_CREDENTIALS" | tr -d '[]' | sed 's|^| - |g'
-        printf "\n -> "
-        read profile_name
-        export AWS_PROFILE="$profile_name"
-        /usr/bin/aws "$@"
-    else
-        printf "Running with profile $AWS_PROFILE...\n"
-        /usr/bin/aws "$@"
-    fi
+    git clone "$domain$user/$repository.git" "$@"
 }

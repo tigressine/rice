@@ -42,5 +42,3 @@ layout() {
     # Reset the focus to the original pane.
     tmux select-pane -t 0
 }
-
-alias f="( nautilus . & ) > /dev/null 2>&1"
