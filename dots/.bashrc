@@ -20,12 +20,12 @@ if [ -f "$HOME/.config/shell/shellrc" ]; then
     . "$HOME/.config/shell/shellrc"
 fi
 
-# Load the Shellcuts controller file if it exists.
-if [ -f "$HOME/.shellcuts/shells/bash/controller.bash" ]; then
-    . "$HOME/.shellcuts/shells/bash/controller.bash"
+# Source ROS tooling if available.
+if [ -f "/opt/ros/melodic/setup.bash" ]; then
+  . "/opt/ros/melodic/setup.bash"
 fi
 
-# Load the Shellcuts controller file if it exists.
-if [ -f $HOME/.shellcuts/shells/bash/controller.bash ]; then
-    . $HOME/.shellcuts/shells/bash/controller.bash
+# Initialize Shellcuts.
+if [ -f "/etc/shellcuts/shells/shellcuts.sh" ]; then
+  . "/etc/shellcuts/shells/shellcuts.sh"
 fi

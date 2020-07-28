@@ -16,7 +16,6 @@ cp dots/.tmux.conf "$HOME/"
 cp dots/.bash_profile "$HOME/"
 cp dots/.config/nvim/init.vim "$HOME/.config/nvim/"
 cp dots/.config/shell/shellrc "$HOME/.config/shell/"
-cp dots/.shellcuts/data/shellcuts.json "$HOME/.shellcuts/data/"
 cp dots/.config/shell/aliases/core_aliases "$HOME/.config/shell/aliases/"
 cp dots/.config/shell/configuration/core_configuration \
     "$HOME/.config/shell/configuration"
