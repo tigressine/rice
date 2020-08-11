@@ -7,6 +7,9 @@ GOOD_COWS="cock default dragon elephant gnu stegosaurus tux turtle sheep moose f
 export VISUAL="nvim"
 export EDITOR="$VISUAL"
 
+# Set the ezrassor ROS workspace directory.
+export EZRASSOR_WORKSPACE_DIR="$HOME/.ezrassor-workspace"
+
 # Display a fun cowsay message.
 selected_cow="$(shuf -e $GOOD_COWS | head -1)"
 fortune | cowsay -f "$selected_cow.cow" | lolcat; echo ""
