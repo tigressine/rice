@@ -25,11 +25,6 @@ if [ -f "/opt/ros/melodic/setup.bash" ]; then
   . "/opt/ros/melodic/setup.bash"
 fi
 
-# Initialize Shellcuts.
-if [ -f "/etc/shellcuts/shells/shellcuts.sh" ]; then
-  . "/etc/shellcuts/shells/shellcuts.sh"
-fi
-
 # Source the ROS setup file for the EZRASSOR, if it exists.
 if [ -f "/home/ANT.AMAZON.COM/tiges/.ezrassor-workspace/devel/setup.bash" ]; then
   . "/home/ANT.AMAZON.COM/tiges/.ezrassor-workspace/devel/setup.bash"
