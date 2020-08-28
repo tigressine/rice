@@ -123,3 +123,8 @@ _clone() {
 
     git clone "$domain$user/$repository.git" "$@"
 }
+
+# Source ROS tooling quickly.
+alias rosez=". '$HOME/.ezrassor-workspace/devel/setup.bash'"
+alias rosmelodic=". '/opt/ros/melodic/setup.bash'"
+alias rosdashing=". '/opt/ros/dashing/setup.bash'"

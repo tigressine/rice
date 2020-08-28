@@ -19,13 +19,3 @@ fi
 if [ -f "$HOME/.config/shell/shellrc" ]; then
     . "$HOME/.config/shell/shellrc"
 fi
-
-# Source ROS tooling if available.
-if [ -f "/opt/ros/melodic/setup.bash" ]; then
-  . "/opt/ros/melodic/setup.bash"
-fi
-
-# Source the ROS setup file for the EZRASSOR, if it exists.
-if [ -f "/home/ANT.AMAZON.COM/tiges/.ezrassor-workspace/devel/setup.bash" ]; then
-  . "/home/ANT.AMAZON.COM/tiges/.ezrassor-workspace/devel/setup.bash"
-fi
