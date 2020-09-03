@@ -9,6 +9,10 @@ export EDITOR="$VISUAL"
 LS_COLORS="di=1;34:ex=1;32:ln=1;33"
 export LS_COLORS
 
+# Configuration for Debian development.
+export DEBFULLNAME="Tiger Sachse"
+export DEBEMAIL="tgsachse@gmail.com"
+
 # Add a local bin folder to the path, if it exists.
 if [ -d "$HOME/bin" ]; then
   export PATH="$PATH:$HOME/bin"
