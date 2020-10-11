@@ -10,6 +10,11 @@ export EDITOR="$VISUAL"
 # Set the ezrassor ROS workspace directory.
 export EZRASSOR_WORKSPACE_DIR="$HOME/.ezrassor-workspace"
 
+# Source the EZRASSOR toolbox.
+if [ -f "$HOME/.ezrassor/ezrassor_toolbox.sh" ]; then
+  . "$HOME/.ezrassor/ezrassor_toolbox.sh"
+fi
+
 # Display a fun cowsay message.
 selected_cow="$(shuf -e $GOOD_COWS | head -1)"
 fortune | cowsay -f "$selected_cow.cow" | lolcat; echo ""
