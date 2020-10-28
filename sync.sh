@@ -31,7 +31,6 @@ cp "$HOME/.bash_profile" dots/
 
 mkdir -p dots/.config/nvim/
 mkdir -p dots/.config/shell/
-mkdir -p dots/.shellcuts/data/
 mkdir -p dots/.config/dropbox/
 mkdir -p dots/.config/shell/aliases/
 mkdir -p dots/.config/shell/configuration/

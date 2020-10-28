@@ -4,7 +4,6 @@
 mkdir -p "$HOME/.config/nvim/"
 mkdir -p "$HOME/.config/shell/"
 mkdir -p "$HOME/.config/dropbox/"
-mkdir -p "$HOME/.shellcuts/data/"
 mkdir -p "$HOME/.config/shell/aliases/"
 mkdir -p "$HOME/.config/shell/configuration/"
 
