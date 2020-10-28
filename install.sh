@@ -34,5 +34,18 @@ if [ "$1" != --core ]; then
     "$HOME/.config/shell/aliases/"
   cp dots/.config/shell/configuration/extended_configuration \
     "$HOME/.config/shell/configuration/"
+
   cat dots/.dconf | dconf load /
+
+  # Save Firefox CSS hacks and link them in each available Firefox profile.
+  mkdir -p "$HOME/.mozilla/firefox/chrome/"
+  cp dots/.mozilla/firefox/chrome/userChrome.css \
+    "$HOME/.mozilla/firefox/chrome/"
+  find "$HOME/.mozilla/firefox/" \
+    -maxdepth 1 \
+    -type d \
+    -name '*.*' \
+    -exec rm -f "{}/chrome/userChrome.css" \; \
+    -exec mkdir -p "{}/chrome/" \; \
+    -exec ln -s "$HOME/.mozilla/firefox/chrome/userChrome.css" "{}/chrome/" \;
 fi

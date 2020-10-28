@@ -32,6 +32,7 @@ mkdir -p dots/.config/nvim/
 mkdir -p dots/.config/shell/
 mkdir -p dots/.config/shell/aliases/
 mkdir -p dots/.config/shell/configuration/
+mkdir -p dots/.mozilla/firefox/chrome/
 
 cp "$HOME/.config/nvim/init.vim" dots/.config/nvim/
 cp "$HOME/.config/shell/shellrc" dots/.config/shell/
@@ -41,3 +42,4 @@ cp "$HOME/.config/shell/configuration/core_configuration" \
   dots/.config/shell/configuration/
 cp "$HOME/.config/shell/configuration/extended_configuration" \
   dots/.config/shell/configuration/
+cp "$HOME/.mozilla/firefox/chrome/userChrome.css" dots/.mozilla/firefox/chrome/

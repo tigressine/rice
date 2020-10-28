@@ -1,0 +1,11 @@
+/* Preferences in about:config that you should change:
+ * browser.fullscreen.autohide -> true
+ * toolkit.legacyUserProfileCustomizations.stylesheets -> true
+ */
+
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+
+/* Enable bookmarks bar in fullscreen. */
+#navigator-toolbox[inFullscreen] toolbar:not([collapsed="true"]) {
+ visibility:visible!important;
+}
