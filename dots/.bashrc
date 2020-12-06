@@ -19,3 +19,6 @@ fi
 if [ -f "$HOME/.config/shell/shellrc" ]; then
     . "$HOME/.config/shell/shellrc"
 fi
+
+# Add auto-completable note names for the paper() function.
+complete -W "$(ls -1 $NOTES_DIR | cut -d "." -f 1)" paper

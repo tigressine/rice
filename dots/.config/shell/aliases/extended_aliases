@@ -42,3 +42,25 @@ layout() {
     # Reset the focus to the original pane.
     tmux select-pane -t 0
 }
+
+paper() {
+    if [ $# -lt 1 ]; then
+        printf "\033[31ma note name is required\n\033[0m"
+        return 1
+    fi
+
+    note_name=$1
+    if [ ! -f "$NOTES_DIR/$note_name.paper" ]; then
+        printf "\033[31m$note_name does not exist in the notes directory\n\033[0m"
+        return 1
+    fi
+
+    parse_command="import json; import sys; print(json.load(sys.stdin)['url'])"
+    url=$(cat "$NOTES_DIR/$note_name.paper" | python3 -c "$parse_command" 2>/dev/null)
+    if [ $? -ne 0 ]; then
+        printf "\033[31mcould not parse URL from $note_name\n\033[0m"
+        return 1
+    fi
+
+    firefox "$url"
+}
