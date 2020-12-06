@@ -7,14 +7,6 @@ GOOD_COWS="cock default dragon elephant gnu stegosaurus tux turtle sheep moose f
 export VISUAL="nvim"
 export EDITOR="$VISUAL"
 
-# Source the EZRASSOR toolbox.
-if [ -f "$HOME/.ezrassor/ezrassor_toolbox.sh" ]; then
-  . "$HOME/.ezrassor/ezrassor_toolbox.sh"
-fi
-
-# Overwrite the EZRASSOR_WORKSPACE directory.
-export EZRASSOR_WORKSPACE="$HOME/.ezrassor-workspace"
-
 # Display a fun cowsay message.
 selected_cow="$(shuf -e $GOOD_COWS | head -1)"
 fortune | cowsay -f "$selected_cow.cow" | lolcat; echo ""

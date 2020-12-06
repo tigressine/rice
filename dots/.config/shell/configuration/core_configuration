@@ -11,7 +11,7 @@ export LS_COLORS
 
 # Configuration for Debian development.
 export DEBFULLNAME="Tiger Sachse"
-export DEBEMAIL="tgsachse@gmail.com"
+export DEBEMAIL="tiger@sachse.io"
 
 # Add a local bin folder to the path, if it exists.
 if [ -d "$HOME/bin" ]; then
