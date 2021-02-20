@@ -127,3 +127,17 @@ _clone() {
 # Source ROS tooling quickly.
 alias rosmelodic=". '/opt/ros/melodic/setup.bash'"
 alias rosdashing=". '/opt/ros/dashing/setup.bash'"
+
+# Execute cls after goto calls.
+to() {
+    goto "$@"
+    if [ $? -eq 0 ]; then
+        case "$1" in
+            -*)
+                ;;
+            *)
+                cls
+                ;;
+        esac
+    fi
+}
