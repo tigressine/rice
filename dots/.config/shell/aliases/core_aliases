@@ -11,43 +11,43 @@ alias la="ls -la -h"
 alias cls="clear && ls"
 
 up() {
-    cd ..
-    if [ $? -ne 0 ]; then
-        return
-    fi
+  cd ..
+  if [ $? -ne 0 ]; then
+    return
+  fi
 
-    if [ ! "$1" = -1 ]; then
-        item_count=$(find . -maxdepth 1 -not -name ".*" | wc -l)
-        if [ $item_count -eq 1 -a -d "$(ls --color=none)" ]; then
-            up
-            return
-        fi
+  if [ ! "$1" = -1 ]; then
+    item_count=$(find . -maxdepth 1 -not -name ".*" | wc -l)
+    if [ $item_count -eq 1 -a -d "$(ls --color=none)" ]; then
+      up
+      return
     fi
+  fi
 
-    pwd
-    ls
+  pwd
+  ls
 }
 
 down() {
-    cd "$1"
-    if [ $? -ne 0 ]; then
-        return
-    fi
+  cd "$1"
+  if [ $? -ne 0 ]; then
+    return
+  fi
 
-    if [ ! "$2" = -1 ]; then
-        item_count=$(find . -maxdepth 1 -not -name ".*" | wc -l)
-        if [ $item_count -eq 1 -a -d "$(ls --color=none)" ]; then
-            down "$(ls --color=none)"
-            return
-        fi
+  if [ ! "$2" = -1 ]; then
+    item_count=$(find . -maxdepth 1 -not -name ".*" | wc -l)
+    if [ $item_count -eq 1 -a -d "$(ls --color=none)" ]; then
+      down "$(ls --color=none)"
+      return
     fi
+  fi
 
-    pwd
-    command -v git > /dev/null 2>&1
-    if [ $? -eq 0 -a -e .git ]; then
-        git branch 2>/dev/null | grep '^*' | sed 's/*/branch:/g'
-    fi
-    ls
+  pwd
+  command -v git > /dev/null 2>&1
+  if [ $? -eq 0 -a -e .git ]; then
+    git branch 2>/dev/null | grep '^*' | sed 's/*/branch:/g'
+  fi
+  ls
 }
 
 # Exit faster.
@@ -68,38 +68,38 @@ alias v='$EDITOR'
 
 # Toss files into the rubbish bin.
 toss() {
-    tossed_stamped_dir="$TOSSED_DIR/$(date +%s)"
-    mkdir -p "$tossed_stamped_dir"
-    for item in "$@"; do
-        mv "$item" "$tossed_stamped_dir"
-    done
+  tossed_stamped_dir="$TOSSED_DIR/$(date +%s)"
+  mkdir -p "$tossed_stamped_dir"
+  for item in "$@"; do
+    mv "$item" "$tossed_stamped_dir"
+  done
 }
 
 # Copy files to the slate.
 slate() {
-    mkdir -p "$SLATE_DIR"
-    for item in "$@"; do
-        if [ -d "$item" ]; then
-            cp -r "$item" "$SLATE_DIR"
-        elif [ -f "$item" ]; then
-            cp "$item" "$SLATE_DIR"
-        fi
-    done
+  mkdir -p "$SLATE_DIR"
+  for item in "$@"; do
+    if [ -d "$item" ]; then
+      cp -r "$item" "$SLATE_DIR"
+    elif [ -f "$item" ]; then
+      cp "$item" "$SLATE_DIR"
+    fi
+  done
 }
 
 # Clean out the slate or the rubbish bin.
 clean() {
-    case "$1" in
-        slate)
-            toss "$SLATE_DIR"/*
-            ;;
-        tossed)
-            rm -rf "$TOSSED_DIR"/*
-            ;;
-        *)
-            echo "Please specify 'tossed' or 'slate'."
-            ;;
-    esac
+  case "$1" in
+    slate)
+      toss "$SLATE_DIR"/*
+      ;;
+    tossed)
+      rm -rf "$TOSSED_DIR"/*
+      ;;
+    *)
+      echo "Please specify 'tossed' or 'slate'."
+      ;;
+  esac
 }
 
 # Clone Github repositories with SSH by default.
@@ -107,21 +107,21 @@ alias clone="clonessh"
 alias clonehttps="_clone 'https://www.github.com/'"
 alias clonessh="_clone 'git@github.com:'"
 _clone() {
-    domain="$1"
-    if [ $# -lt 3 ]; then
-        user="$DEFAULT_GIT_USER"
-        repository="$2"
-        shift
-        shift
-    else
-        user="$2"
-        repository="$3"
-        shift
-        shift
-        shift
-    fi
+  domain="$1"
+  if [ $# -lt 3 ]; then
+    user="$DEFAULT_GIT_USER"
+    repository="$2"
+    shift
+    shift
+  else
+    user="$2"
+    repository="$3"
+    shift
+    shift
+    shift
+  fi
 
-    git clone "$domain$user/$repository.git" "$@"
+  git clone "$domain$user/$repository.git" "$@"
 }
 
 # Source ROS tooling quickly.
@@ -130,14 +130,14 @@ alias rosdashing=". '/opt/ros/dashing/setup.bash'"
 
 # Execute cls after goto calls.
 to() {
-    goto "$@"
-    if [ $? -eq 0 ]; then
-        case "$1" in
-            -*)
-                ;;
-            *)
-                cls
-                ;;
-        esac
-    fi
+  goto "$@"
+  if [ $? -eq 0 ]; then
+    case "$1" in
+      -*)
+        ;;
+      *)
+        cls
+        ;;
+    esac
+  fi
 }

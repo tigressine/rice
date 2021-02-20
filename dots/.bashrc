@@ -12,12 +12,12 @@ PS1="\[\e[1;93m\]>> \[\e[0m\]"
 
 # Source global definitions if available.
 if [ -f "/etc/bashrc" ]; then
-    . "/etc/bashrc"
+  . "/etc/bashrc"
 fi
 
 # Load the generic Shell configuration file if it exists.
 if [ -f "$HOME/.config/shell/shellrc" ]; then
-    . "$HOME/.config/shell/shellrc"
+  . "$HOME/.config/shell/shellrc"
 fi
 
 # Add auto-completable note names for the paper() function.
