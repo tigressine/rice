@@ -10,6 +10,17 @@ alias ls="ls -N --color"
 alias la="ls -la -h"
 alias cls="clear && ls"
 
+
+# Print an error message.
+print_error() {
+  printf "\033[31m%s\n\033[0m" "$@"
+}
+
+# Print an info message.
+print_info() {
+  printf "%s\n" "$@"
+}
+
 up() {
   cd ..
   if [ $? -ne 0 ]; then

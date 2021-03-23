@@ -43,24 +43,44 @@ layout() {
   tmux select-pane -t 0
 }
 
-paper() {
+# Find an import statement in the current git repository.
+imp() {
+
+  # User must provide an import candidate.
   if [ $# -lt 1 ]; then
-    printf "\033[31ma note name is required\n\033[0m"
+    print_error "no import candidate provided"
+
     return 1
   fi
+  candidate="$1"
 
-  note_name=$1
-  if [ ! -f "$NOTES_DIR/$note_name.paper" ]; then
-    printf "\033[31m$note_name does not exist in the notes directory\n\033[0m"
-    return 1
-  fi
+  # Move the working directory up to the top level git directory.
+  # If there is no top level git directory, exit prematurely.
+  old_working_directory="$(pwd)"
+  while [ ! -d .git ]; do
+    if [ "$(pwd)" = "/" ]; then
+      print_error "not inside a git repository"
+      cd "$old_working_directory"
 
-  parse_command="import json; import sys; print(json.load(sys.stdin)['url'])"
-  url=$(cat "$NOTES_DIR/$note_name.paper" | python3 -c "$parse_command" 2>/dev/null)
+      return 1
+    fi
+    cd ..
+  done
+
+  # Check that an import statement exists for the candidate somewhere in the
+  # repository.
+  grep -q -r -e "import.*$candidate"
   if [ $? -ne 0 ]; then
-    printf "\033[31mcould not parse URL from $note_name\n\033[0m"
+    print_error "import not found"
+    cd "$old_working_directory"
+
     return 1
   fi
 
-  firefox "$url"
+  # Take the first candidate match and pipe it to the clipboard with xclip.
+  grep -r -h -e "import.*$candidate" | head -1 | xclip -i -selection clipboard
+  print_info "import added to clipboard"
+  cd "$old_working_directory"
+
+  return 0
 }
