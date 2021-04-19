@@ -7,9 +7,6 @@ GOOD_COWS="cock default dragon elephant gnu stegosaurus tux turtle sheep moose f
 export VISUAL="nvim"
 export EDITOR="$VISUAL"
 
-# Set the notes/ directory for Dropbox Paper.
-export NOTES_DIR="$HOME/.my-dropbox/Dropbox/notes"
-
 # Display a fun cowsay message.
 selected_cow="$(shuf -e $GOOD_COWS | head -1)"
 fortune | cowsay -f "$selected_cow.cow" | lolcat; echo ""

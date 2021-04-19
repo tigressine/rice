@@ -15,7 +15,7 @@
 *.cursorBlink: True
 *.internalBorder: 20
 *.cursorUnderline: True
-*.font: xft:sharetechmono:size=14
+*.font: xft:Fira Mono:size=14
 
 ! *** COLORS ***
 *.background: [90]#151515
