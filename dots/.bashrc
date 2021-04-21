@@ -25,3 +25,8 @@ complete -W "$(ls -1 $NOTES_DIR | cut -d "." -f 1)" paper
 
 # Wire goto's autocompletion to the to() function.
 complete -F _complete_goto_bash "to"
+
+
+# Source goto
+[[ -s "/usr/local/share/goto.sh" ]] && source /usr/local/share/goto.sh
+
