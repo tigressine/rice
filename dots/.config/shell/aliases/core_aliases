@@ -136,8 +136,7 @@ _clone() {
 }
 
 # Source ROS tooling quickly.
-alias rosmelodic=". '/opt/ros/melodic/setup.bash'"
-alias rosdashing=". '/opt/ros/dashing/setup.bash'"
+alias foxy=". '/opt/ros/foxy/setup.bash'"
 
 # Execute cls after goto calls.
 to() {
