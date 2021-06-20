@@ -1,6 +1,7 @@
 # Some fancy extended aliases that are only meant for local machines.
 # Written by Tiger Sachse.
 
+# Use TMUX to create multiple panes in one window.
 layout() {
   if [ $# -eq 0 ]; then
     return
@@ -83,4 +84,56 @@ imp() {
   cd "$old_working_directory"
 
   return 0
+}
+
+# Mount various remote shares.
+mt() {
+  if [ $# -lt 1 ]; then
+    print_error "no mount name provided"
+
+    return 1
+  fi
+
+  mount_name="$1"
+  case "$mount_name" in
+    "rahona")
+      sshfs rahona:/google/src/cloud/tgsachse/google3/google3 "$HOME/rahona"
+      ;;
+    "nuvem")
+      sshfs nuvem:/home/tiger/code "$HOME/nuvem"
+      ;;
+    "dropbox")
+      dbxfs "$HOME/dropbox"
+      ;;
+    *)
+      print_error "invalid mount name provided"
+      return 1
+      ;;
+  esac
+}
+
+# Unmount various remote shares.
+umt() {
+  if [ $# -lt 1 ]; then
+    print_error "no unmount name provided"
+
+    return 1
+  fi
+
+  unmount_name="$1"
+  case "$unmount_name" in
+    "rahona")
+      umount "$HOME/rahona"
+      ;;
+    "nuvem")
+      umount "$HOME/nuvem"
+      ;;
+    "dropbox")
+      fusermount -u "$HOME/dropbox"
+      ;;
+    *)
+      print_error "invalid unmount name provided"
+      return 1
+      ;;
+  esac
 }
