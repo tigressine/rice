@@ -21,12 +21,17 @@ print_info() {
   printf "%s\n" "$@"
 }
 
+# Go up to the next highest useful directory.
 up() {
+
+  # Attempt to go up. Return if it's impossible.
   cd ..
   if [ $? -ne 0 ]; then
     return
   fi
 
+  # If a single jump was not requested ("-1" flag) then keep jumping if the
+  # new working directory is empty.
   if [ ! "$1" = -1 ]; then
     item_count=$(find . -maxdepth 1 -not -name ".*" | wc -l)
     if [ $item_count -eq 1 -a -d "$(ls --color=none)" ]; then
@@ -35,16 +40,28 @@ up() {
     fi
   fi
 
+  # Print the final directory.
   pwd
-  ls
+
+  # Print the contents of the directory if there aren't too many items to show.
+  if [ $(ls -f | wc -l) -lt 64 ]; then
+    ls
+  else
+    print_info "(too many items to display)"
+  fi
 }
 
+# Go down to the next lowest useful directory.
 down() {
+
+  # Attempt to go down. Return if it's impossible.
   cd "$1"
   if [ $? -ne 0 ]; then
     return
   fi
 
+  # If a single jump was not requested ("-1" flag) then keep jumping if the
+  # new working directory is empty.
   if [ ! "$2" = -1 ]; then
     item_count=$(find . -maxdepth 1 -not -name ".*" | wc -l)
     if [ $item_count -eq 1 -a -d "$(ls --color=none)" ]; then
@@ -53,12 +70,21 @@ down() {
     fi
   fi
 
+  # Print the final directory.
   pwd
+
+  # Print the git branch if the directory is a git repository.
   command -v git > /dev/null 2>&1
   if [ $? -eq 0 -a -e .git ]; then
     git branch 2>/dev/null | grep '^*' | sed 's/*/branch:/g'
   fi
-  ls
+
+  # Print the contents of the directory if there aren't too many items to show.
+  if [ $(ls -f | wc -l) -lt 64 ]; then
+    ls
+  else
+    print_info "(too many items to display)"
+  fi
 }
 
 # Exit faster.
