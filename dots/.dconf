@@ -1,6 +1,6 @@
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
 binding='<Super>a'
-command='urxvt -title Terminal -e tmux'
+command='urxvt -title Terminal -e tmx2'
 name='Launch Terminal with Tmux'
 
 [org/gnome/settings-daemon/plugins/media-keys]

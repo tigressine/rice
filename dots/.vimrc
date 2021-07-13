@@ -163,6 +163,7 @@ autocmd FileType yml setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType yaml autocmd BufWritePre <buffer> %s/\s\+$//e
 autocmd FileType yaml setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType vim setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType java setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType java autocmd BufWritePre <buffer> %s/\s\+$//e
 autocmd FileType javascript autocmd BufWritePre <buffer> %s/\s\+$//e
 autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2

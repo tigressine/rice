@@ -103,7 +103,19 @@ mt() {
       sshfs nuvem:/home/tiger/code "$HOME/nuvem"
       ;;
     "dropbox")
-      dbxfs "$HOME/dropbox"
+      for attempt in 1 2 3 4 5 6 7 8 9 10; do
+        dbxfs "$HOME/dropbox"
+        cd "$HOME/dropbox"
+        if [ $? -eq 0 ]; then
+          print_info "mounted dropbox"
+          cd - > /dev/null
+          break
+        else
+          print_info "failed to mount dropbox, retrying"
+          umt dropbox
+          sleep .5
+        fi
+      done
       ;;
     *)
       print_error "invalid mount name provided"
