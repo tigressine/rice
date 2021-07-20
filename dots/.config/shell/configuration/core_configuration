@@ -19,6 +19,10 @@ if [ -d "$HOME/bin" ]; then
 fi
 
 # Initialize goto.
-if [ -f "/usr/local/share/goto.sh" ]; then
-  . "/usr/local/share/goto.sh"
+if [ -f "$HOME/.goto.sh" ]; then
+  . "$HOME/.goto.sh"
+else
+  if [ -f "/usr/local/share/goto.sh" ]; then
+    . "/usr/local/share/goto.sh"
+  fi
 fi
