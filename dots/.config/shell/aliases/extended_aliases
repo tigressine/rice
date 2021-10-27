@@ -54,9 +54,17 @@ mt() {
 
   mount_name="$1"
   case "$mount_name" in
-    "kumo")
-      sshfs kumo:/google/src/cloud/tgsachse/google3/google3 "$HOME/kumo"
-      print_info "mounted kumo"
+    "fig")
+      sshfs kumo:/google/src/cloud/tgsachse/fig "$HOME/fig"
+      print_info "mounted fig"
+      ;;
+    "x20")
+      sshfs kumo:/google/data/ro "$HOME/x20"
+      print_info "mounted x20"
+      ;;
+    "binfs")
+      sshfs kumo:/google/bin "$HOME/binfs"
+      print_info "mounted binfs"
       ;;
     "dropbox")
       for attempt in 1 2 3 4 5 6 7 8 9 10; do
@@ -91,8 +99,14 @@ umt() {
 
   unmount_name="$1"
   case "$unmount_name" in
-    "kumo")
-      umount "$HOME/kumo"
+    "fig")
+      umount "$HOME/fig"
+      ;;
+    "x20")
+      umount "$HOME/x20"
+      ;;
+    "binfs")
+      umount "$HOME/binfs"
       ;;
     "dropbox")
       fusermount -u "$HOME/dropbox"
