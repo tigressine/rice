@@ -96,24 +96,23 @@ mt() {
 
   mount_name="$1"
   case "$mount_name" in
-    "rahona")
-      sshfs rahona:/google/src/cloud/tgsachse/google3/google3 "$HOME/rahona"
-      ;;
-    "nuvem")
-      sshfs nuvem:/home/tiger/code "$HOME/nuvem"
+    "kumo")
+      sshfs kumo:/google/src/cloud/tgsachse/google3/google3 "$HOME/kumo"
+      print_info "mounted kumo"
       ;;
     "dropbox")
       for attempt in 1 2 3 4 5 6 7 8 9 10; do
         dbxfs "$HOME/dropbox"
-        cd "$HOME/dropbox"
+        sleep .1
+        ls "$HOME/dropbox" > /dev/null 2>&1
         if [ $? -eq 0 ]; then
           print_info "mounted dropbox"
-          cd - > /dev/null
           break
         else
-          print_info "failed to mount dropbox, retrying"
+          sleep .3
           umt dropbox
-          sleep .5
+          print_info "failed to mount dropbox, retrying"
+          sleep .3
         fi
       done
       ;;
@@ -134,11 +133,8 @@ umt() {
 
   unmount_name="$1"
   case "$unmount_name" in
-    "rahona")
-      umount "$HOME/rahona"
-      ;;
-    "nuvem")
-      umount "$HOME/nuvem"
+    "kumo")
+      umount "$HOME/kumo"
       ;;
     "dropbox")
       fusermount -u "$HOME/dropbox"

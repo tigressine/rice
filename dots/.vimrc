@@ -5,11 +5,11 @@
 set number
 set expandtab
 set linebreak
-set tabstop=4
+set tabstop=2
 set noshowmode
 set autoindent
-set shiftwidth=4
-set softtabstop=4
+set shiftwidth=2
+set softtabstop=2
 set encoding=utf-8
 set fileformat=unix
 let loaded_matchparen=1
