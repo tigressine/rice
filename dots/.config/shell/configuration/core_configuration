@@ -1,8 +1,18 @@
 # My core shell configuration.
 # Written by Tiger Sachse.
 
-# Set the default editor to be Vi.
-export VISUAL="vi"
+# Set the default editor to be whichever version of Vim is installed.
+which nvim > /dev/null 2>&1
+if [ $? -eq 0 ]; then
+  export VISUAL="nvim"
+else
+  which vim > /dev/null 2>&1
+  if [ $? -eq 0 ]; then
+    export VISUAL="vim"
+  else
+    export VISUAL="vi"
+  fi
+fi
 export EDITOR="$VISUAL"
 
 # Configure 'ls' to be prettier.
