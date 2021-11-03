@@ -171,6 +171,7 @@ autocmd FileType scala autocmd BufWritePre <buffer> %s/\s\+$//e
 autocmd FileType scala setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType kotlin autocmd BufWritePre <buffer> %s/\s\+$//e
 autocmd FileType python autocmd BufWritePre <buffer> %s/\s\+$//e
+autocmd FileType python setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType ruby autocmd BufWritePre <buffer> %s/\s\+$//e
 autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType sh autocmd BufWritePre <buffer> %s/\s\+$//e
