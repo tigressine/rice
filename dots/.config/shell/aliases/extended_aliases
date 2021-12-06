@@ -1,7 +1,7 @@
 # Some fancy extended aliases that are only meant for local machines.
 # Written by Tiger Sachse.
 
-alias f="nautilus . > /dev/null 2>&1 &"
+alias f="(nautilus . &) > /dev/null 2>&1"
 
 # Use TMUX to create multiple panes in one window.
 layout() {
