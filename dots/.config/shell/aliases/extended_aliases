@@ -84,6 +84,10 @@ mt() {
         fi
       done
       ;;
+    "homework")
+      sshfs bekk:/home/tgsachse/homework "$HOME/homework"
+      print_info "mounted homework"
+      ;;
     *)
       print_error "invalid mount name provided"
       return 1
@@ -112,6 +116,9 @@ umt() {
       ;;
     "dropbox")
       fusermount -u "$HOME/dropbox"
+      ;;
+    "homework")
+      umount "$HOME/homework"
       ;;
     *)
       print_error "invalid unmount name provided"
