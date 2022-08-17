@@ -178,3 +178,7 @@ autocmd FileType sh autocmd BufWritePre <buffer> %s/\s\+$//e
 autocmd FileType sh setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType xml autocmd BufWritePre <buffer> %s/\s\+$//e
 autocmd FileType xml setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd BufRead,BufNewFile *.blueprint set filetype=ncl
+autocmd FileType ncl setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType ncl setlocal syntax=python
+autocmd BufRead,BufNewFile *.sky set filetype=bzl
