@@ -1,6 +1,2 @@
 # An extended Shell configuration (only suitable for local machines).
 # Written by Tiger Sachse.
-
-# Set the default editor to be Neovim.
-export VISUAL="nvim"
-export EDITOR="$VISUAL"

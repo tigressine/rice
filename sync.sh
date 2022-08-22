@@ -4,7 +4,6 @@ DCONF_SETTINGS_PATHS="
   org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0
   org/gnome/settings-daemon/plugins/media-keys
   org/gnome/shell/keybindings
-  org/gnome/shell/extensions/dash-to-dock
   org/gnome/desktop/wm/keybindings
   org/gnome/mutter/keybindings
 "

@@ -3,49 +3,6 @@
 
 alias f="(nautilus . &) > /dev/null 2>&1"
 
-# Use TMUX to create multiple panes in one window.
-layout() {
-  if [ $# -eq 0 ]; then
-    return
-  elif [ $# -eq 1 ]; then
-    columns=$1
-    secondary_panes=0
-  else
-    columns=$1
-    secondary_panes=$2
-
-    # Chop extra secondary panes.
-    if [ $secondary_panes -gt $columns ]; then
-      secondary_panes=$columns
-    fi
-  fi
-
-  # Create all necessary columns then even out the spacing.
-  for column in $(seq 2 $columns); do
-    tmux split-pane -h > /dev/null 2>&1
-
-    # If tmux can't create a new pane, revise the columns count and update
-    # the secondary_panes count if necessary.
-    if [ $? -ne 0 ]; then
-      columns=$column
-      if [ $secondary_panes -ge $columns ]; then
-        secondary_panes=`expr $columns - 1`
-      fi
-      break
-    fi
-  done
-  tmux select-layout even-horizontal
-
-  # Create secondary panes starting from right to left.
-  for secondary_pane in $(seq 1 $secondary_panes); do
-    tmux split-pane -v
-    tmux select-pane -L
-  done
-
-  # Reset the focus to the original pane.
-  tmux select-pane -t 0
-}
-
 # Mount various remote shares.
 mt() {
   if [ $# -lt 1 ]; then
@@ -59,14 +16,6 @@ mt() {
     "fig")
       sshfs kumo:/google/src/cloud/tgsachse/fig "$HOME/fig"
       print_info "mounted fig"
-      ;;
-    "x20")
-      sshfs kumo:/google/data/ro "$HOME/x20"
-      print_info "mounted x20"
-      ;;
-    "binfs")
-      sshfs kumo:/google/bin "$HOME/binfs"
-      print_info "mounted binfs"
       ;;
     "dropbox")
       for attempt in 1 2 3 4 5 6 7 8 9 10; do
@@ -83,10 +32,6 @@ mt() {
           sleep .3
         fi
       done
-      ;;
-    "homework")
-      sshfs bekk:/home/tgsachse/homework "$HOME/homework"
-      print_info "mounted homework"
       ;;
     *)
       print_error "invalid mount name provided"
@@ -108,17 +53,8 @@ umt() {
     "fig")
       umount "$HOME/fig"
       ;;
-    "x20")
-      umount "$HOME/x20"
-      ;;
-    "binfs")
-      umount "$HOME/binfs"
-      ;;
     "dropbox")
       fusermount -u "$HOME/dropbox"
-      ;;
-    "homework")
-      umount "$HOME/homework"
       ;;
     *)
       print_error "invalid unmount name provided"
