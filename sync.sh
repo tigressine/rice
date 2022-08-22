@@ -23,6 +23,7 @@ done
 cp "$HOME/.face" dots/
 cp "$HOME/.vimrc" dots/
 cp "$HOME/.bashrc" dots/
+cp "$HOME/.goto.sh" dots/
 cp "$HOME/.Xdefaults" dots/
 cp "$HOME/.tmux.conf" dots/
 cp "$HOME/.bash_profile" dots/
