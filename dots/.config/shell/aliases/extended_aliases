@@ -14,7 +14,7 @@ mt() {
   mount_name="$1"
   case "$mount_name" in
     "fig")
-      sshfs kumo:/google/src/cloud/tgsachse/fig "$HOME/fig"
+      sshfs debesis:/google/src/cloud/tgsachse/fig "$HOME/fig"
       print_info "mounted fig"
       ;;
     "dropbox")
