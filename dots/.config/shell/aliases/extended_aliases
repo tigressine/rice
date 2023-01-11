@@ -14,7 +14,7 @@ mt() {
   mount_name="$1"
   case "$mount_name" in
     "fig")
-      sshfs debesis:/google/src/cloud/tgsachse/fig "$HOME/fig"
+      sshfs oblako:/google/src/cloud/tgsachse/fig "$HOME/fig"
       print_info "mounted fig"
       ;;
     "dropbox")
@@ -32,12 +32,6 @@ mt() {
           sleep .3
         fi
       done
-      ;;
-    "docket")
-      sshfs \
-          debesis:/usr/local/google/home/tgsachse/docket/docket \
-          "$HOME/docket/docket"
-      print_info "mounted docket"
       ;;
     *)
       print_error "invalid mount name provided"
@@ -61,9 +55,6 @@ umt() {
       ;;
     "dropbox")
       fusermount -u "$HOME/dropbox"
-      ;;
-    "docket")
-      umount "$HOME/docket/docket"
       ;;
     *)
       print_error "invalid unmount name provided"
