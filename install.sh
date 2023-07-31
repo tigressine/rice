@@ -1,5 +1,6 @@
 # Install dots located in this repository.
 
+mkdir -p "$HOME/.config/kitty/"
 mkdir -p "$HOME/.config/nvim/"
 mkdir -p "$HOME/.config/shell/"
 mkdir -p "$HOME/.config/shell/aliases/"
@@ -12,6 +13,7 @@ cp dots/.goto.sh "$HOME/"
 cp dots/.Xdefaults "$HOME/"
 cp dots/.tmux.conf "$HOME/"
 cp dots/.bash_profile "$HOME/"
+cp dots/.config/kitty/kitty.conf "$HOME/.config/kitty/"
 cp dots/.config/nvim/init.vim "$HOME/.config/nvim/"
 cp dots/.config/shell/shellrc "$HOME/.config/shell/"
 cp dots/.config/shell/aliases/core_aliases "$HOME/.config/shell/aliases/"

@@ -28,12 +28,14 @@ cp "$HOME/.Xdefaults" dots/
 cp "$HOME/.tmux.conf" dots/
 cp "$HOME/.bash_profile" dots/
 
+mkdir -p dots/.config/kitty/
 mkdir -p dots/.config/nvim/
 mkdir -p dots/.config/shell/
 mkdir -p dots/.config/shell/aliases/
 mkdir -p dots/.config/shell/configuration/
 mkdir -p dots/.mozilla/firefox/chrome/
 
+cp "$HOME/.config/kitty/kitty.conf" dots/.config/kitty/
 cp "$HOME/.config/nvim/init.vim" dots/.config/nvim/
 cp "$HOME/.config/shell/shellrc" dots/.config/shell/
 cp "$HOME/.config/shell/aliases/core_aliases" dots/.config/shell/aliases/
