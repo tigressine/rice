@@ -1,6 +1,6 @@
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
 binding='<Super>a'
-command='kitty --title Terminal tmx2'
+command='kitty --title Terminal tmx2 new-session -t core'
 name='Launch Terminal with Tmux'
 
 [org/gnome/settings-daemon/plugins/media-keys]
