@@ -182,3 +182,9 @@ autocmd BufRead,BufNewFile *.blueprint set filetype=ncl
 autocmd FileType ncl setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType ncl setlocal syntax=python
 autocmd BufRead,BufNewFile *.sky set filetype=bzl
+
+" *** FOLDING ***
+set foldmethod=indent
+nnoremap <space> za
+vnoremap <space> zf
+set foldnestmax=1
