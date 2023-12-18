@@ -15,7 +15,7 @@ set fileformat=unix
 let loaded_matchparen=1
 set clipboard+=unnamedplus
 filetype plugin indent on
-autocmd vimLeave * set guicursor=a:hor50-blinkon1
+" autocmd vimLeave * set guicursor=a:hor50-blinkon1
 
 " *** VISUALS ***
 syntax on

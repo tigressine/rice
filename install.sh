@@ -1,19 +1,18 @@
 # Install dots located in this repository.
 
+mkdir -p "$HOME/.config/gtk-3.0/"
 mkdir -p "$HOME/.config/kitty/"
 mkdir -p "$HOME/.config/nvim/"
 mkdir -p "$HOME/.config/shell/"
 mkdir -p "$HOME/.config/shell/aliases/"
 mkdir -p "$HOME/.config/shell/configuration/"
 
-cp dots/.face "$HOME/"
 cp dots/.vimrc "$HOME/"
 cp dots/.bashrc "$HOME/"
 cp dots/.goto.sh "$HOME/"
 cp dots/.Xdefaults "$HOME/"
 cp dots/.tmux.conf "$HOME/"
 cp dots/.bash_profile "$HOME/"
-cp dots/.config/kitty/kitty.conf "$HOME/.config/kitty/"
 cp dots/.config/nvim/init.vim "$HOME/.config/nvim/"
 cp dots/.config/shell/shellrc "$HOME/.config/shell/"
 cp dots/.config/shell/aliases/core_aliases "$HOME/.config/shell/aliases/"
@@ -33,6 +32,10 @@ fi
 # If a core installation is not requested, install extended configuration
 # and alias files.
 if [ "$1" != --core ]; then
+  cp dots/.face "$HOME/"
+  cp dots/.config/gtk-3.0/bookmarks "$HOME/.config/gtk-3.0/"
+  cp dots/.config/kitty/kitty.conf "$HOME/.config/kitty/"
+
   cp dots/.config/shell/aliases/extended_aliases \
     "$HOME/.config/shell/aliases/"
   cp dots/.config/shell/configuration/extended_configuration \

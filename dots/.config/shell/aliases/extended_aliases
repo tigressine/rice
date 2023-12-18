@@ -69,3 +69,5 @@ umt() {
       ;;
   esac
 }
+
+alias maestral="$HOME/.maestral/.maestral/bin/python3 -m maestral"

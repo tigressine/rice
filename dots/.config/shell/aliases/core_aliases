@@ -1,9 +1,8 @@
 # A collection of aliases that make life easier!
-# Written by Tiger Sachse.
 
-export TOSSED_DIR="$HOME/.tossed"
+export TOSSED_DIR="$HOME/.local/share/Trash/files"
 export SLATE_DIR="$HOME/slate"
-export DEFAULT_GIT_USER="tgsachse"
+export DEFAULT_GIT_USER="tigressine"
 
 # General navigation and visual aliases.
 alias ls="ls -N --color"
@@ -104,10 +103,9 @@ alias v='$EDITOR'
 
 # Toss files into the rubbish bin.
 toss() {
-  tossed_stamped_dir="$TOSSED_DIR/$(date +%s)"
-  mkdir -p "$tossed_stamped_dir"
+  mkdir -p "$TOSSED_DIR"
   for item in "$@"; do
-    mv "$item" "$tossed_stamped_dir"
+    mv "$item" "$TOSSED_DIR"
   done
 }
 
