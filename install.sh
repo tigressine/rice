@@ -54,4 +54,9 @@ if [ "$1" != --core ]; then
     -exec rm -f "{}/chrome/userChrome.css" \; \
     -exec mkdir -p "{}/chrome/" \; \
     -exec ln -s "$HOME/.mozilla/firefox/chrome/userChrome.css" "{}/chrome/" \;
+
+  # Copy useful executable scripts.
+  mkdir -p "$HOME/bin"
+  cp bin/launch-browser "$HOME/bin/"
+  cp bin/launch-terminal "$HOME/bin/"
 fi

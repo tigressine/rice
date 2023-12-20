@@ -1,0 +1,16 @@
+if [ "$1" = "--work" ]; then
+  shift
+  FLAGS="--profile-directory=Default"
+elif [ "$1" = "--personal" ]; then
+  shift
+  FLAGS="--profile-directory=Profile 1"
+else
+  FLAGS=""
+fi
+URL="$1"
+
+if [ $(which google-chrome) ]; then
+  google-chrome "$FLAGS" "$URL"
+else
+  firefox "$URL"
+fi

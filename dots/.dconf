@@ -1,7 +1,17 @@
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
 binding='<Super>a'
-command='kitty --title Terminal tmx2 new-session -t core'
-name='Launch Terminal with Tmux'
+command='launch-terminal'
+name='Launch Terminal'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
+binding='<Super>s'
+command='launch-browser --work'
+name='Launch Work Chrome'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
+binding='<Super>d'
+command='launch-browser --personal'
+name='Launch Personal Chrome'
 
 [org/gnome/settings-daemon/plugins/media-keys]
 area-screenshot=@as []
@@ -83,4 +93,53 @@ unmaximize=@as []
 [org/gnome/mutter/keybindings]
 toggle-tiled-left=['<Shift><Alt>a']
 toggle-tiled-right=['<Shift><Alt>d']
+
+[org/gnome/shell]
+app-picker-layout=[{'ksh93.desktop': <{'position': <0>}>, 'org.gnome.Contacts.desktop': <{'position': <1>}>, 'crd-url-forwarder.desktop': <{'position': <2>}>, 'org.gnome.clocks.desktop': <{'position': <3>}>, 'org.gnome.Extensions.desktop': <{'position': <4>}>, 'fish.desktop': <{'position': <5>}>, 'org.gnome.Totem.desktop': <{'position': <6>}>, 'org.gnome.gedit.desktop': <{'position': <7>}>, 'com.google.GoobuntuConfigWizard.desktop': <{'position': <8>}>, 'org.gnome.Settings.desktop': <{'position': <9>}>, 'gnome-system-monitor.desktop': <{'position': <10>}>, 'goobuntu-indicator.desktop': <{'position': <11>}>, 'org.gnome.Terminal.desktop': <{'position': <12>}>, 'Utilities': <{'position': <13>}>, 'io.github.Hexchat.desktop': <{'position': <14>}>, 'yelp.desktop': <{'position': <15>}>, 'im-config.desktop': <{'position': <16>}>, 'org.gnome.Cheese.desktop': <{'position': <17>}>, 'mpv.desktop': <{'position': <18>}>, 'nvim.desktop': <{'position': <19>}>, 'onboard.desktop': <{'position': <20>}>, 'onboard-settings.desktop': <{'position': <21>}>}, {'system-config-printer.desktop': <{'position': <0>}>, 'ranger.desktop': <{'position': <1>}>, 'chrome-fhihpiojkbmbpdjeoajapmgkhlnakfjf-Default.desktop': <{'position': <2>}>, 'ssh-askpass.desktop': <{'position': <3>}>, 'info.desktop': <{'position': <4>}>, 'org.gnome.TextEditor.desktop': <{'position': <5>}>, 'zutty.desktop': <{'position': <6>}>, 'libreoffice-startcenter.desktop': <{'position': <7>}>, 'libreoffice-base.desktop': <{'position': <8>}>, 'libreoffice-draw.desktop': <{'position': <9>}>, 'libreoffice-impress.desktop': <{'position': <10>}>}]
+disabled-extensions=['apps-menu@gnome-shell-extensions.gcampax.github.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com']
+disable-user-extensions=false
+enabled-extensions=['ubuntu-appindicators@ubuntu.com', 'launch-new-instance@gnome-shell-extensions.gcampax.github.com', 'glinux-menu@glinux-team.google.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'dash-to-panel@jderose9.github.com']
+favorite-apps=['kitty.desktop', 'google-chrome.desktop', 'org.gnome.Nautilus.desktop', 'firefox-esr.desktop', 'org.gnome.Calculator.desktop', 'gimp.desktop', 'libreoffice-writer.desktop', 'libreoffice-calc.desktop']
+last-selected-power-profile='power-saver'
+welcome-dialog-last-shown-version='43.6'
+
+[org/gnome/shell/extensions/dash-to-panel]
+animate-appicon-hover-animation-extent={'RIPPLE': 4, 'PLANK': 4, 'SIMPLE': 1}
+animate-appicon-hover=true
+appicon-margin=8
+appicon-padding=8
+available-monitors=[0]
+dot-position='BOTTOM'
+dot-style-focused='METRO'
+hide-overview-on-startup=true
+hotkeys-overlay-combo='TEMPORARILY'
+intellihide-behaviour='ALL_WINDOWS'
+intellihide-hide-from-windows=true
+intellihide-show-in-fullscreen=true
+intellihide=true
+isolate-workspaces=false
+leftbox-padding=0
+middle-click-action='LAUNCH'
+multi-monitors=false
+panel-anchors='{"0":"MIDDLE","1":"MIDDLE"}'
+panel-element-positions='{"0":[{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"dateMenu","visible":true,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"centerMonitor"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}],"1":[{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"dateMenu","visible":true,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"centerMonitor"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}]}'
+panel-element-positions-monitors-sync=true
+panel-lengths='{"0":100,"1":100}'
+panel-positions='{"0":"BOTTOM","1":"BOTTOM"}'
+panel-sizes='{"0":48,"1":48}'
+primary-monitor=0
+shift-click-action='MINIMIZE'
+shift-middle-click-action='LAUNCH'
+show-appmenu=false
+show-apps-icon-file=''
+show-favorites-all-monitors=false
+show-favorites=true
+show-showdesktop-hover=true
+status-icon-padding=-1
+stockgs-keep-dash=false
+stockgs-keep-top-panel=false
+trans-use-custom-bg=false
+trans-use-custom-opacity=true
+tray-padding=-1
+window-preview-title-position='TOP'
 

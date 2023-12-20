@@ -1,0 +1,6 @@
+if [ $(which tmx2) ]; then
+  MUXER="tmx2"
+else
+  MUXER="tmux"
+fi
+kitty --title Terminal $MUXER new-session -t core

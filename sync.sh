@@ -2,10 +2,14 @@
 
 DCONF_SETTINGS_PATHS="
   org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0
+  org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1
+  org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2
   org/gnome/settings-daemon/plugins/media-keys
   org/gnome/shell/keybindings
   org/gnome/desktop/wm/keybindings
   org/gnome/mutter/keybindings
+  org/gnome/shell
+  org/gnome/shell/extensions/dash-to-panel
 "
 
 # Save specific dconf settings into a file.
@@ -47,3 +51,7 @@ cp "$HOME/.config/shell/configuration/core_configuration" \
 cp "$HOME/.config/shell/configuration/extended_configuration" \
   dots/.config/shell/configuration/
 cp "$HOME/.mozilla/firefox/chrome/userChrome.css" dots/.mozilla/firefox/chrome/
+
+mkdir -p bin/
+cp "$HOME/bin/launch-browser" bin/
+cp "$HOME/bin/launch-terminal" bin/
