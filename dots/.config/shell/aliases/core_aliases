@@ -2,6 +2,7 @@
 
 export TOSSED_DIR="$HOME/.local/share/Trash/files"
 export SLATE_DIR="$HOME/slate"
+export VENV_DIR="$HOME/.venv"
 export DEFAULT_GIT_USER="tigressine"
 
 # General navigation and visual aliases.
@@ -170,4 +171,56 @@ to() {
         ;;
     esac
   fi
+}
+
+# Manage virtual environments for Python.
+venv() {
+  mkdir -p "$VENV_DIR"
+  case "$1" in
+    -i|--install)
+      fucking install -y python3-venv
+      ;;
+    -n|--new)
+      name="$2"
+      if [ "$name" == "" ]; then
+        print_error "name argument is missing"
+        return 1
+      elif [ -d "$VENV_DIR/$name" ]; then
+        print_error "'$name' environment already exists"
+        return 1
+      else
+        python3 -m venv --prompt "$name" "$VENV_DIR/$name"
+      fi
+      ;;
+    -d|--delete)
+      name="$2"
+      if [ "$name" == "" ]; then
+        print_error "name argument is missing"
+        return 1
+      elif [ ! -d "$VENV_DIR/$name" ]; then
+        print_error "'$name' environment doesn't exist"
+        return 1
+      else
+        toss "$VENV_DIR/$name"
+      fi
+      ;;
+    -l|--list)
+      ls "$VENV_DIR"
+      ;;
+    -x|-e|--exit)
+      deactivate
+      ;;
+    *)
+      name="$1"
+      if [ "$name" == "" ]; then
+        print_error "name argument is missing"
+        return 1
+      elif [ ! -d "$VENV_DIR/$name" ]; then
+        print_error "'$name' environment doesn't exist"
+        return 1
+      else
+        . "$VENV_DIR/$name/bin/activate"
+      fi
+      ;;
+  esac
 }

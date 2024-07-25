@@ -14,28 +14,11 @@ mt() {
   mount_name="$1"
   case "$mount_name" in
     "fig")
-      sshfs oblako:/google/src/cloud/tgsachse/fig "$HOME/fig"
+      sshfs \
+          -o reconnect \
+          -o ServerAliveInterval=15 \
+          oblako:/google/src/cloud/tgsachse/fig "$HOME/fig"
       print_info "mounted fig"
-      ;;
-    "allegro")
-      sshfs oblako:/usr/local/google/home/tgsachse/allegro "$HOME/allegro"
-      print_info "mounted allegro"
-      ;;
-    "dropbox")
-      for attempt in 1 2 3 4 5 6 7 8 9 10; do
-        dbxfs "$HOME/dropbox"
-        sleep .1
-        ls "$HOME/dropbox" > /dev/null 2>&1
-        if [ $? -eq 0 ]; then
-          print_info "mounted dropbox"
-          break
-        else
-          sleep .3
-          umt dropbox
-          print_info "failed to mount dropbox, retrying"
-          sleep .3
-        fi
-      done
       ;;
     *)
       print_error "invalid mount name provided"
@@ -56,12 +39,6 @@ umt() {
   case "$unmount_name" in
     "fig")
       umount "$HOME/fig"
-      ;;
-    "allegro")
-      umount "$HOME/allegro"
-      ;;
-    "dropbox")
-      fusermount -u "$HOME/dropbox"
       ;;
     *)
       print_error "invalid unmount name provided"

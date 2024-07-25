@@ -1,16 +1,24 @@
 if [ "$1" = "--work" ]; then
-  shift
-  FLAGS="--profile-directory=Default"
-elif [ "$1" = "--personal" ]; then
-  shift
-  FLAGS="--profile-directory=Profile 1"
+  work=true
 else
-  FLAGS=""
+  work=false
 fi
-URL="$1"
 
-if [ $(which google-chrome) ]; then
-  google-chrome "$FLAGS" "$URL"
+shift
+if [ "$1" != "" ]; then
+  URL="$1"
+fi
+
+if [ $work = true ]; then
+  if [ "$URL" != "" ]; then
+    google-chrome --profile-directory=Default "$URL"
+  else
+    google-chrome --profile-directory=Default
+  fi
 else
-  firefox "$URL"
+  if [ "$URL" != "" ]; then
+    firefox --new-tab "$URL"
+  else
+    firefox
+  fi
 fi

@@ -6,12 +6,12 @@ name='Launch Terminal'
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
 binding='<Super>s'
 command='launch-browser --work'
-name='Launch Work Chrome'
+name='Launch Work Browser'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
 binding='<Super>d'
 command='launch-browser --personal'
-name='Launch Personal Chrome'
+name='Launch Personal Browser'
 
 [org/gnome/settings-daemon/plugins/media-keys]
 area-screenshot=@as []
@@ -95,11 +95,11 @@ toggle-tiled-left=['<Shift><Alt>a']
 toggle-tiled-right=['<Shift><Alt>d']
 
 [org/gnome/shell]
-app-picker-layout=[{'ksh93.desktop': <{'position': <0>}>, 'org.gnome.Contacts.desktop': <{'position': <1>}>, 'crd-url-forwarder.desktop': <{'position': <2>}>, 'org.gnome.clocks.desktop': <{'position': <3>}>, 'org.gnome.Extensions.desktop': <{'position': <4>}>, 'fish.desktop': <{'position': <5>}>, 'org.gnome.Totem.desktop': <{'position': <6>}>, 'org.gnome.gedit.desktop': <{'position': <7>}>, 'com.google.GoobuntuConfigWizard.desktop': <{'position': <8>}>, 'org.gnome.Settings.desktop': <{'position': <9>}>, 'gnome-system-monitor.desktop': <{'position': <10>}>, 'goobuntu-indicator.desktop': <{'position': <11>}>, 'org.gnome.Terminal.desktop': <{'position': <12>}>, 'Utilities': <{'position': <13>}>, 'io.github.Hexchat.desktop': <{'position': <14>}>, 'yelp.desktop': <{'position': <15>}>, 'im-config.desktop': <{'position': <16>}>, 'org.gnome.Cheese.desktop': <{'position': <17>}>, 'mpv.desktop': <{'position': <18>}>, 'nvim.desktop': <{'position': <19>}>, 'onboard.desktop': <{'position': <20>}>, 'onboard-settings.desktop': <{'position': <21>}>}, {'system-config-printer.desktop': <{'position': <0>}>, 'ranger.desktop': <{'position': <1>}>, 'chrome-fhihpiojkbmbpdjeoajapmgkhlnakfjf-Default.desktop': <{'position': <2>}>, 'ssh-askpass.desktop': <{'position': <3>}>, 'info.desktop': <{'position': <4>}>, 'org.gnome.TextEditor.desktop': <{'position': <5>}>, 'zutty.desktop': <{'position': <6>}>, 'libreoffice-startcenter.desktop': <{'position': <7>}>, 'libreoffice-base.desktop': <{'position': <8>}>, 'libreoffice-draw.desktop': <{'position': <9>}>, 'libreoffice-impress.desktop': <{'position': <10>}>}]
-disabled-extensions=['apps-menu@gnome-shell-extensions.gcampax.github.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com']
+app-picker-layout=[{'ksh93.desktop': <{'position': <0>}>, 'org.gnome.Contacts.desktop': <{'position': <1>}>, 'crd-url-forwarder.desktop': <{'position': <2>}>, 'org.gnome.clocks.desktop': <{'position': <3>}>, 'org.gnome.Extensions.desktop': <{'position': <4>}>, 'fish.desktop': <{'position': <5>}>, 'org.gnome.Totem.desktop': <{'position': <6>}>, 'org.gnome.gedit.desktop': <{'position': <7>}>, 'com.google.GoobuntuConfigWizard.desktop': <{'position': <8>}>, 'org.gnome.Settings.desktop': <{'position': <9>}>, 'goobuntu-indicator.desktop': <{'position': <10>}>, 'org.gnome.Terminal.desktop': <{'position': <11>}>, 'Utilities': <{'position': <12>}>, 'io.github.Hexchat.desktop': <{'position': <13>}>, 'yelp.desktop': <{'position': <14>}>, 'im-config.desktop': <{'position': <15>}>, 'org.gnome.Cheese.desktop': <{'position': <16>}>, 'mpv.desktop': <{'position': <17>}>, 'nvim.desktop': <{'position': <18>}>, 'onboard.desktop': <{'position': <19>}>, 'onboard-settings.desktop': <{'position': <20>}>}, {'system-config-printer.desktop': <{'position': <0>}>, 'ranger.desktop': <{'position': <1>}>, 'chrome-fhihpiojkbmbpdjeoajapmgkhlnakfjf-Default.desktop': <{'position': <2>}>, 'ssh-askpass.desktop': <{'position': <3>}>, 'info.desktop': <{'position': <4>}>, 'org.gnome.TextEditor.desktop': <{'position': <5>}>, 'zutty.desktop': <{'position': <6>}>, 'libreoffice-startcenter.desktop': <{'position': <7>}>, 'libreoffice-base.desktop': <{'position': <8>}>, 'libreoffice-draw.desktop': <{'position': <9>}>, 'libreoffice-impress.desktop': <{'position': <10>}>, 'org.gnome.SystemMonitor.desktop': <{'position': <11>}>, 'com.google.AndroidStudio.desktop': <{'position': <12>}>, 'nl.hjdskes.gcolor3.desktop': <{'position': <13>}>, 'com.discordapp.Discord.desktop': <{'position': <14>}>, 'org.gtk.Demo4.desktop': <{'position': <15>}>, 'org.gtk.IconBrowser4.desktop': <{'position': <16>}>, 'org.gtk.gtk4.NodeEditor.desktop': <{'position': <17>}>, 'org.gtk.PrintEditor4.desktop': <{'position': <18>}>, 'vlc.desktop': <{'position': <19>}>, 'org.gtk.WidgetFactory4.desktop': <{'position': <20>}>}]
+disabled-extensions=['apps-menu@gnome-shell-extensions.gcampax.github.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'native-window-placement@gnome-shell-extensions.gcampax.github.com', 'rounded-window-corners@yilozt', 'useless-gaps@pimsnel.com']
 disable-user-extensions=false
 enabled-extensions=['ubuntu-appindicators@ubuntu.com', 'launch-new-instance@gnome-shell-extensions.gcampax.github.com', 'glinux-menu@glinux-team.google.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'dash-to-panel@jderose9.github.com']
-favorite-apps=['kitty.desktop', 'google-chrome.desktop', 'org.gnome.Nautilus.desktop', 'firefox-esr.desktop', 'org.gnome.Calculator.desktop', 'gimp.desktop', 'libreoffice-writer.desktop', 'libreoffice-calc.desktop']
+favorite-apps=['kitty.desktop', 'google-chrome.desktop', 'org.gnome.Nautilus.desktop', 'firefox-esr.desktop', 'org.gnome.Calculator.desktop', 'gimp.desktop', 'libreoffice-writer.desktop', 'libreoffice-calc.desktop', 'org.signal.Signal.desktop', 'com.spotify.Client.desktop', 'org.telegram.desktop.desktop']
 last-selected-power-profile='power-saver'
 welcome-dialog-last-shown-version='43.6'
 
@@ -108,7 +108,7 @@ animate-appicon-hover-animation-extent={'RIPPLE': 4, 'PLANK': 4, 'SIMPLE': 1}
 animate-appicon-hover=true
 appicon-margin=8
 appicon-padding=8
-available-monitors=[0]
+available-monitors=[0, 1]
 dot-position='BOTTOM'
 dot-style-focused='METRO'
 hide-overview-on-startup=true
