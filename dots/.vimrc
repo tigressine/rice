@@ -15,7 +15,6 @@ set fileformat=unix
 let loaded_matchparen=1
 set clipboard+=unnamedplus
 filetype plugin indent on
-" autocmd vimLeave * set guicursor=a:hor50-blinkon1
 
 " *** VISUALS ***
 syntax on
@@ -24,6 +23,7 @@ set background=dark
 if exists('&cc')
   set cc=80
 endif
+highlight Normal ctermbg=None
 
 " *** GREEN COLORED ITEMS ***
 highlight MoreMsg ctermfg=2
